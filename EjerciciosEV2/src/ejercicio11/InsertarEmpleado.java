@@ -10,7 +10,7 @@ public class InsertarEmpleado {
 			// Establecemos la conexion con la BD
 			Connection conexion = DriverManager.getConnection
 					("jdbc:mysql://localhost/ejemplo", "ejemplo", "ejemplo");
-										
+
 			// recuperar argumentos de main
 			String emp_no = args[0]; // num. departamento
 			String apellido = args[1]; // nombre
@@ -20,8 +20,8 @@ public class InsertarEmpleado {
 			String comision = args[5]; // localidad
 			String dept_no = args[6]; // localidad
 			Date date = new Date(System.currentTimeMillis());
-			System.out.print(date);
-			
+			System.out.print("Hola" +date);
+
 			//Comprobar que exista el departamento
 			String sql_v_dept = String.format("SELECT * FROM departamentos WHERE dept_no = %s", dept_no);
 			Statement sentencia = conexion.createStatement();
@@ -54,10 +54,10 @@ public class InsertarEmpleado {
 						}
 					}
 				}
-				
+
 			}
 		} catch (Exception e) {
-			
+
 		}
 	}
 
