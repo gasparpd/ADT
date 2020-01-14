@@ -1,9 +1,6 @@
 package ejercicio11;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class InsertarEmpleado {
 
@@ -22,6 +19,8 @@ public class InsertarEmpleado {
 			String salario = args[4]; // nombre
 			String comision = args[5]; // localidad
 			String dept_no = args[6]; // localidad
+			Date date = new Date(System.currentTimeMillis());
+			System.out.print(date);
 			
 			//Comprobar que exista el departamento
 			String sql_v_dept = String.format("SELECT * FROM departamentos WHERE dept_no = %s", dept_no);
@@ -47,7 +46,11 @@ public class InsertarEmpleado {
 						if(!rs.next()) {
 							System.out.println("El director no existe.");
 						} else {
-							
+							if (apellido == null || oficio == null){
+								System.out.println("El apellido y el oficio no pueden ser nulos");
+							} else {
+
+							}
 						}
 					}
 				}
