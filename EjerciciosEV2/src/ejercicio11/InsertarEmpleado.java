@@ -19,8 +19,9 @@ public class InsertarEmpleado {
 			String salario = args[4]; // nombre
 			String comision = args[5]; // localidad
 			String dept_no = args[6]; // localidad
-			Date date = new Date(System.currentTimeMillis());
-			System.out.print("Hola" +date);
+			Date fecha_alta = new Date(System.currentTimeMillis());
+			String fecha = String.valueOf(fecha_alta);
+			System.out.println("Hoy es: " +fecha_alta);
 
 			//Comprobar que exista el departamento
 			String sql_v_dept = String.format("SELECT * FROM departamentos WHERE dept_no = %s", dept_no);
@@ -41,15 +42,18 @@ public class InsertarEmpleado {
 						System.out.println("El salario es menor o igual a 0.");
 					} else {
 						//Comprobar que existe el director
-						String sql_v_dir = String.format("SELECT * FROM empleados WHERE dir = %s", dir);
-						rs= sentencia.executeQuery(sql_v_numemp);
+						String sql_v_dir = String.format("SELECT * FROM empleados WHERE emp_no = %s", dir);
+						rs= sentencia.executeQuery(sql_v_dir);
 						if(!rs.next()) {
 							System.out.println("El director no existe.");
 						} else {
 							if (apellido == null || oficio == null){
 								System.out.println("El apellido y el oficio no pueden ser nulos");
 							} else {
-
+								String sql_insert = String.format("INSERT INTO `empleados` (`emp_no`, `apellido`, `oficio`, `dir`, `fecha_alt`, `salario`, `comision`, `dept_no`)"
+										+ " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", emp_no, apellido, oficio, dir, fecha, salario, comision, dept_no);
+								int filas = sentencia.executeUpdate(sql_insert);
+								System.out.println("Filas afectadas: " +filas);
 							}
 						}
 					}
@@ -57,7 +61,7 @@ public class InsertarEmpleado {
 
 			}
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}
 	}
 
