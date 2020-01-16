@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-01-2020 a las 10:35:01
+-- Tiempo de generación: 16-01-2020 a las 12:26:27
 -- Versión del servidor: 5.7.11
 -- Versión de PHP: 5.6.18
 
@@ -19,6 +19,20 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `smartphones`
 --
+
+-- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `smartphone`
+--
+
+DROP TABLE IF EXISTS `smartphone`;
+CREATE TABLE `smartphone` (
+  `ID_SMARTPHONE` int(2) NOT NULL,
+  `ID_MARCA` int(2) NOT NULL,
+  `MODELO` varchar(20) NOT NULL,
+  `PULGADAS_PANTALLA` varchar(10) NOT NULL,
+  `PRECIO` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -37,18 +51,6 @@ CREATE TABLE `fabricante` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `smartphone`
---
-
-DROP TABLE IF EXISTS `smartphone`;
-CREATE TABLE `smartphone` (
-  `ID_MARCA` int(2) NOT NULL,
-  `MODELO` varchar(20) NOT NULL,
-  `PULGADAS_PANTALLA` varchar(10) NOT NULL,
-  `PRECIO` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
 -- Índices para tablas volcadas
 --
 
@@ -62,7 +64,18 @@ ALTER TABLE `fabricante`
 -- Indices de la tabla `smartphone`
 --
 ALTER TABLE `smartphone`
-  ADD PRIMARY KEY (`ID_MARCA`,`MODELO`);
+  ADD PRIMARY KEY (`ID_SMARTPHONE`),
+  ADD KEY `ID_MARCA` (`ID_MARCA`);
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `smartphone`
+--
+ALTER TABLE `smartphone`
+  ADD CONSTRAINT `smartphone_ibfk_1` FOREIGN KEY (`ID_MARCA`) REFERENCES `fabricante` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

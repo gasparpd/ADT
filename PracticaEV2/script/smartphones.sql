@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-01-2020 a las 19:11:03
+-- Tiempo de generación: 16-01-2020 a las 12:17:15
 -- Versión del servidor: 5.7.11
 -- Versión de PHP: 5.6.18
 
@@ -99,7 +99,7 @@ ALTER TABLE `smartphone`
 -- Filtros para la tabla `smartphone`
 --
 ALTER TABLE `smartphone`
-  ADD CONSTRAINT `smartphone_ibfk_1` FOREIGN KEY (`ID_MARCA`) REFERENCES `fabricante` (`ID`);
+  ADD CONSTRAINT `smartphone_ibfk_1` FOREIGN KEY (`ID_MARCA`) REFERENCES `fabricante` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
