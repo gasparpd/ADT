@@ -7,5 +7,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/Clase/2º DAM/Acceso a datos/1ª Ev/UD2/RecursosUnidad2/conectoresSQL/mysql-connector-java-5.1.38-bin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
