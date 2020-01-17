@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-01-2020 a las 12:26:27
+-- Tiempo de generación: 17-01-2020 a las 11:09:58
 -- Versión del servidor: 5.7.11
 -- Versión de PHP: 5.6.18
 
@@ -21,44 +21,17 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
---
--- Estructura de tabla para la tabla `smartphone`
---
-
-DROP TABLE IF EXISTS `smartphone`;
-CREATE TABLE `smartphone` (
-  `ID_SMARTPHONE` int(2) NOT NULL,
-  `ID_MARCA` int(2) NOT NULL,
-  `MODELO` varchar(20) NOT NULL,
-  `PULGADAS_PANTALLA` varchar(10) NOT NULL,
-  `PRECIO` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `fabricante`
 --
 
-DROP TABLE IF EXISTS `fabricante`;
 CREATE TABLE `fabricante` (
   `ID` int(2) NOT NULL,
   `NOMBRE` varchar(15) NOT NULL,
   `FUNDACION_YEAR` varchar(4) NOT NULL,
   `MATRIZ` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `fabricante`
---
-
-
 
 --
 -- Volcado de datos para la tabla `fabricante`
@@ -72,6 +45,20 @@ INSERT INTO `fabricante` (`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES
 (5, 'REALME', '2018', 3),
 (6, 'HONOR', '2013', 4),
 (7, 'XIAOMI', '2010', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `smartphone`
+--
+
+CREATE TABLE `smartphone` (
+  `ID_SMARTPHONE` int(2) NOT NULL,
+  `ID_MARCA` int(2) NOT NULL,
+  `MODELO` varchar(20) NOT NULL,
+  `PULGADAS_PANTALLA` varchar(10) NOT NULL,
+  `PRECIO` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `smartphone`
@@ -87,6 +74,13 @@ INSERT INTO `smartphone` (`ID_SMARTPHONE`, `ID_MARCA`, `MODELO`, `PULGADAS_PANTA
 (7, 7, 'MI NOTE 10', '6.47', '549€'),
 (8, 7, 'MI 9', '6.39', '449€');
 
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `fabricante`
+--
 ALTER TABLE `fabricante`
   ADD PRIMARY KEY (`ID`);
 
@@ -94,7 +88,8 @@ ALTER TABLE `fabricante`
 -- Indices de la tabla `smartphone`
 --
 ALTER TABLE `smartphone`
-  ADD PRIMARY KEY (`ID_SMARTPHONE`);
+  ADD PRIMARY KEY (`ID_SMARTPHONE`),
+  ADD KEY `smartphone_ibfk_1` (`ID_MARCA`);
 
 --
 -- Restricciones para tablas volcadas
@@ -104,7 +99,7 @@ ALTER TABLE `smartphone`
 -- Filtros para la tabla `smartphone`
 --
 ALTER TABLE `smartphone`
-  ADD CONSTRAINT `smartphone_ibfk_1` FOREIGN KEY (`ID_MARCA`) REFERENCES `fabricante` (`ID`) ON DELETE SET NULL ON UPDATE SET NULL;
+  ADD CONSTRAINT `smartphone_ibfk_1` FOREIGN KEY (`ID_MARCA`) REFERENCES `fabricante` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

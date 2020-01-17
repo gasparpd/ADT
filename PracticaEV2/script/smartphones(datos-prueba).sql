@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-01-2020 a las 12:40:26
+-- Tiempo de generación: 17-01-2020 a las 11:12:25
 -- Versión del servidor: 5.7.11
 -- Versión de PHP: 5.6.18
 
@@ -21,6 +21,11 @@ SET time_zone = "+00:00";
 --
 
 --
+-- Truncar tablas antes de insertar `fabricante`
+--
+
+TRUNCATE TABLE `fabricante`;
+--
 -- Volcado de datos para la tabla `fabricante`
 --
 
@@ -33,6 +38,11 @@ INSERT INTO `fabricante` (`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES
 (6, 'HONOR', '2013', 4),
 (7, 'XIAOMI', '2010', NULL);
 
+--
+-- Truncar tablas antes de insertar `smartphone`
+--
+
+TRUNCATE TABLE `smartphone`;
 --
 -- Volcado de datos para la tabla `smartphone`
 --

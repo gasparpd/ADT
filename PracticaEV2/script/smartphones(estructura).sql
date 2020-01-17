@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-01-2020 a las 12:26:27
+-- Tiempo de generación: 17-01-2020 a las 11:11:17
 -- Versión del servidor: 5.7.11
 -- Versión de PHP: 5.6.18
 
@@ -21,6 +21,24 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `fabricante`
+--
+-- Desactivo el check de claves foráneas por problemas
+-- con las mismas al hacer el DROP TABLE
+SET foreign_key_checks = 0;
+-- -------------------------------------------------------
+DROP TABLE IF EXISTS `fabricante`;
+CREATE TABLE `fabricante` (
+  `ID` int(2) NOT NULL,
+  `NOMBRE` varchar(15) NOT NULL,
+  `FUNDACION_YEAR` varchar(4) NOT NULL,
+  `MATRIZ` int(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
 --
 -- Estructura de tabla para la tabla `smartphone`
 --
@@ -34,26 +52,12 @@ CREATE TABLE `smartphone` (
   `PRECIO` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `fabricante`
---
-
-DROP TABLE IF EXISTS `fabricante`;
-CREATE TABLE `fabricante` (
-  `ID` int(2) NOT NULL,
-  `NOMBRE` varchar(15) NOT NULL,
-  `FUNDACION_YEAR` varchar(4) NOT NULL,
-  `MATRIZ` int(2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
 --
 -- Índices para tablas volcadas
 --
-
+-- Reactivo el check de claves foráneas
+SET foreign_key_checks = 1;
+-- -------------------------------------------------------
 --
 -- Indices de la tabla `fabricante`
 --
@@ -65,7 +69,7 @@ ALTER TABLE `fabricante`
 --
 ALTER TABLE `smartphone`
   ADD PRIMARY KEY (`ID_SMARTPHONE`),
-  ADD KEY `ID_MARCA` (`ID_MARCA`);
+  ADD KEY `smartphone_ibfk_1` (`ID_MARCA`);
 
 --
 -- Restricciones para tablas volcadas

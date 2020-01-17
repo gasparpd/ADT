@@ -69,7 +69,7 @@ public class Principal {
         }
     }
     public static void datosPrueba() {
-        File script = new File("./script/smartphones(datos-prueba-delayed).sql");
+        File script = new File("./script/smartphones(datos-prueba).sql");
         System.out.println("--------------------------------------------");
         System.out.println("\n\nFichero de consulta : " + script.getName());
         System.out.println("Convirtiendo el fichero a cadena...");
