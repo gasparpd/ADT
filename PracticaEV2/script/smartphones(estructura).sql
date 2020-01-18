@@ -19,7 +19,14 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `smartphones`
 --
-
+DROP TABLE IF EXISTS `smartphone`;
+CREATE TABLE `smartphone` (
+  `ID_SMARTPHONE` int(2) NOT NULL,
+  `ID_MARCA` int(2) NOT NULL,
+  `MODELO` varchar(20) NOT NULL,
+  `PULGADAS_PANTALLA` varchar(10) NOT NULL,
+  `PRECIO` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 
 --
@@ -27,7 +34,7 @@ SET time_zone = "+00:00";
 --
 -- Desactivo el check de claves foráneas por problemas
 -- con las mismas al hacer el DROP TABLE
-SET foreign_key_checks = 0;
+-- SET foreign_key_checks = 0;
 -- -------------------------------------------------------
 DROP TABLE IF EXISTS `fabricante`;
 CREATE TABLE `fabricante` (
@@ -43,20 +50,13 @@ CREATE TABLE `fabricante` (
 -- Estructura de tabla para la tabla `smartphone`
 --
 
-DROP TABLE IF EXISTS `smartphone`;
-CREATE TABLE `smartphone` (
-  `ID_SMARTPHONE` int(2) NOT NULL,
-  `ID_MARCA` int(2) NOT NULL,
-  `MODELO` varchar(20) NOT NULL,
-  `PULGADAS_PANTALLA` varchar(10) NOT NULL,
-  `PRECIO` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 --
 -- Índices para tablas volcadas
 --
 -- Reactivo el check de claves foráneas
-SET foreign_key_checks = 1;
+-- SET foreign_key_checks = 1;
 -- -------------------------------------------------------
 --
 -- Indices de la tabla `fabricante`

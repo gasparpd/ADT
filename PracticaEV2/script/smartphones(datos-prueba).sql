@@ -19,16 +19,16 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `smartphones`
 --
-
+SET foreign_key_checks = 0;
 --
 -- Truncar tablas antes de insertar `fabricante`
 --
-
+TRUNCATE TABLE `smartphone`;
 TRUNCATE TABLE `fabricante`;
 --
 -- Volcado de datos para la tabla `fabricante`
 --
-
+SET foreign_key_checks = 1;
 INSERT INTO `fabricante` (`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES
 (1, 'APPLE', '1976', NULL),
 (2, 'SAMSUNG', '1938', NULL),
@@ -42,7 +42,7 @@ INSERT INTO `fabricante` (`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES
 -- Truncar tablas antes de insertar `smartphone`
 --
 
-TRUNCATE TABLE `smartphone`;
+
 --
 -- Volcado de datos para la tabla `smartphone`
 --

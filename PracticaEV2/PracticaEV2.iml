@@ -11,6 +11,7 @@
       <library>
         <CLASSES>
           <root url="jar://D:/Clase/2º DAM/Acceso a datos/1ª Ev/UD2/RecursosUnidad2/conectoresSQL/mysql-connector-java-5.1.38-bin.jar!/" />
+          <root url="jar://$USER_HOME$/Documents/ADT/RecursosUnidad2/conectoresSQL/mysql-connector-java-5.1.38-bin.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
