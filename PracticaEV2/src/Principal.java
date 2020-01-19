@@ -1,5 +1,6 @@
 import java.io.*;
 import java.sql.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Principal {
@@ -14,6 +15,7 @@ public class Principal {
                     "2 - Insertar datos de prueba.\n" +
                     "3 - Eliminar base de datos.\n" +
                     "4 - Insertar datos en una tabla.\n" +
+                    "5 - Visualizar datos de una tabla.\n" +
                     "0 - Salir.\n" +
                     "-------------------------------------------");
             int res = teclado.nextInt();
@@ -29,6 +31,9 @@ public class Principal {
                     break;
                 case 4:
                     insertConsultaPreparada();
+                    break;
+                case 5:
+                    visualizarTabla();
                     break;
                 case 0:
                     continuar = false;
@@ -266,6 +271,64 @@ public class Principal {
                 int filas_afectadas = sentencia.executeUpdate();
                 System.out.println("Filas afectadas: " + filas_afectadas);
             } catch (SQLException e) {
+                System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
+                System.out.println("Mensaje:    "+ e.getMessage());
+                System.out.println("SQL estado: "+ e.getSQLState());
+                System.out.println("Cód error:  "+ e.getErrorCode());
+            }
+
+            sentencia.close(); // Cerrar Statement
+            conexion.close(); // Cerrar conexión
+
+        } catch (ClassNotFoundException cn) {
+            cn.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    private static void visualizarTabla() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
+            // Establecemos la conexion con la BD
+            Connection conexion = DriverManager.getConnection
+                    ("jdbc:mysql://localhost/smartphones", "ejemplo", "ejemplo");
+
+            // Pedir la tabla para mostrar sus datos
+            int tabla = 0;
+            do {
+                System.out.println("¿Qué tabla quieres visualizar?");
+                System.out.println("--------------------MENU-------------------\n" +
+                        "1 - Tabla Smartphone.\n" +
+                        "2 - Tabla Fabricante.\n" +
+                        "-------------------------------------------");
+                tabla = teclado.nextInt();
+            } while (tabla != 1 && tabla != 2);
+
+            //Preparamos la sentencia SQL para sacar todos los datos de la tabla pedida
+            String sql;
+            if (tabla == 1) {
+                sql = "SELECT * FROM smartphone";
+            } else {
+                sql = "SELECT * FROM fabricante";
+            }
+            System.out.println(sql);
+
+            //Inicializamos la sentencia
+            Statement sentencia = conexion.createStatement();
+            try {
+                //Ejecutamos la sentencia con executeQuery y recoremos el ResulSet que
+                //nos devuelve
+
+                ResultSet rs = sentencia.executeQuery(sql);
+                while (rs.next()) {
+                    if (tabla == 1){
+                        System.out.printf("%d, %d, %s, %s, %s\n", rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                    } else {
+                        System.out.printf("%d, %s, %s, %d\n", rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
+                    }
+                }
+
+            }catch (SQLException e) {
                 System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
                 System.out.println("Mensaje:    "+ e.getMessage());
                 System.out.println("SQL estado: "+ e.getSQLState());
