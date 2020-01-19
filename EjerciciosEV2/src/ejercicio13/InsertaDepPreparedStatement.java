@@ -30,7 +30,7 @@ public class InsertaDepPreparedStatement {
 				  filas = sentencia.executeUpdate();
 				  System.out.println("Filas afectadas: " + filas);
 				} catch (SQLException e) {
-					System.out.println("HA OCURRIDO UNA EXCEPCIÓN:"); 
+					System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
 				    System.out.println("Mensaje:    "+ e.getMessage());
 				    System.out.println("SQL estado: "+ e.getSQLState());
 			    	System.out.println("Cód error:  "+ e.getErrorCode());

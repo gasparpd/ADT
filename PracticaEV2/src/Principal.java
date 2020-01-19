@@ -13,7 +13,7 @@ public class Principal {
                     "1 - Crea tablas.\n" +
                     "2 - Insertar datos de prueba.\n" +
                     "3 - Eliminar base de datos.\n" +
-                    "4 - Visualizar datos de una tabla.\n" +
+                    "4 - Insertar datos en una tabla.\n" +
                     "0 - Salir.\n" +
                     "-------------------------------------------");
             int res = teclado.nextInt();
@@ -28,7 +28,7 @@ public class Principal {
                     borrarDB();
                     break;
                 case 4:
-                    consultaPreparada();
+                    insertConsultaPreparada();
                     break;
                 case 0:
                     continuar = false;
@@ -183,7 +183,7 @@ public class Principal {
             e.printStackTrace();
         }
     }
-    public static void consultaPreparada() {
+    public static void insertConsultaPreparada() {
         try {
             Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
             // Establecemos la conexion con la BD
@@ -192,24 +192,79 @@ public class Principal {
 
             // Pedir la tabla para mostrar sus datos
             teclado.nextLine();
-            String tabla = "";
+            String tabla, modelo="", pulgadas="", precio="", nombre_marca="", year_foundation="";
+            int id_marca = 0, id_fab = 0, matriz = 0;
             do {
-                System.out.println("Introduce la el nombre de la tabla de la cual quieres sacar los datos.\n(smartphone / fabricante)");
+                System.out.println("Dame el nombre de la tabla en la que quieres introducir los datos.\n(smartphone / fabricante).");
                 tabla = teclado.nextLine();
-            }while (tabla.equalsIgnoreCase("smartphone") || tabla.equalsIgnoreCase("fabricante"));
+                if (tabla.equalsIgnoreCase("smartphone")) {
+                    System.out.println("Introduce ID_MARCA.");
+                    id_marca = teclado.nextInt();
+                    teclado.nextLine();
+                    System.out.println("Introduce MODELO.");
+                    modelo = teclado.nextLine();
+                    System.out.println("Introduce PULGADAS de PANTALLA.");
+                    pulgadas = teclado.nextLine();
+                    System.out.println("Introduce el PRECIO.");
+                    precio = teclado.nextLine();
+                }
+                else if (tabla.equalsIgnoreCase("fabricante")){
+                    System.out.println("Introduce ID.");
+                    id_fab = teclado.nextInt();
+                    teclado.nextLine();
+                    System.out.println("Introduce NOMBRE.");
+                    nombre_marca = teclado.nextLine();
+                    System.out.println("Introduce AÑO de FUNDACIÓN.");
+                    year_foundation = teclado.nextLine();
+                    System.out.println("Introduce MATRIZ.");
+                    matriz = teclado.nextInt();
+                }
+                else {
+                    System.out.println("El nombre de la tabla introducido (" +tabla +") no es válido.");
+                }
+            }while (!tabla.equalsIgnoreCase("smartphone") && !tabla.equalsIgnoreCase("fabricante"));
 
 
-            // construir orden SELECT
-            String sql = "SELECT * FROM ?";
+            // construir orden INSERT
+            String sql_smart = "INSERT INTO `smartphone`(`ID_MARCA`, `MODELO`, `PULGADAS_PANTALLA`, `PRECIO`) VALUES (?, ?, ?, ?)";
+            String sql_fab = "INSERT INTO `fabricante`(`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES (?, ?, ?, ?)";
 
-            System.out.println(sql);
-            PreparedStatement sentencia = conexion.prepareStatement(sql);
-            sentencia.setString(1, tabla);
+            //Hacemos el PreparedStatement para cada opción (fabricante o smartphone)
+            PreparedStatement sentencia;
+            if (tabla.equalsIgnoreCase("smartphone")) {
+                System.out.println(sql_smart);
+                sentencia = conexion.prepareStatement(sql_smart);
+                sentencia.setInt(1, id_marca);
+                sentencia.setString(2, modelo);
+                sentencia.setString(3, pulgadas);
+                sentencia.setString(4, precio);
+            }
+            else {
+                System.out.println(sql_fab);
+                sentencia = conexion.prepareStatement(sql_smart);
+                sentencia.setInt(1, id_fab);
+                sentencia.setString(2, nombre_marca);
+                sentencia.setString(3, year_foundation);
+                sentencia.setInt(4, matriz);
+            }
 
-            int filas;
             try {
-                filas = sentencia.executeUpdate();
-                System.out.println("Filas afectadas: " + filas);
+                //Ejecutamos la sentencia con executeQuery y recoremos el ResulSet que
+                //nos devuelve
+                /*
+                ResultSet rs = sentencia.executeQuery();
+                while (rs.next()) {
+                    if (tabla.equalsIgnoreCase("smartphone")){
+                        System.out.printf("%d, %d, %s, %s, %s", rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                    } else {
+                        System.out.printf("%d, %s, %s, %d", rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
+                    }
+                }
+                */
+
+                //Ejecutamos la setencia INSERT y recogemos las filas afectadas
+                int filas_afectadas = sentencia.executeUpdate();
+                System.out.println("Filas afectadas: " + filas_afectadas);
             } catch (SQLException e) {
                 System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
                 System.out.println("Mensaje:    "+ e.getMessage());

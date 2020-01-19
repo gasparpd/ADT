@@ -21,11 +21,12 @@ SET time_zone = "+00:00";
 --
 DROP TABLE IF EXISTS `smartphone`;
 CREATE TABLE `smartphone` (
-  `ID_SMARTPHONE` int(2) NOT NULL,
+  `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT,
   `ID_MARCA` int(2) NOT NULL,
   `MODELO` varchar(20) NOT NULL,
   `PULGADAS_PANTALLA` varchar(10) NOT NULL,
-  `PRECIO` varchar(5) NOT NULL
+  `PRECIO` varchar(5) NOT NULL,
+  PRIMARY KEY (`ID_SMARTPHONE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 
@@ -38,10 +39,11 @@ CREATE TABLE `smartphone` (
 -- -------------------------------------------------------
 DROP TABLE IF EXISTS `fabricante`;
 CREATE TABLE `fabricante` (
-  `ID` int(2) NOT NULL,
+  `ID` int(2) NOT NULL AUTO_INCREMENT,
   `NOMBRE` varchar(15) NOT NULL,
   `FUNDACION_YEAR` varchar(4) NOT NULL,
-  `MATRIZ` int(2) DEFAULT NULL
+  `MATRIZ` int(2) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

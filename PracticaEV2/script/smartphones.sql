@@ -27,10 +27,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `fabricante` (
-  `ID` int(2) NOT NULL,
+  `ID` int(2) NOT NULL AUTO_INCREMENT,
   `NOMBRE` varchar(15) NOT NULL,
   `FUNDACION_YEAR` varchar(4) NOT NULL,
-  `MATRIZ` int(2) DEFAULT NULL
+  `MATRIZ` int(2) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -53,11 +54,12 @@ INSERT INTO `fabricante` (`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES
 --
 
 CREATE TABLE `smartphone` (
-  `ID_SMARTPHONE` int(2) NOT NULL,
+  `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT,
   `ID_MARCA` int(2) NOT NULL,
   `MODELO` varchar(20) NOT NULL,
   `PULGADAS_PANTALLA` varchar(10) NOT NULL,
-  `PRECIO` varchar(5) NOT NULL
+  `PRECIO` varchar(5) NOT NULL,
+  PRIMARY KEY (`ID_SMARTPHONE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -74,26 +76,6 @@ INSERT INTO `smartphone` (`ID_SMARTPHONE`, `ID_MARCA`, `MODELO`, `PULGADAS_PANTA
 (7, 7, 'MI NOTE 10', '6.47', '549€'),
 (8, 7, 'MI 9', '6.39', '449€');
 
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `fabricante`
---
-ALTER TABLE `fabricante`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indices de la tabla `smartphone`
---
-ALTER TABLE `smartphone`
-  ADD PRIMARY KEY (`ID_SMARTPHONE`),
-  ADD KEY `smartphone_ibfk_1` (`ID_MARCA`);
-
---
--- Restricciones para tablas volcadas
---
 
 --
 -- Filtros para la tabla `smartphone`

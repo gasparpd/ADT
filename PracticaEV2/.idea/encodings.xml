@@ -4,7 +4,5 @@
     <file url="file://$PROJECT_DIR$/script" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/script/borrarbasedatos.sql" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/script/smartphones(datos-prueba).sql" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/script/smartphones(estructura).sql" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/script/smartphones.sql" charset="UTF-8" />
   </component>
 </project>
