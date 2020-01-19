@@ -1,19 +1,19 @@
 import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Scanner;
 
 public class Principal {
+    static Scanner teclado;
+
     public static void main(String[]args){
-        Scanner teclado = new Scanner(System.in);
+        teclado = new Scanner(System.in);
         boolean continuar = true;
         while (continuar) {
             System.out.println("--------------------MENU-------------------\n" +
                     "1 - Crea tablas.\n" +
                     "2 - Insertar datos de prueba.\n" +
                     "3 - Eliminar base de datos.\n" +
+                    "4 - Visualizar datos de una tabla.\n" +
                     "0 - Salir.\n" +
                     "-------------------------------------------");
             int res = teclado.nextInt();
@@ -26,6 +26,9 @@ public class Principal {
                     break;
                 case 3:
                     borrarDB();
+                    break;
+                case 4:
+                    consultaPreparada();
                     break;
                 case 0:
                     continuar = false;
@@ -177,6 +180,49 @@ public class Principal {
             sents.close();
         } catch (SQLException e) {
             System.out.println("ERROR AL EJECUTAR EL SCRIPT: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    public static void consultaPreparada() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
+            // Establecemos la conexion con la BD
+            Connection conexion = DriverManager.getConnection
+                    ("jdbc:mysql://localhost/smartphones", "ejemplo", "ejemplo");
+
+            // Pedir la tabla para mostrar sus datos
+            teclado.nextLine();
+            String tabla = "";
+            do {
+                System.out.println("Introduce la el nombre de la tabla de la cual quieres sacar los datos.\n(smartphone / fabricante)");
+                tabla = teclado.nextLine();
+            }while (tabla.equalsIgnoreCase("smartphone") || tabla.equalsIgnoreCase("fabricante"));
+
+
+            // construir orden SELECT
+            String sql = "SELECT * FROM ?";
+
+            System.out.println(sql);
+            PreparedStatement sentencia = conexion.prepareStatement(sql);
+            sentencia.setString(1, tabla);
+
+            int filas;
+            try {
+                filas = sentencia.executeUpdate();
+                System.out.println("Filas afectadas: " + filas);
+            } catch (SQLException e) {
+                System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
+                System.out.println("Mensaje:    "+ e.getMessage());
+                System.out.println("SQL estado: "+ e.getSQLState());
+                System.out.println("Cód error:  "+ e.getErrorCode());
+            }
+
+            sentencia.close(); // Cerrar Statement
+            conexion.close(); // Cerrar conexión
+
+        } catch (ClassNotFoundException cn) {
+            cn.printStackTrace();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
