@@ -16,6 +16,7 @@ public class Principal {
                     "4 - Visualizar datos de una tabla.\n" +
                     "5 - Insertar datos en una tabla.\n" +
                     "6 - Modificar datos de una tabla.\n" +
+                    "7 - Eliminar datos de una tabla.\n" +
                     "0 - Salir.\n" +
                     "-------------------------------------------");
             int res = teclado.nextInt();
@@ -38,12 +39,84 @@ public class Principal {
                 case 6:
                     modificarDatos();
                     break;
+                case 7:
+                    eliminarDatos();
+                    break;
                 case 0:
                     continuar = false;
                     break;
                 default:
                     System.out.println("Operación no válida.");
             }
+        }
+    }
+
+    public static void eliminarDatos() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
+            // Establecemos la conexion con la BD
+            Connection conexion = DriverManager.getConnection
+                    ("jdbc:mysql://localhost/smartphones", "ejemplo", "ejemplo");
+
+            // Pedir la tabla para mostrar sus datos
+            int id_smart = 0, id_fab = 0, tabla = 0;
+            do {
+                System.out.println("¿Qué tabla quieres eliminar?");
+                System.out.println("--------------------MENU-------------------\n" +
+                        "1 - Tabla Smartphone.\n" +
+                        "2 - Tabla Fabricante.\n" +
+                        "-------------------------------------------");
+                tabla = teclado.nextInt();
+                if (tabla == 1) {
+                    System.out.println("Introduce ID_SMARTPHONE.");
+                    id_smart = teclado.nextInt();
+                }
+                else if (tabla == 2){
+                    System.out.println("Introduce ID.");
+                    id_fab = teclado.nextInt();
+                }
+                else {
+                    System.out.println("El número de la tabla introducido (" +tabla +") no es válido.");
+                }
+            }while (tabla != 1 && tabla != 2);
+
+
+            // construir orden INSERT
+            String sql_smart = "DELETE FROM `smartphone` WHERE `smartphone`.`ID_SMARTPHONE` = ?";
+            String sql_fab = "DELETE FROM `fabricante` WHERE `fabricante`.`ID` = ?";
+
+            //Hacemos el PreparedStatement para cada opción (fabricante o smartphone)
+            PreparedStatement sentencia;
+            if (tabla == 1) {
+                System.out.println(sql_smart);
+                sentencia = conexion.prepareStatement(sql_smart);
+                sentencia.setInt(1, id_smart);
+            }
+            else {
+                System.out.println(sql_fab);
+                sentencia = conexion.prepareStatement(sql_smart);
+                sentencia.setInt(1, id_fab);
+
+            }
+
+            try {
+                //Ejecutamos la setencia UPDATE y recogemos las filas afectadas
+                int filas = sentencia.executeUpdate();
+                System.out.printf("Filas afectadas:%d %n", filas);
+            } catch (SQLException e) {
+                System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
+                System.out.println("Mensaje:    "+ e.getMessage());
+                System.out.println("SQL estado: "+ e.getSQLState());
+                System.out.println("Cód error:  "+ e.getErrorCode());
+            }
+
+            sentencia.close(); // Cerrar Statement
+            conexion.close(); // Cerrar conexión
+
+        } catch (ClassNotFoundException cn) {
+            cn.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
