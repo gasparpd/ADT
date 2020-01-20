@@ -17,7 +17,7 @@ public class Principal {
                     "5 - Insertar datos en una tabla.\n" +
                     "6 - Modificar datos de una tabla.\n" +
                     "7 - Eliminar datos de una tabla.\n" +
-                    "8 - Procedimiento almacenado (Aplicar descuento).\n" +
+                    "8 - Procedimientos almacenados.\n" +
                     "0 - Salir.\n" +
                     "-------------------------------------------");
             int res = teclado.nextInt();
@@ -67,14 +67,14 @@ public class Principal {
             do {
                 System.out.println("--------------------MENU-------------------\n" +
                         "1 - Aplicar descuento a los modelos de una marca.\n" +
-                        "2 - Falta implementar.\n" +
+                        "2 - Devolver smartphones según precio (mayor o menos que)(Falta implementar).\n" +
                         "-------------------------------------------");
                 proc = teclado.nextInt();
-                if(proc != 1)
+                if(proc != 1 && proc != 2)
                     System.out.println("Número (" +proc +") introducido NO válido.");
             } while (proc != 1);
 
-            String sql = "";
+            String sql;
             CallableStatement llamada = null;
 
             switch (proc) {
@@ -91,6 +91,19 @@ public class Principal {
                     llamada.setInt(1, id_marca);
                     llamada.setInt(2, descuento);
                     break;
+                case 2:/*
+                    // Construir orden de llamada
+                    sql = "{ call aplicar_descuento ( ?, ?) }";
+                    // Preparar la llamada
+                    llamada = conexion.prepareCall(sql);
+                    // Dar valor a los argumentos
+                    System.out.println("Dame el ID de la marca.");
+                    int id_marca = teclado.nextInt();
+                    System.out.println("¿Qué descuento (en €) quiere aplicar?");
+                    int descuento = teclado.nextInt();
+                    llamada.setInt(1, id_marca);
+                    llamada.setInt(2, descuento);
+                    break;*/
             }
             // Ejecutar procedimiento
             llamada.executeUpdate();
@@ -121,7 +134,7 @@ public class Principal {
                     ("jdbc:mysql://localhost/smartphones", "ejemplo", "ejemplo");
 
             // Pedir la tabla para eliminar datos
-            int id_smart = 0, id_fab = 0, tabla = 0;
+            int id_smart = 0, id_fab = 0, tabla;
             do {
                 System.out.println("¿De qué tabla quieres eliminar datos?");
                 System.out.println("--------------------MENU-------------------\n" +
@@ -191,8 +204,8 @@ public class Principal {
 
             // Pedir la tabla para modificar sus datos
             teclado.nextLine();
-            String precio= "", nombre_marca = "";
-            int id_smart = 0, id_fab = 0, tabla = 0;
+            String nombre_marca = "";
+            int id_smart = 0, id_fab = 0, tabla = 0, precio = 0;
             do {
                 System.out.println("¿Qué tabla quieres modificar?");
                 System.out.println("--------------------MENU-------------------\n" +
@@ -205,7 +218,7 @@ public class Principal {
                     id_smart = teclado.nextInt();
                     teclado.nextLine();
                     System.out.println("Introduce el PRECIO.");
-                    precio = teclado.nextLine();
+                    precio = teclado.nextInt();
                 }
                 else if (tabla == 2){
                     System.out.println("Introduce ID.");
@@ -229,7 +242,7 @@ public class Principal {
             if (tabla == 1) {
                 System.out.println(sql_smart);
                 sentencia = conexion.prepareStatement(sql_smart);
-                sentencia.setString(1, precio);
+                sentencia.setInt(1, precio);
                 sentencia.setInt(2, id_smart);
             }
             else {
@@ -425,8 +438,8 @@ public class Principal {
 
             // Pedir la tabla para mostrar sus datos
             teclado.nextLine();
-            String modelo="", pulgadas="", precio="", nombre_marca="", year_foundation="";
-            int id_marca = 0, id_fab = 0, matriz = 0, tabla = 0;
+            String modelo="", pulgadas="", nombre_marca="", year_foundation="";
+            int id_marca = 0, id_fab = 0, matriz = 0, tabla = 0, precio = 0;
             do {
                 System.out.println("¿De qué tabla quieres eliminar datos?");
                 System.out.println("--------------------MENU-------------------\n" +
@@ -443,7 +456,7 @@ public class Principal {
                     System.out.println("Introduce PULGADAS de PANTALLA.");
                     pulgadas = teclado.nextLine();
                     System.out.println("Introduce el PRECIO.");
-                    precio = teclado.nextLine();
+                    precio = teclado.nextInt();
                 }
                 else if (tabla == 2){
                     System.out.println("Introduce ID.");
@@ -474,7 +487,7 @@ public class Principal {
                 sentencia.setInt(1, id_marca);
                 sentencia.setString(2, modelo);
                 sentencia.setString(3, pulgadas);
-                sentencia.setString(4, precio);
+                sentencia.setInt(4, precio);
             }
             else {
                 System.out.println(sql_fab);
