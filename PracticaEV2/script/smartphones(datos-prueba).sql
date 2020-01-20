@@ -48,14 +48,14 @@ INSERT INTO `fabricante` (`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES
 --
 
 INSERT INTO `smartphone` (`ID_SMARTPHONE`, `ID_MARCA`, `MODELO`, `PULGADAS_PANTALLA`, `PRECIO`) VALUES
-(1, 1, 'iPhone X', '5.8', '1159€'),
-(2, 2, 'GALAXY S10', '6.1', '909€'),
-(3, 3, 'RENO 2', '6.5', '499€'),
-(4, 4, 'MATE 30 PRO', '6.53', '1099€'),
-(5, 5, 'X2 PRO', '6.5', '399€'),
-(6, 6, '20 PRO', '6.26', '599€'),
-(7, 7, 'MI NOTE 10', '6.47', '549€'),
-(8, 7, 'MI 9', '6.39', '449€');
+(1, 1, 'iPhone X', '5.8', 1159),
+(2, 2, 'GALAXY S10', '6.1', 909),
+(3, 3, 'RENO 2', '6.5', 499),
+(4, 4, 'MATE 30 PRO', '6.53', 1099),
+(5, 5, 'X2 PRO', '6.5', 399),
+(6, 6, '20 PRO', '6.26', 599),
+(7, 7, 'MI NOTE 10', '6.47', 549),
+(8, 7, 'MI 9', '6.39', 449);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

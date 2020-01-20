@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `smartphones`
 --
-
+CREATE DATABASE IF NOT EXISTS `smartphones` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
+USE `smartphones`;
 -- --------------------------------------------------------
 
 --
@@ -58,7 +59,7 @@ CREATE TABLE `smartphone` (
   `ID_MARCA` int(2) NOT NULL,
   `MODELO` varchar(20) NOT NULL,
   `PULGADAS_PANTALLA` varchar(10) NOT NULL,
-  `PRECIO` varchar(5) NOT NULL,
+  `PRECIO` int(5) NOT NULL,
   PRIMARY KEY (`ID_SMARTPHONE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -67,16 +68,29 @@ CREATE TABLE `smartphone` (
 --
 
 INSERT INTO `smartphone` (`ID_SMARTPHONE`, `ID_MARCA`, `MODELO`, `PULGADAS_PANTALLA`, `PRECIO`) VALUES
-(1, 1, 'iPhone X', '5.8', '1159€'),
-(2, 2, 'GALAXY S10', '6.1', '909€'),
-(3, 3, 'RENO 2', '6.5', '499€'),
-(4, 4, 'MATE 30 PRO', '6.53', '1099€'),
-(5, 5, 'X2 PRO', '6.5', '399€'),
-(6, 6, '20 PRO', '6.26', '599€'),
-(7, 7, 'MI NOTE 10', '6.47', '549€'),
-(8, 7, 'MI 9', '6.39', '449€');
+(1, 1, 'iPhone X', '5.8', 1159),
+(2, 2, 'GALAXY S10', '6.1', 909),
+(3, 3, 'RENO 2', '6.5', 499),
+(4, 4, 'MATE 30 PRO', '6.53', 1099),
+(5, 5, 'X2 PRO', '6.5', 399),
+(6, 6, '20 PRO', '6.26', 599),
+(7, 7, 'MI NOTE 10', '6.47', 549),
+(8, 7, 'MI 9', '6.39', 449);
 
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
 
+--
+-- AUTO_INCREMENT de la tabla `fabricante`
+--
+ALTER TABLE `fabricante`
+  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT de la tabla `smartphone`
+--
+ALTER TABLE `smartphone`
+  MODIFY `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 --
 -- Filtros para la tabla `smartphone`
 --

@@ -19,13 +19,16 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `smartphones`
 --
+CREATE DATABASE IF NOT EXISTS `smartphones` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
+USE `smartphones`;
+
 DROP TABLE IF EXISTS `smartphone`;
 CREATE TABLE `smartphone` (
   `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT,
   `ID_MARCA` int(2) NOT NULL,
   `MODELO` varchar(20) NOT NULL,
   `PULGADAS_PANTALLA` varchar(10) NOT NULL,
-  `PRECIO` varchar(5) NOT NULL,
+  `PRECIO` int(5) NOT NULL,
   PRIMARY KEY (`ID_SMARTPHONE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
@@ -76,7 +79,20 @@ ALTER TABLE `smartphone`
 --
 -- Restricciones para tablas volcadas
 --
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
 
+--
+-- AUTO_INCREMENT de la tabla `fabricante`
+--
+ALTER TABLE `fabricante`
+  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT de la tabla `smartphone`
+--
+ALTER TABLE `smartphone`
+  MODIFY `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 --
 -- Filtros para la tabla `smartphone`
 --

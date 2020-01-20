@@ -17,6 +17,7 @@ public class Principal {
                     "5 - Insertar datos en una tabla.\n" +
                     "6 - Modificar datos de una tabla.\n" +
                     "7 - Eliminar datos de una tabla.\n" +
+                    "8 - Procedimiento almacenado (Aplicar descuento).\n" +
                     "0 - Salir.\n" +
                     "-------------------------------------------");
             int res = teclado.nextInt();
@@ -42,12 +43,73 @@ public class Principal {
                 case 7:
                     eliminarDatos();
                     break;
+                case 8:
+                    procedimientoAlmacenado();
+                    break;
                 case 0:
                     continuar = false;
                     break;
                 default:
                     System.out.println("Operación no válida.");
             }
+        }
+    }
+
+    public static void procedimientoAlmacenado() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
+            // Establecemos la conexion con la BD
+            Connection conexion = DriverManager.getConnection
+                    ("jdbc:mysql://localhost/smartphones", "ejemplo", "ejemplo");
+
+            // Pedir selección de un procedimiento almacenado
+            int proc;
+            do {
+                System.out.println("--------------------MENU-------------------\n" +
+                        "1 - Aplicar descuento a los modelos de una marca.\n" +
+                        "2 - Falta implementar.\n" +
+                        "-------------------------------------------");
+                proc = teclado.nextInt();
+                if(proc != 1)
+                    System.out.println("Número (" +proc +") introducido NO válido.");
+            } while (proc != 1);
+
+            String sql = "";
+            CallableStatement llamada = null;
+
+            switch (proc) {
+                case 1:
+                    // Construir orden de llamada
+                    sql = "{ call aplicar_descuento ( ?, ?) }";
+                    // Preparar la llamada
+                    llamada = conexion.prepareCall(sql);
+                    // Dar valor a los argumentos
+                    System.out.println("Dame el ID de la marca.");
+                    int id_marca = teclado.nextInt();
+                    System.out.println("¿Qué descuento (en €) quiere aplicar?");
+                    int descuento = teclado.nextInt();
+                    llamada.setInt(1, id_marca);
+                    llamada.setInt(2, descuento);
+                    break;
+            }
+            // Ejecutar procedimiento
+            llamada.executeUpdate();
+
+            // Imprimo los mensajes correspondientes a cada procedimiento
+            switch (proc) {
+                case 1:
+                    System.out.println("Descuento aplicado.");
+                    break;
+            }
+
+            //Cerramos la conexión y la llamada
+            llamada.close(); // Cerrar Statement
+            conexion.close(); // Cerrar conexión
+
+        } catch (ClassNotFoundException cn) {
+            cn.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -58,10 +120,10 @@ public class Principal {
             Connection conexion = DriverManager.getConnection
                     ("jdbc:mysql://localhost/smartphones", "ejemplo", "ejemplo");
 
-            // Pedir la tabla para mostrar sus datos
+            // Pedir la tabla para eliminar datos
             int id_smart = 0, id_fab = 0, tabla = 0;
             do {
-                System.out.println("¿Qué tabla quieres eliminar?");
+                System.out.println("¿De qué tabla quieres eliminar datos?");
                 System.out.println("--------------------MENU-------------------\n" +
                         "1 - Tabla Smartphone.\n" +
                         "2 - Tabla Fabricante.\n" +
@@ -127,7 +189,7 @@ public class Principal {
             Connection conexion = DriverManager.getConnection
                     ("jdbc:mysql://localhost/smartphones", "ejemplo", "ejemplo");
 
-            // Pedir la tabla para mostrar sus datos
+            // Pedir la tabla para modificar sus datos
             teclado.nextLine();
             String precio= "", nombre_marca = "";
             int id_smart = 0, id_fab = 0, tabla = 0;
@@ -363,12 +425,16 @@ public class Principal {
 
             // Pedir la tabla para mostrar sus datos
             teclado.nextLine();
-            String tabla, modelo="", pulgadas="", precio="", nombre_marca="", year_foundation="";
-            int id_marca = 0, id_fab = 0, matriz = 0;
+            String modelo="", pulgadas="", precio="", nombre_marca="", year_foundation="";
+            int id_marca = 0, id_fab = 0, matriz = 0, tabla = 0;
             do {
-                System.out.println("Dame el nombre de la tabla en la que quieres introducir los datos.\n(smartphone / fabricante).");
-                tabla = teclado.nextLine();
-                if (tabla.equalsIgnoreCase("smartphone")) {
+                System.out.println("¿De qué tabla quieres eliminar datos?");
+                System.out.println("--------------------MENU-------------------\n" +
+                        "1 - Tabla Smartphone.\n" +
+                        "2 - Tabla Fabricante.\n" +
+                        "-------------------------------------------");
+                tabla = teclado.nextInt();
+                if (tabla == 1) {
                     System.out.println("Introduce ID_MARCA.");
                     id_marca = teclado.nextInt();
                     teclado.nextLine();
@@ -379,7 +445,7 @@ public class Principal {
                     System.out.println("Introduce el PRECIO.");
                     precio = teclado.nextLine();
                 }
-                else if (tabla.equalsIgnoreCase("fabricante")){
+                else if (tabla == 2){
                     System.out.println("Introduce ID.");
                     id_fab = teclado.nextInt();
                     teclado.nextLine();
@@ -391,9 +457,9 @@ public class Principal {
                     matriz = teclado.nextInt();
                 }
                 else {
-                    System.out.println("El nombre de la tabla introducido (" +tabla +") no es válido.");
+                    System.out.println("El número de la tabla introducido (" +tabla +") no es válido.");
                 }
-            }while (!tabla.equalsIgnoreCase("smartphone") && !tabla.equalsIgnoreCase("fabricante"));
+            }while (tabla != 1 && tabla != 2);
 
 
             // construir orden INSERT
@@ -402,7 +468,7 @@ public class Principal {
 
             //Hacemos el PreparedStatement para cada opción (fabricante o smartphone)
             PreparedStatement sentencia;
-            if (tabla.equalsIgnoreCase("smartphone")) {
+            if (tabla == 1) {
                 System.out.println(sql_smart);
                 sentencia = conexion.prepareStatement(sql_smart);
                 sentencia.setInt(1, id_marca);
