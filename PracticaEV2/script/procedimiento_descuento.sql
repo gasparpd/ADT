@@ -1,3 +1,4 @@
+#Escrito por mí
 delimiter //
 CREATE PROCEDURE aplicar_descuento(marca INT, descuento INT)
 BEGIN
@@ -5,7 +6,7 @@ BEGIN
 END //
 delimiter ;
 
-#Export de PHPmyAdmin
+#Exportado de PHPMyAdmin
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `aplicar_descuento`(marca INT, descuento INT)
 BEGIN
