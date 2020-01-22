@@ -67,12 +67,12 @@ public class Principal {
             do {
                 System.out.println("--------------------MENU-------------------\n" +
                         "1 - Aplicar descuento a los modelos de una marca.\n" +
-                        "2 - Devolver smartphones según precio (mayor o menos que)(Falta implementar).\n" +
+                        "2 - Devolver información de una marca.\n" +
                         "-------------------------------------------");
                 proc = teclado.nextInt();
                 if(proc != 1 && proc != 2)
                     System.out.println("Número (" +proc +") introducido NO válido.");
-            } while (proc != 1);
+            } while (proc != 1 && proc !=2);
 
             String sql;
             CallableStatement llamada = null;
@@ -91,19 +91,18 @@ public class Principal {
                     llamada.setInt(1, id_marca);
                     llamada.setInt(2, descuento);
                     break;
-                case 2:/*
+                case 2:
                     // Construir orden de llamada
-                    sql = "{ call aplicar_descuento ( ?, ?) }";
+                    sql = "{call proc_comprob_marca (?, ?, ?) }";
                     // Preparar la llamada
                     llamada = conexion.prepareCall(sql);
-                    // Dar valor a los argumentos
+                    // Dar valor a los argumentos de entrada y registrar los de salida
                     System.out.println("Dame el ID de la marca.");
-                    int id_marca = teclado.nextInt();
-                    System.out.println("¿Qué descuento (en €) quiere aplicar?");
-                    int descuento = teclado.nextInt();
-                    llamada.setInt(1, id_marca);
-                    llamada.setInt(2, descuento);
-                    break;*/
+                    int id = teclado.nextInt();
+                    llamada.setInt(1, id); // Param entrada
+                    llamada.registerOutParameter(2, Types.VARCHAR); //Param OUT nom
+                    llamada.registerOutParameter(3, Types.INTEGER); //Param OUT id_m
+                    break;
             }
             // Ejecutar procedimiento
             llamada.executeUpdate();
@@ -112,6 +111,10 @@ public class Principal {
             switch (proc) {
                 case 1:
                     System.out.println("Descuento aplicado.");
+                    break;
+                case 2:
+                    System.out.printf("ID_Marca: %d\nNombre_Marca: %s\n",
+                            llamada.getInt(3), llamada.getString(2));
                     break;
             }
 
