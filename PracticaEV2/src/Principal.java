@@ -3,7 +3,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Principal {
-    static Scanner teclado;
+    private static Scanner teclado;
 
     public static void main(String[]args){
         teclado = new Scanner(System.in);
