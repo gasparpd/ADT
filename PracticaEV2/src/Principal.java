@@ -444,7 +444,7 @@ public class Principal {
             String modelo="", pulgadas="", nombre_marca="", year_foundation="";
             int id_marca = 0, id_fab = 0, matriz = 0, tabla = 0, precio = 0;
             do {
-                System.out.println("¿De qué tabla quieres eliminar datos?");
+                System.out.println("¿En qué tabla quieres insertar datos?");
                 System.out.println("--------------------MENU-------------------\n" +
                         "1 - Tabla Smartphone.\n" +
                         "2 - Tabla Fabricante.\n" +
