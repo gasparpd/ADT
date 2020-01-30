@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/Profesor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/profesor.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/profesor.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/profesor.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +42,37 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DAM\Git\ADT\PruebaMaven\src\main\resources" />
+      <recent name="C:\Users\DAM\Git\ADT\PruebaMaven\src\main\java\ejemplo01" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ejemplo01.App" />
+      <module name="PruebaMaven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ejemplo01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -58,17 +88,45 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="120" y="67" key="SettingsEditor" timestamp="1580153874292">
+    <state x="232" y="151" key="#Project_Structure" timestamp="1580411513400">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="120" y="67" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1580153874292" />
-    <state x="336" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1580325213479">
+    <state x="232" y="151" key="#Project_Structure/0.0.1280.984@0.0.1280.984" timestamp="1580411513400" />
+    <state x="94" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580411308891">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="336" y="317" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1580325213479" />
+    <state x="94" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1580411308891" />
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom" timestamp="1580411603013">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1580411603013" />
+    <state width="1237" height="263" key="GridCell.Tab.0.center" timestamp="1580411603013">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1580411603013" />
+    <state width="1237" height="263" key="GridCell.Tab.0.left" timestamp="1580411603013">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1580411603013" />
+    <state width="1237" height="263" key="GridCell.Tab.0.right" timestamp="1580411603013">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1580411603013" />
+    <state x="120" y="67" key="SettingsEditor" timestamp="1580411481849">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="120" y="67" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1580411481849" />
+    <state x="336" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1580409025118">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="336" y="317" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1580409025118" />
     <state x="22" y="195" key="new project wizard" timestamp="1580151202970">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="22" y="195" key="new project wizard/0.0.1280.984@0.0.1280.984" timestamp="1580151202970" />
+    <state x="296" y="226" key="run.anything.popup" timestamp="1580410246769">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="296" y="226" key="run.anything.popup/0.0.1280.984@0.0.1280.984" timestamp="1580410246769" />
   </component>
 </project>
