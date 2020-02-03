@@ -4,23 +4,30 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import javax.persistence.PersistenceException;
+
 public class App {
     private static void save() {
-        //Obtenemos el SessionFactory
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+        try {
+            //Obtenemos el SessionFactory
 
-        //Abrimos la sesión mediante el SessionFactory
-        Session session = sessionFactory.openSession();
+            SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
-        //Creamos el objeto
-        Profesor profesor = new Profesor(101, "Juan","Perez","García");
-        Transaction tx = session.beginTransaction();
+            //Abrimos la sesión mediante el SessionFactory
+            Session session = sessionFactory.openSession();
 
-        session.save(profesor);//Aquí guardamos el objeto en la base de datos.
+            //Creamos el objeto
+            Profesor profesor = new Profesor(101, "Juan", "Perez", "García");
+            Transaction tx = session.beginTransaction();
 
-        tx.commit();
-        session.close();
-        sessionFactory.close();
+            session.save(profesor);//Aquí guardamos el objeto en la base de datos.
+
+            tx.commit();
+            session.close();
+            sessionFactory.close();
+        } catch (PersistenceException e){
+            System.out.println("Clave primaria duplicada.");
+        }
     }
 
     public static void main(String [] args) {
