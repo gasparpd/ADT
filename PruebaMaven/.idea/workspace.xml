@@ -80,7 +80,19 @@
       <option name="presentableId" value="Default" />
       <updated>1580151022451</updated>
     </task>
+    <task id="LOCAL-00001" summary="Capturada la excepción por clave primaria duplicada">
+      <created>1580758105612</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580758105612</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Capturada la excepción por clave primaria duplicada" />
+    <option name="LAST_COMMIT_MESSAGE" value="Capturada la excepción por clave primaria duplicada" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="151" key="#Project_Structure" timestamp="1580411513400">
@@ -91,30 +103,34 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="94" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1580411308891" />
-    <state width="1237" height="263" key="GridCell.Tab.0.bottom" timestamp="1580757987169">
+    <state x="294" y="87" key="CommitChangelistDialog2" timestamp="1580758105139">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1580757987169" />
-    <state width="1237" height="263" key="GridCell.Tab.0.center" timestamp="1580757987169">
+    <state x="294" y="87" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1580758105139" />
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom" timestamp="1580932318418">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1580757987169" />
-    <state width="1237" height="263" key="GridCell.Tab.0.left" timestamp="1580757987169">
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1580932318418" />
+    <state width="1237" height="263" key="GridCell.Tab.0.center" timestamp="1580932318418">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1580757987169" />
-    <state width="1237" height="263" key="GridCell.Tab.0.right" timestamp="1580757987169">
+    <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1580932318418" />
+    <state width="1237" height="263" key="GridCell.Tab.0.left" timestamp="1580932318418">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1580757987169" />
+    <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1580932318418" />
+    <state width="1237" height="263" key="GridCell.Tab.0.right" timestamp="1580932318418">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1580932318418" />
     <state x="120" y="67" key="SettingsEditor" timestamp="1580411481849">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="120" y="67" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1580411481849" />
-    <state x="336" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1580755503073">
+    <state x="336" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1580928070506">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="336" y="317" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1580755503073" />
+    <state x="336" y="317" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1580928070506" />
     <state x="22" y="195" key="new project wizard" timestamp="1580151202970">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
