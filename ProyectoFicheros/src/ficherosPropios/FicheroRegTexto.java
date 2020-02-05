@@ -399,8 +399,11 @@ public class FicheroRegTexto extends FicheroReg {
 	//En cada registro obtenido invocará al método mostrarDatos para mostrar los datos leídos
 	public void mostrarRegistros() {
 		Empleado em = new Empleado();
+		int cont = 0;
 		while (leerRegistro(em, false)) {
-			em.mostraDatos();
+			cont++;
+			System.out.println("---------Empleado " +cont +"---------");
+			em.mostrarDatos();
 		}
 		
 		cerrarFicheroR();

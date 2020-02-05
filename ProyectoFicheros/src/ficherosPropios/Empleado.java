@@ -7,7 +7,7 @@ public class Empleado {
 	private String cargo;
 	private int duracionContrato;
 	private char sexo;
-	
+
 	public Empleado() {
 		nombre="";
 		apellidos="";
@@ -16,14 +16,23 @@ public class Empleado {
 		duracionContrato= -1;
 		sexo= ' ';
 	}
-	
-	public void mostraDatos() {
-		System.out.println(this.nombre);
-		System.out.println(this.apellidos);
-		System.out.println(this.edad);
-		System.out.println(this.cargo);
-		System.out.println(this.duracionContrato);
-		System.out.println(this.sexo);
+
+	public Empleado(String nombre, String apellidos, int edad, String cargo, int duracionContrato, char sexo) {
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.edad = edad;
+		this.cargo = cargo;
+		this.duracionContrato = duracionContrato;
+		this.sexo = sexo;
+	}
+
+	public void mostrarDatos() {
+		System.out.println("Nombre: " +this.nombre);
+		System.out.println("Apellidos: " +this.apellidos);
+		System.out.println("Edad: " +this.edad);
+		System.out.println("Cargo: " +this.cargo);
+		System.out.println("Duración del contrato: " +this.duracionContrato);
+		System.out.println("Sexo: " +this.sexo);
 	}
 	
 	public String getNombre() {
