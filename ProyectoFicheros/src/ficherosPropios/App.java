@@ -6,7 +6,7 @@ public class App {
     private static Scanner input;
     private static FicheroRegTexto fichReg;
 
-    public static void Main(String[] args) {
+    public static void main(String[] args) {
         input = new Scanner(System.in);
         boolean salir = false;
 
@@ -20,18 +20,18 @@ public class App {
         int accion;
         boolean salir = false;
 
-        System.out.println("----------------MENU----------------" +
-                "1. Establecer fichero." +
-                "2. Mostrar número de registros." +
-                "3. Imprimir los registros." +
-                "4. Agregar registro." +
-                "5. Borrar registro." +
-                "6. Borrar fichero de datos." +
-                "7. Buscar registro." +
-                "0. Salir." +
+        System.out.println("----------------MENU----------------\n" +
+                "1. Establecer fichero.\n" +
+                "2. Mostrar número de registros.\n" +
+                "3. Imprimir los registros.\n" +
+                "4. Agregar registro.\n" +
+                "5. Borrar registro.\n" +
+                "6. Borrar fichero de datos.\n" +
+                "7. Buscar registro.\n" +
+                "0. Salir.\n" +
                 "------------------------------------");
         accion = input.nextInt();
-        input.next();
+
         switch (accion) {
             case 1:
                 establecerFichero();
@@ -62,8 +62,40 @@ public class App {
                 System.out.println("El número no corresponde con ninguna acción.");
                 break;
         }
-
         return salir;
+    }
+
+    private static void buscarRegistro() {
+        //Pedimos que rellene los datos de un empleado
+        Empleado emp = pedirEmpleado();
+
+        int posicion = fichReg.buscarRegistro(emp);
+
+        if (posicion == -1){
+            System.out.println("El empleado no ha sudo encontrado.");
+        } else {
+            System.out.println("El empleado está en la posición: " +posicion);
+        }
+    }
+
+    private static void borrarFichero() {
+        System.out.println("Dame la ruta del fichero a eliminar.");
+        String ruta = input.nextLine();
+        boolean resul = fichReg.borrarFicheroDatos(ruta);
+
+        if (resul){
+            System.out.println("El fichero ha sido eliminado.");
+        }
+        else {
+            System.out.println("El fichero no ha podido ser eliminado.");
+        }
+    }
+
+    private static void borrarRegistro() {
+        System.out.println("Dame el apellido del empleado a eliminar.");
+        String apell = input.nextLine();
+
+        boolean resultado = fichReg.borrarRegistro(apell);
     }
 
     private static void establecerFichero() {
@@ -82,6 +114,33 @@ public class App {
     }
 
     private static void anadirRegistro() {
+        //Pedimos la ruta del fichero
+        System.out.println("Introduce la ruta del fichero.");
+        String ruta = input.nextLine();
+        //Preguntamos si quiere sobreescribir
+        char sobr;
+        do {
+            System.out.println("¿Quieres sobreescribir (S) el fichero o añadir a continuación (A)?");
+            sobr = input.nextLine().charAt(0);
+        }while (sobr != 'S' && sobr != 's' && sobr != 'A' && sobr != 'a');
+        boolean append = true;
+
+        if (sobr == 'S' || sobr == 's'){
+            append = false;
+        }
+        //Pedimos que rellene los datos de un empleado
+        Empleado empleado = pedirEmpleado();
+
+        boolean bool = fichReg.escribirRegistro(empleado, ruta, append);
+
+        if (bool)
+            System.out.println("Empleado añadido con éxito.");
+        else
+            System.out.println("El empleado no pudo ser añadido.");
+    }
+
+    private static Empleado pedirEmpleado() {
+        //Creamos el empleado
         System.out.println("Vamos a crear un empleado. Dime su nombre.");
         String name = input.nextLine();
         System.out.println("Escribe sus apellidos.");
@@ -97,17 +156,8 @@ public class App {
         System.out.println("Su sexo (F/M).");
         char sexo = input.next().charAt(0);
 
-        Empleado empleado = new Empleado(name, apell, edad, cargo, durC, sexo);
-        boolean bool = fichReg.escribirRegistro(empleado);
+        Empleado emp = new Empleado(name, apell, edad, cargo, durC, sexo);
 
-        if (bool)
-            System.out.println("Empleado añadido con éxito.");
-        else
-            System.out.println("El empleado no pudo ser añadido.");
-
-
-        /*
-        Se puede implementar la agregación de un empleado con el mismo método
-         */
+        return emp;
     }
 }
