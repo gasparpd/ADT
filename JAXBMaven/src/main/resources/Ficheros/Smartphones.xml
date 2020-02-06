@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Smartphones>
+    <smartphone>
+        <marca>SAMSUNG</marca>
+        <pantalla>6.4</pantalla>
+        <precio>900</precio>
+    </smartphone>
+    <smartphone>
+        <marca>APPLE</marca>
+        <pantalla>5.8</pantalla>
+        <precio>1159</precio>
+    </smartphone>
+    <smartphone>
+        <marca>SAMSUNG</marca>
+        <pantalla>6.1</pantalla>
+        <precio>1009</precio>
+    </smartphone>
+    <smartphone>
+        <marca>REALME</marca>
+        <pantalla>6.5</pantalla>
+        <precio>399</precio>
+    </smartphone>
+    <smartphone>
+        <marca>ONEPLUS</marca>
+        <pantalla>6.67</pantalla>
+        <precio>759</precio>
+    </smartphone>
+    <smartphone>
+        <marca>XIAOMI</marca>
+        <pantalla>6.53</pantalla>
+        <precio>249</precio>
+    </smartphone>
+    <smartphone>
+        <marca>XIAOMI</marca>
+        <pantalla>6.4</pantalla>
+        <precio>329</precio>
+    </smartphone>
+</Smartphones>
