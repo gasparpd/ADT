@@ -52,8 +52,8 @@ public class EscribirXStream {
             //Array de libros de la clase Librería
             xstream.addImplicitCollection(Libreria.class, "libros");
 
-            //xstream.toXML(libros, new FileOutputStream("Alumnos.xml"));
-            xstream.toXML(libreria, new FileOutputStream("Alumnos.xml"));
+            xstream.toXML(libros, new FileOutputStream("Libreria.xml"));
+            xstream.toXML(libreria, new FileOutputStream("Libreria.xml"));
 
             System.out.println("Creado fichero XML....");
 

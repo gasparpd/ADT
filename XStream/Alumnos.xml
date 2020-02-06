@@ -1,11 +1,16 @@
-<Libreria>
-  <NombreLibreria>Librería 1</NombreLibreria>
-  <Libro ISBN="12304506">
-    <Titulo>El capital</Titulo>
-    <autor>Karl Marx</autor>
-  </Libro>
-  <Libro ISBN="83489723">
-    <Titulo>Titulo2</Titulo>
-    <autor>Autor2</autor>
-  </Libro>
-</Libreria>
+<list>
+  <MisAlumnos>
+    <MiGrupo>2DAM</MiGrupo>
+    <MiTurno>Tarde</MiTurno>
+    <Alumno>
+      <MiNota>7</MiNota>
+      <MiNombre>Juan</MiNombre>
+      <MisApellidos>Roca</MisApellidos>
+    </Alumno>
+    <Alumno>
+      <MiNota>8</MiNota>
+      <MiNombre>Sandra</MiNombre>
+      <MisApellidos>Ruiz</MisApellidos>
+    </Alumno>
+  </MisAlumnos>
+</list>
