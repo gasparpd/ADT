@@ -37,7 +37,7 @@ public class EscribirXStream {
 
             //Alias de las clases
             xstream.alias("Libreria", Libreria.class);
-            xstream.alias("Libreria.Libro", Libro.class);
+            xstream.alias("Libro", Libro.class);
 
             //Campos de la clase librería
             xstream.aliasField("NombreLibreria", Libreria.class, "nombre");
