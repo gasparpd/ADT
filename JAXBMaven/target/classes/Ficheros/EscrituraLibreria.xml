@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><libreria><nombre>Librería 1</nombre><libros><libro isbn="12304506"><titulo>Titulo1</titulo><autor>Autor1</autor></libro><libro isbn="83489723"><titulo>Titulo2</titulo><autor>Autor2</autor></libro></libros></libreria>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><libreria><nombre>Librería 1</nombre><libros><libro isbn="12304506"><titulo>El capital</titulo><autor>Karl Marx</autor></libro><libro isbn="83489723"><titulo>Titulo2</titulo><autor>Autor2</autor></libro></libros></libreria>
