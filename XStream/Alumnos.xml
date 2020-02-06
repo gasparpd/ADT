@@ -1,0 +1,11 @@
+<Libreria>
+  <NombreLibreria>Librería 1</NombreLibreria>
+  <Libro ISBN="12304506">
+    <Titulo>El capital</Titulo>
+    <autor>Karl Marx</autor>
+  </Libro>
+  <Libro ISBN="83489723">
+    <Titulo>Titulo2</Titulo>
+    <autor>Autor2</autor>
+  </Libro>
+</Libreria>
