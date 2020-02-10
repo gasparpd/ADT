@@ -5,54 +5,82 @@ import java.util.Scanner;
 public class Principal {
     private static Scanner teclado;
 
-    public static void main(String[]args){
+    public static void main(String[] args) {
         teclado = new Scanner(System.in);
-        boolean continuar = true;
-        while (continuar) {
-            System.out.println("--------------------MENU-------------------\n" +
-                    "1 - Crea tablas.\n" +
-                    "2 - Insertar datos de prueba.\n" +
-                    "3 - Eliminar base de datos.\n" +
-                    "4 - Visualizar datos de una tabla.\n" +
-                    "5 - Insertar datos en una tabla.\n" +
-                    "6 - Modificar datos de una tabla.\n" +
-                    "7 - Eliminar datos de una tabla.\n" +
-                    "8 - Procedimientos almacenados.\n" +
-                    "0 - Salir.\n" +
-                    "-------------------------------------------");
-            int res = teclado.nextInt();
-            switch (res){
-                case 1:
-                    crearTablas();
-                    break;
-                case 2:
-                    datosPrueba();
-                    break;
-                case 3:
-                    borrarDB();
-                    break;
-                case 4:
-                    visualizarTabla();
-                    break;
-                case 5:
-                    insertConsultaPreparada();
-                    break;
-                case 6:
-                    modificarDatos();
-                    break;
-                case 7:
-                    eliminarDatos();
-                    break;
-                case 8:
-                    procedimientoAlmacenado();
-                    break;
-                case 0:
-                    continuar = false;
-                    break;
-                default:
-                    System.out.println("Operación no válida.");
-            }
+        boolean salir = false;
+
+        do {
+            salir = menu();
+        } while (!salir);
+
+        System.out.println("-------------- FIN DEL PROGRAMA --------------");
+    }
+
+    private static boolean menu() {
+        boolean salir = false;
+
+        System.out.println("--------------------MENU-------------------\n" +
+                "1 - Crea tablas.\n" +
+                "2 - Insertar datos de prueba.\n" +
+                "3 - Eliminar base de datos.\n" +
+                "4 - Visualizar datos de una tabla.\n" +
+                "5 - Insertar datos en una tabla.\n" +
+                "6 - Modificar datos de una tabla.\n" +
+                "7 - Eliminar datos de una tabla.\n" +
+                "8 - Procedimientos almacenados.\n" +
+                "0 - Salir.\n" +
+                "-------------------------------------------");
+        int res = teclado.nextInt();
+        switch (res) {
+            case 1:
+                crearTablas();
+                break;
+            case 2:
+                datosPrueba();
+                break;
+            case 3:
+                borrarDB();
+                break;
+            case 4:
+                visualizarTabla();
+                break;
+            case 5:
+                //Meter inserciones con DOM y SAX
+                menuInsert();
+                insertConsultaPreparada();
+                break;
+            case 6:
+                modificarDatos();
+                break;
+            case 7:
+                eliminarDatos();
+                break;
+            case 8:
+                procedimientoAlmacenado();
+                break;
+            case 0:
+                salir = true;
+                break;
+            default:
+                System.out.println("Operación no válida.");
         }
+
+        return salir;
+    }
+
+    private static void menuInsert() {
+        System.out.println("--------------------MENU-------------------\n" +
+                "1 - Consultas preparadas.\n" +
+                "2 - Insertar datos de prueba.\n" +
+                "3 - Eliminar base de datos.\n" +
+                "4 - Visualizar datos de una tabla.\n" +
+                "5 - Insertar datos en una tabla.\n" +
+                "6 - Modificar datos de una tabla.\n" +
+                "7 - Eliminar datos de una tabla.\n" +
+                "8 - Procedimientos almacenados.\n" +
+                "0 - Salir.\n" +
+                "-------------------------------------------");
+        int res = teclado.nextInt();
     }
 
     public static void procedimientoAlmacenado() {
@@ -70,9 +98,9 @@ public class Principal {
                         "2 - Devolver información de una marca.\n" +
                         "-------------------------------------------");
                 proc = teclado.nextInt();
-                if(proc != 1 && proc != 2)
-                    System.out.println("Número (" +proc +") introducido NO válido.");
-            } while (proc != 1 && proc !=2);
+                if (proc != 1 && proc != 2)
+                    System.out.println("Número (" + proc + ") introducido NO válido.");
+            } while (proc != 1 && proc != 2);
 
             String sql;
             CallableStatement llamada = null;
@@ -148,15 +176,13 @@ public class Principal {
                 if (tabla == 1) {
                     System.out.println("Introduce ID_SMARTPHONE.");
                     id_smart = teclado.nextInt();
-                }
-                else if (tabla == 2){
+                } else if (tabla == 2) {
                     System.out.println("Introduce ID.");
                     id_fab = teclado.nextInt();
+                } else {
+                    System.out.println("El número de la tabla introducido (" + tabla + ") no es válido.");
                 }
-                else {
-                    System.out.println("El número de la tabla introducido (" +tabla +") no es válido.");
-                }
-            }while (tabla != 1 && tabla != 2);
+            } while (tabla != 1 && tabla != 2);
 
 
             // construir orden INSERT
@@ -169,8 +195,7 @@ public class Principal {
                 System.out.println(sql_smart);
                 sentencia = conexion.prepareStatement(sql_smart);
                 sentencia.setInt(1, id_smart);
-            }
-            else {
+            } else {
                 System.out.println(sql_fab);
                 sentencia = conexion.prepareStatement(sql_smart);
                 sentencia.setInt(1, id_fab);
@@ -183,9 +208,9 @@ public class Principal {
                 System.out.printf("Filas afectadas:%d %n", filas);
             } catch (SQLException e) {
                 System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
-                System.out.println("Mensaje:    "+ e.getMessage());
-                System.out.println("SQL estado: "+ e.getSQLState());
-                System.out.println("Cód error:  "+ e.getErrorCode());
+                System.out.println("Mensaje:    " + e.getMessage());
+                System.out.println("SQL estado: " + e.getSQLState());
+                System.out.println("Cód error:  " + e.getErrorCode());
             }
 
             sentencia.close(); // Cerrar Statement
@@ -222,18 +247,16 @@ public class Principal {
                     teclado.nextLine();
                     System.out.println("Introduce el PRECIO.");
                     precio = teclado.nextInt();
-                }
-                else if (tabla == 2){
+                } else if (tabla == 2) {
                     System.out.println("Introduce ID.");
                     id_fab = teclado.nextInt();
                     teclado.nextLine();
                     System.out.println("Introduce NOMBRE.");
                     nombre_marca = teclado.nextLine();
+                } else {
+                    System.out.println("El número de la tabla introducido (" + tabla + ") no es válido.");
                 }
-                else {
-                    System.out.println("El número de la tabla introducido (" +tabla +") no es válido.");
-                }
-            }while (tabla != 1 && tabla != 2);
+            } while (tabla != 1 && tabla != 2);
 
 
             // construir orden INSERT
@@ -247,8 +270,7 @@ public class Principal {
                 sentencia = conexion.prepareStatement(sql_smart);
                 sentencia.setInt(1, precio);
                 sentencia.setInt(2, id_smart);
-            }
-            else {
+            } else {
                 System.out.println(sql_fab);
                 sentencia = conexion.prepareStatement(sql_smart);
                 sentencia.setString(1, nombre_marca);
@@ -259,7 +281,7 @@ public class Principal {
             try {
                 //Ejecutamos la setencia UPDATE y recogemos las filas afectadas
                 boolean ex_bool = sentencia.execute();
-                if(ex_bool){
+                if (ex_bool) {
                     ResultSet rs = sentencia.getResultSet();
                     while (rs.next())
                         System.out.printf("%d, %s %n", rs.getInt(1), rs.getInt(2));
@@ -270,9 +292,9 @@ public class Principal {
                 }
             } catch (SQLException e) {
                 System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
-                System.out.println("Mensaje:    "+ e.getMessage());
-                System.out.println("SQL estado: "+ e.getSQLState());
-                System.out.println("Cód error:  "+ e.getErrorCode());
+                System.out.println("Mensaje:    " + e.getMessage());
+                System.out.println("SQL estado: " + e.getSQLState());
+                System.out.println("Cód error:  " + e.getErrorCode());
             }
 
             sentencia.close(); // Cerrar Statement
@@ -441,7 +463,7 @@ public class Principal {
 
             // Pedir la tabla para mostrar sus datos
             teclado.nextLine();
-            String modelo="", pulgadas="", nombre_marca="", year_foundation="";
+            String modelo = "", pulgadas = "", nombre_marca = "", year_foundation = "";
             int id_marca = 0, id_fab = 0, matriz = 0, tabla = 0, precio = 0;
             do {
                 System.out.println("¿En qué tabla quieres insertar datos?");
@@ -460,8 +482,7 @@ public class Principal {
                     pulgadas = teclado.nextLine();
                     System.out.println("Introduce el PRECIO.");
                     precio = teclado.nextInt();
-                }
-                else if (tabla == 2){
+                } else if (tabla == 2) {
                     System.out.println("Introduce ID.");
                     id_fab = teclado.nextInt();
                     teclado.nextLine();
@@ -471,11 +492,10 @@ public class Principal {
                     year_foundation = teclado.nextLine();
                     System.out.println("Introduce MATRIZ.");
                     matriz = teclado.nextInt();
+                } else {
+                    System.out.println("El número de la tabla introducido (" + tabla + ") no es válido.");
                 }
-                else {
-                    System.out.println("El número de la tabla introducido (" +tabla +") no es válido.");
-                }
-            }while (tabla != 1 && tabla != 2);
+            } while (tabla != 1 && tabla != 2);
 
 
             // construir orden INSERT
@@ -491,8 +511,7 @@ public class Principal {
                 sentencia.setString(2, modelo);
                 sentencia.setString(3, pulgadas);
                 sentencia.setInt(4, precio);
-            }
-            else {
+            } else {
                 System.out.println(sql_fab);
                 sentencia = conexion.prepareStatement(sql_smart);
                 sentencia.setInt(1, id_fab);
@@ -507,9 +526,9 @@ public class Principal {
                 System.out.println("Filas afectadas: " + filas_afectadas);
             } catch (SQLException e) {
                 System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
-                System.out.println("Mensaje:    "+ e.getMessage());
-                System.out.println("SQL estado: "+ e.getSQLState());
-                System.out.println("Cód error:  "+ e.getErrorCode());
+                System.out.println("Mensaje:    " + e.getMessage());
+                System.out.println("SQL estado: " + e.getSQLState());
+                System.out.println("Cód error:  " + e.getErrorCode());
             }
 
             sentencia.close(); // Cerrar Statement
@@ -557,18 +576,18 @@ public class Principal {
 
                 ResultSet rs = sentencia.executeQuery(sql);
                 while (rs.next()) {
-                    if (tabla == 1){
+                    if (tabla == 1) {
                         System.out.printf("%d, %d, %s, %s, %s\n", rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5));
                     } else {
                         System.out.printf("%d, %s, %s, %d\n", rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
                     }
                 }
 
-            }catch (SQLException e) {
+            } catch (SQLException e) {
                 System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
-                System.out.println("Mensaje:    "+ e.getMessage());
-                System.out.println("SQL estado: "+ e.getSQLState());
-                System.out.println("Cód error:  "+ e.getErrorCode());
+                System.out.println("Mensaje:    " + e.getMessage());
+                System.out.println("SQL estado: " + e.getSQLState());
+                System.out.println("Cód error:  " + e.getErrorCode());
             }
 
             sentencia.close(); // Cerrar Statement

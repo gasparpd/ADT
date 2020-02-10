@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4c90194-129f-448e-8121-2df37a5d0abc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../JAXBMaven/.idea/dictionaries/DAM.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/productos.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAXBMaven/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JAXBMaven/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAXBMaven/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JAXBMaven/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JAXBMaven/target/classes/Ficheros/EscrituraLibreria.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JAXBMaven/target/classes/Ficheros/EscrituraLibreria.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PruebaMaven/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PruebaMaven/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaEV2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaEV2/src/Principal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,11 +126,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="125" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1580979363503" />
-    <state x="539" y="388" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581015696795">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581341833308">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="539" y="388" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1581015696795" />
-    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580994453297" />
+    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581341833308" />
     <state width="1237" height="325" key="GridCell.Tab.0.bottom" timestamp="1581018700530">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
