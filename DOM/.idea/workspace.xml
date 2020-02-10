@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4c90194-129f-448e-8121-2df37a5d0abc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaEV2/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaEV2/src/Principal.java" afterDir="false" />
-    </list>
+    <list default="true" id="a4c90194-129f-448e-8121-2df37a5d0abc" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,11 +121,15 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="125" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1580979363503" />
-    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581341833308">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="539" y="388" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581360647318">
+      <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="539" y="388" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1581015696795" />
+    <state x="539" y="388" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1581360647318" />
     <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581341833308" />
+    <state x="271" y="154" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor" timestamp="1581360640241">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="271" y="154" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/0.0.1280.984@0.0.1280.984" timestamp="1581360640241" />
     <state width="1237" height="325" key="GridCell.Tab.0.bottom" timestamp="1581018700530">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -171,6 +170,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1580979485088" />
+    <state x="336" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1581360630665">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="336" y="317" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1581360630665" />
     <state x="-3" y="191" key="new project wizard" timestamp="1581017932786">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
