@@ -8,10 +8,12 @@ import org.hibernate.Transaction;
 import javax.persistence.PersistenceException;
 
 public class App {
-    public static void main(String [] args) {
+    public static void main(String[] args) {
         //save();
         //leerProfesor();
-        leerProfesorLoad();
+        //leerProfesorLoad();
+        //modificarProfesor();
+        borrarProfesor();
     }
 
     private static void save() {
@@ -32,7 +34,7 @@ public class App {
             tx.commit();
             session.close();
             sessionFactory.close();
-        } catch (PersistenceException e){
+        } catch (PersistenceException e) {
             System.out.println("Clave primaria duplicada.");
         }
     }
@@ -48,7 +50,7 @@ public class App {
         try {
             Profesor profesor = (Profesor) session.get(Profesor.class, 102);
             System.out.println("Profesor: " + profesor.getNombre());
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("El identificador no ha sido encontrado en la base de datos.");
         }
 
@@ -73,6 +75,51 @@ public class App {
             System.out.println("El valor clave no se ha encontrado en la base de datos.");
         }
 
+        tx.commit();
+        session.close();
+        sessionFactory.close();
+    }
+
+    public static void modificarProfesor() {
+        //Obtenemos el SessionFactory
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+
+        //Abrimos la sesión mediante el SessionFactory
+        Session session = sessionFactory.openSession();
+
+        Transaction tx = session.beginTransaction();
+        try {
+            Profesor profesor = (Profesor) session.get(Profesor.class, 101);
+            System.out.println("Profesor: " + profesor.getNombre());
+            System.out.println("Profesor: " + profesor.getNombre());
+            profesor.setNombre("Pedro");
+            session.update(profesor);
+        } catch (NullPointerException e) {
+            System.out.println("El identificador no ha sido encontrado en la base de datos.");
+        }
+
+        tx.commit();
+        session.close();
+        sessionFactory.close();
+    }
+
+    public static void borrarProfesor() {
+        //Obtenemos el SessionFactory
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+
+        //Abrimos la sesión mediante el SessionFactory
+        Session session = sessionFactory.openSession();
+
+        Transaction tx = session.beginTransaction();
+        try {
+            Profesor profesor = (Profesor) session.get(Profesor.class, 102);
+
+            System.out.println("Profesor:" + profesor.getNombre());
+
+            session.delete(profesor);
+        } catch (NullPointerException e){
+            System.out.println("ID no encontrado en la base de datos.");
+        }
         tx.commit();
         session.close();
         sessionFactory.close();
