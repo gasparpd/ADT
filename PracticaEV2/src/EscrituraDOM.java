@@ -4,8 +4,8 @@ import java.io.IOException;
 
 public class EscrituraDOM {
     public static void main(String [] args) throws ParserConfigurationException, TransformerException, IOException {
-        GeneradorMarcaDOM generadorDOM = new GeneradorMarcaDOM();
-        generadorDOM.generarDocument();
+        GeneradorDOM generadorDOM = new GeneradorDOM();
+        generadorDOM.generarFabricanteDocument();
         generadorDOM.generarXML();
     }
 }
