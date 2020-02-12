@@ -24,23 +24,57 @@ public class GeneradorDOM {
         docum = builder.newDocument();
     }
 
-    public void generarFabricanteDocument() {
-        Element raiz = docum.createElement("fabricantes");
-        docum.appendChild(raiz);
+    public void generarDocument(String clase) {
+        if (clase.equalsIgnoreCase("fabricantes")) {
+            /* Creamos el nodo raíz (Fabricantes)*/
+            Element raiz = docum.createElement("fabricantes");
+            docum.appendChild(raiz);
 
-        // Leer array de objetos Fabricante
-        Element fabricante = docum.createElement("fabricante");
-        raiz.appendChild(fabricante);
+            /*Cargamos el array fabricantes*/
+            cargarArrayFabricantes();
 
-        crearElemento(fabricante, "campo", "valor");
+            /* Leemos el array de objetos Fabricante*/
+            for (int cont = 0; cont < fabricantes.size(); cont++) {
+                Element fabricante = docum.createElement("fabricante");
+                raiz.appendChild(fabricante);
+
+                Fabricante fab = fabricantes.get(cont);
+                crearElemento(fabricante, "id", Integer.toString(fab.getId()));
+                crearElemento(fabricante, "nombre", fab.getNombre());
+                crearElemento(fabricante, "foundation_year", fab.getF_year());
+                crearElemento(fabricante, "matriz", Integer.toString(fab.getMatriz()));
+            }
+        }
+
+        if (clase.equalsIgnoreCase("smartphones")) {
+            /* Creamos el nodo raíz (smartphones)*/
+            Element raiz = docum.createElement("smartphones");
+            docum.appendChild(raiz);
+
+            /*Cargamos el array fabricantes*/
+            cargarArraySmartphones();
+
+            /* Leemos el array de objetos smartphone*/
+            for (int cont = 0; cont < smartphones.size(); cont++) {
+                Element smartphone = docum.createElement("smartphone");
+                raiz.appendChild(smartphone);
+
+                Smartphone smar = smartphones.get(cont);
+                crearElemento(smartphone, "id", Integer.toString(smar.getId_smartphone()));
+                crearElemento(smartphone, "id_marca", Integer.toString(smar.getId_marca()));
+                crearElemento(smartphone, "modelo", smar.getModelo());
+                crearElemento(smartphone, "pulgadas_pantalla", smar.getP_pantalla());
+                crearElemento(smartphone, "precio", Integer.toString(smar.getPrecio()));
+            }
+        }
     }
 
-    public void generarXML() throws TransformerException, IOException {
+    public void generarXML(String clase) throws TransformerException, IOException {
         TransformerFactory factoria = TransformerFactory.newInstance();
         Transformer transformer = factoria.newTransformer();
 
         Source source = new DOMSource(docum);
-        File file = new File("fabricantes.xml");
+        File file = new File("./Ficheros/" + clase + ".xml");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
         Result result = new StreamResult(pw);

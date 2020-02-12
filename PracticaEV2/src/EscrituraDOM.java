@@ -4,8 +4,10 @@ import java.io.IOException;
 
 public class EscrituraDOM {
     public static void main(String [] args) throws ParserConfigurationException, TransformerException, IOException {
+        String claseFab = "fabricantes";
+        String claseSmart = "smarphones";
         GeneradorDOM generadorDOM = new GeneradorDOM();
-        generadorDOM.generarFabricanteDocument();
-        generadorDOM.generarXML();
+        generadorDOM.generarDocument(claseFab);
+        generadorDOM.generarXML(claseFab);
     }
 }
