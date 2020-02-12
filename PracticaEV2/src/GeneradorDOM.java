@@ -80,7 +80,8 @@ public class GeneradorDOM {
         PrintWriter pw = new PrintWriter(fw);
         Result result = new StreamResult(pw);
 
-        System.out.println("Fichero: ");
+        System.out.println("Fichero: " +clase +".xml escrito.\n" +
+                "Ruta: ./Ficheros/" +clase +".xml");
 
         transformer.transform(source, result);
     }
