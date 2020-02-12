@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class GeneradorDOM {
@@ -31,7 +32,8 @@ public class GeneradorDOM {
             docum.appendChild(raiz);
 
             /*Cargamos el array fabricantes*/
-            cargarArrayFabricantes();
+            //cargarArrayFabricantes();
+            obtenerDatosTabla("fabricante");
 
             /* Leemos el array de objetos Fabricante*/
             for (Fabricante fab : fabricantes) {
@@ -51,7 +53,8 @@ public class GeneradorDOM {
             docum.appendChild(raiz);
 
             /*Cargamos el array fabricantes*/
-            cargarArraySmartphones();
+            //cargarArraySmartphones();
+            obtenerDatosTabla("smartphone");
 
             /* Leemos el array de objetos smartphone*/
             for (Smartphone smart : smartphones) {
@@ -77,8 +80,9 @@ public class GeneradorDOM {
         PrintWriter pw = new PrintWriter(fw);
         Result result = new StreamResult(pw);
 
-        transformer.transform(source, result);
+        System.out.println("Fichero: ");
 
+        transformer.transform(source, result);
     }
 
     public void crearElemento(Element raiz, String campo, String valor) {
@@ -92,7 +96,69 @@ public class GeneradorDOM {
         }
     }
 
-    public void cargarArrayFabricantes() {
+    public void obtenerDatosTabla(String tabla) {
+        {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
+                // Establecemos la conexion con la BD
+                Connection conexion = DriverManager.getConnection
+                        ("jdbc:mysql://localhost/smartphones", "ejemplo", "ejemplo");
+
+                //Preparamos la sentencia SQL para sacar todos los datos de la tabla pedida
+                String sql;
+                if (tabla.equalsIgnoreCase("smartphone")) {
+                    sql = "SELECT * FROM smartphone";
+                    smartphones = new ArrayList<>();
+                } else {
+                    sql = "SELECT * FROM fabricante";
+                    fabricantes = new ArrayList<>();
+                }
+
+                //Inicializamos la sentencia
+                Statement sentencia = conexion.createStatement();
+                try {
+                    /*Ejecutamos la sentencia con executeQuery y recorremos el ResulSet que
+                    nos devuelve creando objetos y metiéndolos en su array*/
+
+                    ResultSet rs = sentencia.executeQuery(sql);
+                    while (rs.next()) {
+                        if (tabla.equalsIgnoreCase("smartphone")) {
+                            Smartphone smart= new Smartphone();
+                            smart.setId_smartphone(rs.getInt(1));
+                            smart.setId_marca(rs.getInt(2));
+                            smart.setModelo(rs.getString(3));
+                            smart.setP_pantalla(rs.getString(4));
+                            smart.setPrecio(rs.getInt(5));
+
+                            smartphones.add(smart);
+                        } else {
+                            Fabricante fab= new Fabricante();
+                            fab.setId(rs.getInt(1));
+                            fab.setNombre(rs.getString(2));
+                            fab.setF_year(rs.getString(3));
+                            fab.setMatriz(rs.getInt(4));
+
+                            fabricantes.add(fab);
+                        }
+                    }
+
+                } catch (SQLException e) {
+                    System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
+                    System.out.println("Mensaje:    " + e.getMessage());
+                    System.out.println("SQL estado: " + e.getSQLState());
+                    System.out.println("Cód error:  " + e.getErrorCode());
+                }
+
+                sentencia.close(); // Cerrar Statement
+                conexion.close(); // Cerrar conexión
+
+            } catch (ClassNotFoundException | SQLException cn) {
+                cn.printStackTrace();
+            }
+        }
+    }
+
+    /*public void cargarArrayFabricantes() {
         fabricantes = new ArrayList<>();
 
         Fabricante fab = new Fabricante(1, "APPLE", "1976");
@@ -130,5 +196,5 @@ public class GeneradorDOM {
         smartphones.add(smart);
         smart = new Smartphone(8, 7, "MI 9", "6.39", 449);
         smartphones.add(smart);
-    }
+    }*/
 }
