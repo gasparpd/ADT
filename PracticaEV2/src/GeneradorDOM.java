@@ -27,18 +27,17 @@ public class GeneradorDOM {
     public void generarDocument(String clase) {
         if (clase.equalsIgnoreCase("fabricantes")) {
             /* Creamos el nodo raíz (Fabricantes)*/
-            Element raiz = docum.createElement("fabricantes");
+            Element raiz = docum.createElement(clase);
             docum.appendChild(raiz);
 
             /*Cargamos el array fabricantes*/
             cargarArrayFabricantes();
 
             /* Leemos el array de objetos Fabricante*/
-            for (int cont = 0; cont < fabricantes.size(); cont++) {
+            for (Fabricante fab : fabricantes) {
                 Element fabricante = docum.createElement("fabricante");
                 raiz.appendChild(fabricante);
 
-                Fabricante fab = fabricantes.get(cont);
                 crearElemento(fabricante, "id", Integer.toString(fab.getId()));
                 crearElemento(fabricante, "nombre", fab.getNombre());
                 crearElemento(fabricante, "foundation_year", fab.getF_year());
@@ -48,23 +47,22 @@ public class GeneradorDOM {
 
         if (clase.equalsIgnoreCase("smartphones")) {
             /* Creamos el nodo raíz (smartphones)*/
-            Element raiz = docum.createElement("smartphones");
+            Element raiz = docum.createElement(clase);
             docum.appendChild(raiz);
 
             /*Cargamos el array fabricantes*/
             cargarArraySmartphones();
 
             /* Leemos el array de objetos smartphone*/
-            for (int cont = 0; cont < smartphones.size(); cont++) {
+            for (Smartphone smart : smartphones) {
                 Element smartphone = docum.createElement("smartphone");
                 raiz.appendChild(smartphone);
 
-                Smartphone smar = smartphones.get(cont);
-                crearElemento(smartphone, "id", Integer.toString(smar.getId_smartphone()));
-                crearElemento(smartphone, "id_marca", Integer.toString(smar.getId_marca()));
-                crearElemento(smartphone, "modelo", smar.getModelo());
-                crearElemento(smartphone, "pulgadas_pantalla", smar.getP_pantalla());
-                crearElemento(smartphone, "precio", Integer.toString(smar.getPrecio()));
+                crearElemento(smartphone, "id", Integer.toString(smart.getId_smartphone()));
+                crearElemento(smartphone, "id_marca", Integer.toString(smart.getId_marca()));
+                crearElemento(smartphone, "modelo", smart.getModelo());
+                crearElemento(smartphone, "pulgadas_pantalla", smart.getP_pantalla());
+                crearElemento(smartphone, "precio", Integer.toString(smart.getPrecio()));
             }
         }
     }

@@ -5,9 +5,9 @@ import java.io.IOException;
 public class EscrituraDOM {
     public static void main(String [] args) throws ParserConfigurationException, TransformerException, IOException {
         String claseFab = "fabricantes";
-        String claseSmart = "smarphones";
+        String claseSmart = "smartphones";
         GeneradorDOM generadorDOM = new GeneradorDOM();
-        generadorDOM.generarDocument(claseFab);
-        generadorDOM.generarXML(claseFab);
+        generadorDOM.generarDocument(claseSmart);
+        generadorDOM.generarXML(claseSmart);
     }
 }
