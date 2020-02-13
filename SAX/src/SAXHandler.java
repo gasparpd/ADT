@@ -4,7 +4,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
 
-public class VersionesHandler extends DefaultHandler {
+public class SAXHandler extends DefaultHandler {
 
     private ArrayList<Smartphone> smartphones = new ArrayList<>();
     private Smartphone smart;
@@ -15,12 +15,12 @@ public class VersionesHandler extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         buffer.append(ch, start, length);
     }
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
         switch (qName){
             case "smartphone":
                 smart = new Smartphone();
@@ -35,7 +35,7 @@ public class VersionesHandler extends DefaultHandler {
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) {
         switch (qName){
             case "smartphone":
                 break;

@@ -13,7 +13,7 @@ public class VersionesSAX {
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         SAXParser saxParser = saxParserFactory.newSAXParser();
         File file = new File("./Ficheros/Smartphones.xml");
-        VersionesHandler handler = new VersionesHandler();
+        SAXHandler handler = new SAXHandler();
         saxParser.parse(file, handler);
 
         ArrayList<Smartphone> smartphones = handler.getSmartphones();
