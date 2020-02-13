@@ -5,12 +5,12 @@ import java.util.ArrayList;
 
 public class SAXHandlerFabricantes extends DefaultHandler {
 
-    private ArrayList<Smartphone> smartphones = new ArrayList<>();
-    private Smartphone smart;
+    private ArrayList<Fabricante> fabricantes = new ArrayList<>();
+    private Fabricante fab;
     private StringBuilder buffer = new StringBuilder();
 
-    public ArrayList<Smartphone> getSmartphones(){
-        return smartphones;
+    public ArrayList<Fabricante> getFabricantes(){
+        return fabricantes;
     }
 
     @Override
@@ -21,13 +21,14 @@ public class SAXHandlerFabricantes extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         switch (qName){
-            case "smartphone":
-                smart = new Smartphone();
-                smartphones.add(smart);
+            case "fabricante":
+                fab = new Fabricante();
+                fabricantes.add(fab);
+                fab.setId(Integer.parseInt(attributes.getValue(0)));
                 break;
-            case "marca":
-            case "pantalla":
-            case "precio":
+            case "nombre":
+            case "foundation_year":
+            case "matriz":
                 buffer.delete(0, buffer.length());
                 break;
         }
@@ -36,16 +37,14 @@ public class SAXHandlerFabricantes extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) {
         switch (qName){
-            case "smartphone":
+            case "nombre":
+                fab.setNombre(buffer.toString());
                 break;
-            case "modelo":
-                smart.setModelo(buffer.toString());
+            case "foundation_year":
+                fab.setF_year(buffer.toString());
                 break;
-            case "pulgadas_pantalla":
-                smart.setP_pantalla(buffer.toString());
-                break;
-            case "precio":
-                smart.setPrecio(Integer.parseInt(buffer.toString()));
+            case "matriz":
+                fab.setMatriz(Integer.parseInt(buffer.toString()));
                 break;
         }
     }

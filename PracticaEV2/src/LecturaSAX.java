@@ -12,13 +12,13 @@ public class LecturaSAX {
     public static void main(String [] args) throws ParserConfigurationException, SAXException, IOException {
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         SAXParser saxParser = saxParserFactory.newSAXParser();
-        File file = new File("./Ficheros/smartphones.xml");
-        SAXHandlerSmartphones handler = new SAXHandlerSmartphones();
+        File file = new File("./Ficheros/fabricantes.xml");
+        SAXHandlerFabricantes handler = new SAXHandlerFabricantes();
         saxParser.parse(file, handler);
 
-        ArrayList<Smartphone> smartphones = handler.getSmartphones();
+        ArrayList<Fabricante> fabricantes = handler.getFabricantes();
 
-        for (Smartphone s: smartphones){
+        for (Fabricante s: fabricantes){
             System.out.println(s);
         }
     }
