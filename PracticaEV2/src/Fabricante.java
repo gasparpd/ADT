@@ -21,6 +21,16 @@ public class Fabricante {
         this.f_year = f_year;
     }
 
+    @Override
+    public String toString() {
+        return "Fabricante{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", f_year='" + f_year + '\'' +
+                ", matriz=" + matriz +
+                '}';
+    }
+
     public int getId() {
         return id;
     }

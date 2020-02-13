@@ -17,6 +17,17 @@ public class Smartphone {
         this.precio = precio;
     }
 
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "id_smartphone=" + id_smartphone +
+                ", id_marca=" + id_marca +
+                ", modelo='" + modelo + '\'' +
+                ", p_pantalla='" + p_pantalla + '\'' +
+                ", precio=" + precio +
+                '}';
+    }
+
     public int getId_smartphone() {
         return id_smartphone;
     }
