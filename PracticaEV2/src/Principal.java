@@ -7,7 +7,7 @@ public class Principal {
 
     public static void main(String[] args) {
         teclado = new Scanner(System.in);
-        boolean salir = false;
+        boolean salir;
 
         do {
             salir = menu();
@@ -28,6 +28,7 @@ public class Principal {
                 "6 - Modificar datos de una tabla.\n" +
                 "7 - Eliminar datos de una tabla.\n" +
                 "8 - Procedimientos almacenados.\n" +
+                "9 - Generar XML de datos (DOM)\n" +
                 "0 - Salir.\n" +
                 "-------------------------------------------");
         int res = teclado.nextInt();
@@ -47,7 +48,7 @@ public class Principal {
             case 5:
                 //Meter inserciones con DOM y SAX
                 menuInsert();
-                insertConsultaPreparada();
+                //insertConsultaPreparada();
                 break;
             case 6:
                 modificarDatos();
@@ -57,6 +58,9 @@ public class Principal {
                 break;
             case 8:
                 procedimientoAlmacenado();
+                break;
+            case 9:
+                generarXMLDOM();
                 break;
             case 0:
                 salir = true;
@@ -71,16 +75,43 @@ public class Principal {
     private static void menuInsert() {
         System.out.println("--------------------MENU-------------------\n" +
                 "1 - Consultas preparadas.\n" +
-                "2 - Insertar datos de prueba.\n" +
-                "3 - Eliminar base de datos.\n" +
-                "4 - Visualizar datos de una tabla.\n" +
-                "5 - Insertar datos en una tabla.\n" +
-                "6 - Modificar datos de una tabla.\n" +
-                "7 - Eliminar datos de una tabla.\n" +
-                "8 - Procedimientos almacenados.\n" +
+                "2 - Insertar datos con DOM (xml).\n" +
+                "3 - Insertar datos con SAX (xml).\n" +
                 "0 - Salir.\n" +
                 "-------------------------------------------");
         int res = teclado.nextInt();
+
+        switch (res) {
+            case 1:
+                insertConsultaPreparada();
+                break;
+            case 2:
+                //Insertar datos con DOM
+                break;
+            case 3:
+                //Insertar datos con SAX
+                break;
+        }
+    }
+
+    private static void generarXMLDOM() {
+        System.out.println("¿De qué tabla quieres extraer los datos?\n" +
+                "--------------------MENU-------------------\n" +
+                "1 - Tabla Smartphone.\n" +
+                "2 - Tabla Fabricante.\n" +
+                "-------------------------------------------");
+        int tabla = teclado.nextInt();
+        switch (tabla) {
+            case 1:
+                EscrituraDOM.main("smartphones");
+                break;
+            case 2:
+                EscrituraDOM.main("fabricantes");
+                break;
+            default:
+                System.out.println("Valor erróneo.");
+                break;
+        }
     }
 
     public static void procedimientoAlmacenado() {
@@ -150,10 +181,8 @@ public class Principal {
             llamada.close(); // Cerrar Statement
             conexion.close(); // Cerrar conexión
 
-        } catch (ClassNotFoundException cn) {
+        } catch (ClassNotFoundException | SQLException cn) {
             cn.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
@@ -216,10 +245,8 @@ public class Principal {
             sentencia.close(); // Cerrar Statement
             conexion.close(); // Cerrar conexión
 
-        } catch (ClassNotFoundException cn) {
+        } catch (ClassNotFoundException | SQLException cn) {
             cn.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
@@ -233,7 +260,7 @@ public class Principal {
             // Pedir la tabla para modificar sus datos
             teclado.nextLine();
             String nombre_marca = "";
-            int id_smart = 0, id_fab = 0, tabla = 0, precio = 0;
+            int id_smart = 0, id_fab = 0, tabla, precio = 0;
             do {
                 System.out.println("¿Qué tabla quieres modificar?");
                 System.out.println("--------------------MENU-------------------\n" +
@@ -300,10 +327,8 @@ public class Principal {
             sentencia.close(); // Cerrar Statement
             conexion.close(); // Cerrar conexión
 
-        } catch (ClassNotFoundException cn) {
+        } catch (ClassNotFoundException | SQLException cn) {
             cn.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
@@ -320,7 +345,7 @@ public class Principal {
             System.out.println("ERROR NO ENCUENTRA el fichero: " + e.getMessage());
             e.printStackTrace();
         }
-        String linea = null;
+        String linea;
         StringBuilder stringBuilder = new StringBuilder();
         String salto = System.getProperty("line.separator");
         try {
@@ -369,7 +394,7 @@ public class Principal {
             System.out.println("ERROR NO ENCUENTRA el fichero: " + e.getMessage());
             e.printStackTrace();
         }
-        String linea = null;
+        String linea;
         StringBuilder stringBuilder = new StringBuilder();
         String salto = System.getProperty("line.separator");
         try {
@@ -418,7 +443,7 @@ public class Principal {
             System.out.println("ERROR NO ENCUENTRA el fichero: " + e.getMessage());
             e.printStackTrace();
         }
-        String linea = null;
+        String linea;
         StringBuilder stringBuilder = new StringBuilder();
         String salto = System.getProperty("line.separator");
         try {
@@ -464,7 +489,7 @@ public class Principal {
             // Pedir la tabla para mostrar sus datos
             teclado.nextLine();
             String modelo = "", pulgadas = "", nombre_marca = "", year_foundation = "";
-            int id_marca = 0, id_fab = 0, matriz = 0, tabla = 0, precio = 0;
+            int id_marca = 0, id_fab = 0, matriz = 0, tabla, precio = 0;
             do {
                 System.out.println("¿En qué tabla quieres insertar datos?");
                 System.out.println("--------------------MENU-------------------\n" +
@@ -534,10 +559,8 @@ public class Principal {
             sentencia.close(); // Cerrar Statement
             conexion.close(); // Cerrar conexión
 
-        } catch (ClassNotFoundException cn) {
+        } catch (ClassNotFoundException | SQLException cn) {
             cn.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
@@ -549,7 +572,7 @@ public class Principal {
                     ("jdbc:mysql://localhost/smartphones", "ejemplo", "ejemplo");
 
             // Pedir la tabla para mostrar sus datos
-            int tabla = 0;
+            int tabla;
             do {
                 System.out.println("¿Qué tabla quieres visualizar?");
                 System.out.println("--------------------MENU-------------------\n" +
@@ -593,10 +616,8 @@ public class Principal {
             sentencia.close(); // Cerrar Statement
             conexion.close(); // Cerrar conexión
 
-        } catch (ClassNotFoundException cn) {
+        } catch (ClassNotFoundException | SQLException cn) {
             cn.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
