@@ -16,23 +16,30 @@ public class LecturaSAX {
     private static ArrayList<Fabricante> fabricantes;
     private static ArrayList<Smartphone> smartphones;
 
-    public static void LeerXML(String tabla) throws ParserConfigurationException, SAXException, IOException {
-        SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
-        SAXParser saxParser = saxParserFactory.newSAXParser();
-        File file = new File("./Ficheros/" +tabla +".xml");
-        if (tabla.equalsIgnoreCase("fabricantes")) {
-            SAXHandlerFabricantes handler = new SAXHandlerFabricantes();
-            saxParser.parse(file, handler);
-            fabricantes = handler.getFabricantes();
-        } else {
-            SAXHandlerSmartphones handler = new SAXHandlerSmartphones();
-            saxParser.parse(file, handler);
-            smartphones = handler.getSmartphones();
-        }
-
-        /*for (Fabricante s: fabricantes){
+    public static void leerXML(String tabla) {
+        try {
+            SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+            SAXParser saxParser = saxParserFactory.newSAXParser();
+            File file = new File("./Ficheros/" + tabla + ".xml");
+            if (tabla.equalsIgnoreCase("fabricantes")) {
+                SAXHandlerFabricantes handler = new SAXHandlerFabricantes();
+                saxParser.parse(file, handler);
+                fabricantes = handler.getFabricantes();
+            } else {
+                SAXHandlerSmartphones handler = new SAXHandlerSmartphones();
+                saxParser.parse(file, handler);
+                smartphones = handler.getSmartphones();
+            }
+        /*Imprimir objetos
+        for (Fabricante s: fabricantes){
             System.out.println(s);
         }*/
+
+        } catch (ParserConfigurationException | IOException | SAXException e) {
+            e.printStackTrace();
+        }
+
+        insertarDatosEnBD();
     }
 
     public static void insertarDatosEnBD() {
@@ -47,26 +54,29 @@ public class LecturaSAX {
             String sql_fab = "INSERT INTO `fabricante`(`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES (?, ?, ?, ?)";
 
             //Hacemos el PreparedStatement para cada opción (fabricante o smartphone)
+            //Bucle para insertar las filas que obtenemos del XML (almacenadas ahora en un array)
             PreparedStatement sentencia;
-            /*if (!smartphones.isEmpty()) {
-                System.out.println(sql_smart);
-                sentencia = conexion.prepareStatement(sql_smart);
-                sentencia.setInt(1, id_marca);
-                sentencia.setString(2, modelo);
-                sentencia.setString(3, pulgadas);
-                sentencia.setInt(4, precio);
+            if (smartphones != null) {
+                for (Smartphone smart: smartphones) {
+                    sentencia = conexion.prepareStatement(sql_smart);
+                    sentencia.setInt(1, smart.getId_marca());
+                    sentencia.setString(2, smart.getModelo());
+                    sentencia.setString(3, smart.getP_pantalla());
+                    sentencia.setInt(4, smart.getPrecio());
+                    sentencia.executeUpdate();
+                }
             } else {
-                System.out.println(sql_fab);
-                sentencia = conexion.prepareStatement(sql_smart);
-                sentencia.setInt(1, id_fab);
-                sentencia.setString(2, nombre_marca);
-                sentencia.setString(3, year_foundation);
-                sentencia.setInt(4, matriz);
-            }*/
+                for (Fabricante fab: fabricantes) {
+                    sentencia = conexion.prepareStatement(sql_fab);
+                    sentencia.setInt(1, fab.getId());
+                    sentencia.setString(2, fab.getNombre());
+                    sentencia.setString(3, fab.getF_year());
+                    sentencia.setInt(4, fab.getMatriz());
+                    sentencia.executeUpdate();
+                }
+            }
 
-            //Ejecutamos la setencia INSERT y recogemos las filas afectadas
-            //int filas_afectadas = sentencia.executeUpdate();
-            //System.out.println("Filas afectadas: " + filas_afectadas);
+            System.out.println("Datos insertados.");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

@@ -19,18 +19,18 @@ public class Principal {
     private static boolean menu() {
         boolean salir = false;
 
-        System.out.println("--------------------MENU-------------------\n" +
-                "1 - Crea tablas.\n" +
-                "2 - Insertar datos de prueba.\n" +
-                "3 - Eliminar base de datos.\n" +
-                "4 - Visualizar datos de una tabla.\n" +
-                "5 - Insertar datos en una tabla.\n" +
+        System.out.println("-------------------- MENÚ -------------------\n" +
+                "1 - Crear tablas (base de datos si no existe).\n" +
+                "2 - Insertar datos de prueba (script).\n" +
+                "3 - Insertar datos en una tabla.\n" +
+                "4 - Eliminar base de datos.\n" +
+                "5 - Visualizar datos de una tabla.\n" +
                 "6 - Modificar datos de una tabla.\n" +
                 "7 - Eliminar datos de una tabla.\n" +
                 "8 - Procedimientos almacenados.\n" +
                 "9 - Generar XML de datos (DOM)\n" +
                 "0 - Salir.\n" +
-                "-------------------------------------------");
+                "---------------------------------------------");
         int res = teclado.nextInt();
         switch (res) {
             case 1:
@@ -40,15 +40,13 @@ public class Principal {
                 datosPrueba();
                 break;
             case 3:
-                borrarDB();
+                menuInsert();
                 break;
             case 4:
-                visualizarTabla();
+                borrarDB();
                 break;
             case 5:
-                //Meter inserciones con DOM y SAX
-                menuInsert();
-                //insertConsultaPreparada();
+                visualizarTabla();
                 break;
             case 6:
                 modificarDatos();
@@ -73,12 +71,12 @@ public class Principal {
     }
 
     private static void menuInsert() {
-        System.out.println("--------------------MENU-------------------\n" +
+        System.out.println("-------------------- MENÚ -------------------\n" +
                 "1 - Consultas preparadas.\n" +
-                "2 - Insertar datos con DOM (xml).\n" +
+                "2 - Insertar datos con DOM (xml) ¡NO IMPLEMENTADO!.\n" +
                 "3 - Insertar datos con SAX (xml).\n" +
                 "0 - Salir.\n" +
-                "-------------------------------------------");
+                "---------------------------------------------");
         int res = teclado.nextInt();
 
         switch (res) {
@@ -90,16 +88,40 @@ public class Principal {
                 break;
             case 3:
                 //Insertar datos con SAX
+                insertXMLSAX();
+                break;
+        }
+    }
+
+    private static void insertXMLSAX() {
+        System.out.println("¿De qué fichero quieres insertar los datos?\n" +
+                "-------------------- MENÚ -------------------\n" +
+                "1 - Fichero smartphones.xml.\n" +
+                "2 - Fichero fabricantes.xml.\n" +
+                "NOTA:\n" +
+                "Para insertar smartphones debe de haber datos\n" +
+                "de fabricantes para que no den errores de clave foránea.\n" +
+                "---------------------------------------------");
+        int tabla = teclado.nextInt();
+        switch (tabla) {
+            case 1:
+                LecturaSAX.leerXML("smartphones");
+                break;
+            case 2:
+                LecturaSAX.leerXML("fabricantes");
+                break;
+            default:
+                System.out.println("Valor erróneo.");
                 break;
         }
     }
 
     private static void generarXMLDOM() {
         System.out.println("¿De qué tabla quieres extraer los datos?\n" +
-                "--------------------MENU-------------------\n" +
+                "-------------------- MENÚ -------------------\n" +
                 "1 - Tabla Smartphone.\n" +
                 "2 - Tabla Fabricante.\n" +
-                "-------------------------------------------");
+                "---------------------------------------------");
         int tabla = teclado.nextInt();
         switch (tabla) {
             case 1:
