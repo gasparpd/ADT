@@ -29,6 +29,7 @@ public class Principal {
                 "7 - Eliminar datos de una tabla.\n" +
                 "8 - Procedimientos almacenados.\n" +
                 "9 - Generar XML de datos (DOM)\n" +
+                "10 - Crear base de datos.\n" +
                 "0 - Salir.\n" +
                 "---------------------------------------------");
         int res = teclado.nextInt();
@@ -60,6 +61,9 @@ public class Principal {
             case 9:
                 generarXMLDOM();
                 break;
+            case 10:
+                crearBaseDatos();
+                break;
             case 0:
                 salir = true;
                 break;
@@ -90,6 +94,43 @@ public class Principal {
                 //Insertar datos con SAX
                 insertXMLSAX();
                 break;
+        }
+    }
+
+    private static void crearBaseDatos() {
+        File scriptFile = new File("./script/crearbasedatos.sql");
+        System.out.println("--------------------------------------------");
+        System.out.println("\n\nFichero de consulta : " + scriptFile.getName());
+        System.out.println("Convirtiendo el fichero a cadena...");
+
+        BufferedReader entrada = null;
+        try {
+            entrada = new BufferedReader(new FileReader(scriptFile));
+
+
+            String linea;
+            StringBuilder stringBuilder = new StringBuilder();
+            String salto = System.getProperty("line.separator");
+
+            while ((linea = entrada.readLine()) != null) {
+                stringBuilder.append(linea);
+                stringBuilder.append(salto);
+            }
+
+            String consulta = stringBuilder.toString();
+
+            System.out.println(consulta);
+
+
+            Connection connmysql = DriverManager
+                    .getConnection("jdbc:mysql://localhost/?allowMultiQueries=true", "root", "root");
+            Statement sents = connmysql.createStatement();
+            int res = sents.executeUpdate(consulta);
+            System.out.println("Script creado con éxito, res = " + res);
+            connmysql.close();
+            sents.close();
+        } catch (SQLException | IOException e) {
+            e.printStackTrace();
         }
     }
 
