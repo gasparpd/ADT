@@ -19,24 +19,9 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `smartphones`
 --
-CREATE DATABASE IF NOT EXISTS `smartphones` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `smartphones`;
 
-DELIMITER $$
---
--- Procedimientos
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `aplicar_descuento` (`marca` INT, `descuento` INT)  BEGIN
-    UPDATE smartphone SET PRECIO= PRECIO - descuento WHERE ID_MARCA = marca;
-END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_comprob_marca` (`id_marca` INT, OUT `nom` VARCHAR(15), OUT `id_m` INT)  BEGIN
-	SET id_m = 0;
-	SET nom = 'INECISTENTE';
-	SELECT NOMBRE, ID INTO nom, id_m FROM fabricante WHERE ID = id_marca;
-END$$
 
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -62,7 +47,16 @@ CREATE TABLE `fabricante` (
 -- Estructura de tabla para la tabla `smartphone`
 --
 
-
+DROP TABLE IF EXISTS `smartphone`;
+CREATE TABLE `smartphone` (
+  `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT,
+  `ID_MARCA` int(2) NOT NULL,
+  `MODELO` varchar(20) NOT NULL,
+  `PULGADAS_PANTALLA` varchar(10) NOT NULL,
+  `PRECIO` int(5) NOT NULL,
+  PRIMARY KEY (`ID_SMARTPHONE`),
+  KEY `smartphone_ibfk_1` (`ID_MARCA`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tablas volcadas
@@ -70,10 +64,23 @@ CREATE TABLE `fabricante` (
 -- Reactivo el check de claves foráneas
 -- SET foreign_key_checks = 1;
 -- -------------------------------------------------------
---
--- Indices de la tabla `fabricante`
---
 
+
+--
+-- Procedimientos
+--
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `aplicar_descuento` (`marca` INT, `descuento` INT)  BEGIN
+    UPDATE smartphone SET PRECIO= PRECIO - descuento WHERE ID_MARCA = marca;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_comprob_marca` (`id_marca` INT, OUT `nom` VARCHAR(15), OUT `id_m` INT)  BEGIN
+	SET id_m = 0;
+	SET nom = 'INECISTENTE';
+	SELECT NOMBRE, ID INTO nom, id_m FROM fabricante WHERE ID = id_marca;
+END$$
+
+DELIMITER ;
 --
 -- Indices de la tabla `smartphone`
 --

@@ -20,49 +20,49 @@ public class Principal {
         boolean salir = false;
 
         System.out.println("-------------------- MENÚ -------------------\n" +
-                "1 - Crear tablas (base de datos si no existe).\n" +
-                "2 - Insertar datos de prueba (script).\n" +
-                "3 - Insertar datos en una tabla.\n" +
-                "4 - Eliminar base de datos.\n" +
-                "5 - Visualizar datos de una tabla.\n" +
-                "6 - Modificar datos de una tabla.\n" +
-                "7 - Eliminar datos de una tabla.\n" +
-                "8 - Procedimientos almacenados.\n" +
-                "9 - Generar XML de datos (DOM)\n" +
-                "10 - Crear base de datos.\n" +
+                "1 - Crear base de datos.\n" +
+                "2 - Crear tablas.\n" +
+                "3 - Insertar datos de prueba (script).\n" +
+                "4 - Insertar datos en una tabla.\n" +
+                "5 - Eliminar base de datos.\n" +
+                "6 - Visualizar datos de una tabla.\n" +
+                "7 - Modificar datos de una tabla.\n" +
+                "8 - Eliminar datos de una tabla.\n" +
+                "9 - Procedimientos almacenados.\n" +
+                "10 - Generar XML de datos (DOM)\n" +
                 "0 - Salir.\n" +
                 "---------------------------------------------");
         int res = teclado.nextInt();
         switch (res) {
             case 1:
-                crearTablas();
+                crearBaseDatos();
                 break;
             case 2:
-                datosPrueba();
+                crearTablas();
                 break;
             case 3:
-                menuInsert();
+                datosPrueba();
                 break;
             case 4:
-                borrarDB();
+                menuInsert();
                 break;
             case 5:
-                visualizarTabla();
+                borrarDB();
                 break;
             case 6:
-                modificarDatos();
+                visualizarTabla();
                 break;
             case 7:
-                eliminarDatos();
+                modificarDatos();
                 break;
             case 8:
-                procedimientoAlmacenado();
+                eliminarDatos();
                 break;
             case 9:
-                generarXMLDOM();
+                procedimientoAlmacenado();
                 break;
             case 10:
-                crearBaseDatos();
+                generarXMLDOM();
                 break;
             case 0:
                 salir = true;

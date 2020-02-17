@@ -32,7 +32,7 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_comprob_marca` (`id_marca` INT, OUT `nom` VARCHAR(15), OUT `id_m` INT)  BEGIN
 	SET id_m = 0;
-	SET nom = 'INECISTENTE';
+	SET nom = 'INEXISTENTE';
 	SELECT NOMBRE, ID INTO nom, id_m FROM fabricante WHERE ID = id_marca;
 END$$
 
