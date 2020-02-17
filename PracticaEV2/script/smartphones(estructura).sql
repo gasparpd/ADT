@@ -24,12 +24,11 @@ USE `smartphones`;
 
 DROP TABLE IF EXISTS `smartphone`;
 CREATE TABLE `smartphone` (
-  `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT,
+  `ID_SMARTPHONE` int(2) PRIMARY KEY AUTO_INCREMENT,
   `ID_MARCA` int(2) NOT NULL,
   `MODELO` varchar(20) NOT NULL,
   `PULGADAS_PANTALLA` varchar(10) NOT NULL,
-  `PRECIO` int(5) NOT NULL,
-  PRIMARY KEY (`ID_SMARTPHONE`)
+  `PRECIO` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 
@@ -66,14 +65,11 @@ CREATE TABLE `fabricante` (
 --
 -- Indices de la tabla `fabricante`
 --
-ALTER TABLE `fabricante`
-  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `smartphone`
 --
 ALTER TABLE `smartphone`
-  ADD PRIMARY KEY (`ID_SMARTPHONE`),
   ADD KEY `smartphone_ibfk_1` (`ID_MARCA`);
 
 --
