@@ -19,17 +19,25 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `smartphones`
 --
-CREATE DATABASE IF NOT EXISTS `smartphones` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
+CREATE DATABASE IF NOT EXISTS `smartphones` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `smartphones`;
 
-DROP TABLE IF EXISTS `smartphone`;
-CREATE TABLE `smartphone` (
-  `ID_SMARTPHONE` int(2) PRIMARY KEY AUTO_INCREMENT,
-  `ID_MARCA` int(2) NOT NULL,
-  `MODELO` varchar(20) NOT NULL,
-  `PULGADAS_PANTALLA` varchar(10) NOT NULL,
-  `PRECIO` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `aplicar_descuento` (`marca` INT, `descuento` INT)  BEGIN
+    UPDATE smartphone SET PRECIO= PRECIO - descuento WHERE ID_MARCA = marca;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_comprob_marca` (`id_marca` INT, OUT `nom` VARCHAR(15), OUT `id_m` INT)  BEGIN
+	SET id_m = 0;
+	SET nom = 'INECISTENTE';
+	SELECT NOMBRE, ID INTO nom, id_m FROM fabricante WHERE ID = id_marca;
+END$$
+
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --

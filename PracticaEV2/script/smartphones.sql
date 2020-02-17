@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-01-2020 a las 11:09:58
+-- Tiempo de generación: 17-02-2020 a las 12:50:20
 -- Versión del servidor: 5.7.11
 -- Versión de PHP: 5.6.18
 
@@ -19,34 +19,56 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `smartphones`
 --
-CREATE DATABASE IF NOT EXISTS `smartphones` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
+CREATE DATABASE IF NOT EXISTS `smartphones` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `smartphones`;
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `aplicar_descuento` (`marca` INT, `descuento` INT)  BEGIN
+    UPDATE smartphone SET PRECIO= PRECIO - descuento WHERE ID_MARCA = marca;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_comprob_marca` (`id_marca` INT, OUT `nom` VARCHAR(15), OUT `id_m` INT)  BEGIN
+	SET id_m = 0;
+	SET nom = 'INECISTENTE';
+	SELECT NOMBRE, ID INTO nom, id_m FROM fabricante WHERE ID = id_marca;
+END$$
+
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `fabricante`
 --
 
-CREATE TABLE `fabricante` (
+CREATE TABLE IF NOT EXISTS `fabricante` (
   `ID` int(2) NOT NULL AUTO_INCREMENT,
   `NOMBRE` varchar(15) NOT NULL,
   `FUNDACION_YEAR` varchar(4) NOT NULL,
   `MATRIZ` int(2) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
+--
+-- Truncar tablas antes de insertar `fabricante`
+--
+
+TRUNCATE TABLE `fabricante`;
 --
 -- Volcado de datos para la tabla `fabricante`
 --
 
 INSERT INTO `fabricante` (`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES
-(1, 'APPLE', '1976', NULL),
-(2, 'SAMSUNG', '1938', NULL),
-(3, 'OPPO', '2004', NULL),
-(4, 'HUAWEI', '1987', NULL),
+(1, 'APPLE', '1976', 0),
+(2, 'SAMSUNG', '1938', 0),
+(3, 'OPPO', '2004', 0),
+(4, 'HUAWEI', '1987', 0),
 (5, 'REALME', '2018', 3),
 (6, 'HONOR', '2013', 4),
-(7, 'XIAOMI', '2010', NULL);
+(7, 'XIAOMI', '2010', 0);
 
 -- --------------------------------------------------------
 
@@ -54,15 +76,21 @@ INSERT INTO `fabricante` (`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES
 -- Estructura de tabla para la tabla `smartphone`
 --
 
-CREATE TABLE `smartphone` (
+CREATE TABLE IF NOT EXISTS `smartphone` (
   `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT,
   `ID_MARCA` int(2) NOT NULL,
   `MODELO` varchar(20) NOT NULL,
   `PULGADAS_PANTALLA` varchar(10) NOT NULL,
   `PRECIO` int(5) NOT NULL,
-  PRIMARY KEY (`ID_SMARTPHONE`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`ID_SMARTPHONE`),
+  KEY `smartphone_ibfk_1` (`ID_MARCA`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
+--
+-- Truncar tablas antes de insertar `smartphone`
+--
+
+TRUNCATE TABLE `smartphone`;
 --
 -- Volcado de datos para la tabla `smartphone`
 --
@@ -78,19 +106,9 @@ INSERT INTO `smartphone` (`ID_SMARTPHONE`, `ID_MARCA`, `MODELO`, `PULGADAS_PANTA
 (8, 7, 'MI 9', '6.39', 449);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Restricciones para tablas volcadas
 --
 
---
--- AUTO_INCREMENT de la tabla `fabricante`
---
-ALTER TABLE `fabricante`
-  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
---
--- AUTO_INCREMENT de la tabla `smartphone`
---
-ALTER TABLE `smartphone`
-  MODIFY `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 --
 -- Filtros para la tabla `smartphone`
 --
