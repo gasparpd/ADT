@@ -588,10 +588,10 @@ public class Principal {
             // Pedir selección de un procedimiento almacenado
             int proc;
             do {
-                System.out.println("--------------------MENU-------------------\n" +
+                System.out.println("-------------------- MENÚ -------------------\n" +
                         "1 - Aplicar descuento a los modelos de una marca.\n" +
                         "2 - Devolver información de una marca.\n" +
-                        "-------------------------------------------");
+                        "----------------------------------------------");
                 proc = teclado.nextInt();
                 if (proc != 1 && proc != 2)
                     System.out.println("Número (" + proc + ") introducido NO válido.");
