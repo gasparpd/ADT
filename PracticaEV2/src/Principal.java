@@ -21,7 +21,7 @@ public class Principal {
 
         System.out.println("-------------------- MENÚ -------------------\n" +
                 "1 - Crear base de datos.\n" +
-                "2 - Crear tablas.\n" +
+                "2 - Crear estructura.\n" +
                 "3 - Insertar datos de prueba (script).\n" +
                 "4 - Insertar datos en una tabla.\n" +
                 "5 - Eliminar base de datos.\n" +
@@ -284,10 +284,10 @@ public class Principal {
             int id_smart = 0, id_fab = 0, tabla;
             do {
                 System.out.println("¿De qué tabla quieres eliminar datos?");
-                System.out.println("--------------------MENU-------------------\n" +
+                System.out.println("-------------------- MENÚ -------------------\n" +
                         "1 - Tabla Smartphone.\n" +
                         "2 - Tabla Fabricante.\n" +
-                        "-------------------------------------------");
+                        "----------------------------------------------");
                 tabla = teclado.nextInt();
                 if (tabla == 1) {
                     System.out.println("Introduce ID_SMARTPHONE.");
@@ -313,9 +313,8 @@ public class Principal {
                 sentencia.setInt(1, id_smart);
             } else {
                 System.out.println(sql_fab);
-                sentencia = conexion.prepareStatement(sql_smart);
+                sentencia = conexion.prepareStatement(sql_fab);
                 sentencia.setInt(1, id_fab);
-
             }
 
             try {
@@ -350,10 +349,10 @@ public class Principal {
             int id_smart = 0, id_fab = 0, tabla, precio = 0;
             do {
                 System.out.println("¿Qué tabla quieres modificar?");
-                System.out.println("--------------------MENU-------------------\n" +
+                System.out.println("-------------------- MENÚ -------------------\n" +
                         "1 - Tabla Smartphone.\n" +
                         "2 - Tabla Fabricante.\n" +
-                        "-------------------------------------------");
+                        "---------------------------------------------");
                 tabla = teclado.nextInt();
                 if (tabla == 1) {
                     System.out.println("Introduce ID_SMARTPHONE.");
@@ -386,7 +385,7 @@ public class Principal {
                 sentencia.setInt(2, id_smart);
             } else {
                 System.out.println(sql_fab);
-                sentencia = conexion.prepareStatement(sql_smart);
+                sentencia = conexion.prepareStatement(sql_fab);
                 sentencia.setString(1, nombre_marca);
                 sentencia.setInt(2, id_fab);
 
@@ -579,10 +578,10 @@ public class Principal {
             int id_marca = 0, id_fab = 0, matriz = 0, tabla, precio = 0;
             do {
                 System.out.println("¿En qué tabla quieres insertar datos?");
-                System.out.println("--------------------MENU-------------------\n" +
+                System.out.println("-------------------- MENÚ -------------------\n" +
                         "1 - Tabla Smartphone.\n" +
                         "2 - Tabla Fabricante.\n" +
-                        "-------------------------------------------");
+                        "---------------------------------------------");
                 tabla = teclado.nextInt();
                 if (tabla == 1) {
                     System.out.println("Introduce ID_MARCA.");
@@ -662,10 +661,10 @@ public class Principal {
             int tabla;
             do {
                 System.out.println("¿Qué tabla quieres visualizar?");
-                System.out.println("--------------------MENU-------------------\n" +
+                System.out.println("-------------------- MENÚ -------------------\n" +
                         "1 - Tabla Smartphone.\n" +
                         "2 - Tabla Fabricante.\n" +
-                        "-------------------------------------------");
+                        "---------------------------------------------");
                 tabla = teclado.nextInt();
             } while (tabla != 1 && tabla != 2);
 
