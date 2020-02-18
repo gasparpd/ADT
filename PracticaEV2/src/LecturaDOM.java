@@ -51,6 +51,25 @@ public class LecturaDOM {
                         fabricantes.add(fabricante);
                     }
                 }
+            } else {
+                for (int c = 0; c < smartNodeList.getLength(); c++) {
+                    Node smart = smartNodeList.item(c);
+
+                    if (smart.getNodeType() == Node.ELEMENT_NODE) {
+                        Element element = (Element) smart;
+                        int id = Integer.parseInt(element.getAttribute("id"));
+                        int id_marca = Integer.parseInt(element.getElementsByTagName("id_marca").
+                                item(0).getTextContent());
+                        String modelo = element.getElementsByTagName("modelo").
+                                item(0).getTextContent();
+                        String pulgadas = element.getElementsByTagName("pulgadas_pantalla").
+                                item(0).getTextContent();
+                        int precio = Integer.parseInt(element.getElementsByTagName("precio").
+                                item(0).getTextContent());
+                        Smartphone smartphone = new Smartphone(id, id_marca, modelo, pulgadas, precio);
+                        smartphones.add(smartphone);
+                    }
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
