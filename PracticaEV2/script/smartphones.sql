@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `fabricante` (
   `FUNDACION_YEAR` varchar(4) NOT NULL,
   `MATRIZ` int(2) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Truncar tablas antes de insertar `fabricante`
@@ -77,13 +77,15 @@ INSERT INTO `fabricante` (`ID`, `NOMBRE`, `FUNDACION_YEAR`, `MATRIZ`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `smartphone` (
-  `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT,
+  `ID_SMARTPHONE` int(2) PRIMARY KEY AUTO_INCREMENT,
   `ID_MARCA` int(2) NOT NULL,
   `MODELO` varchar(20) NOT NULL,
   `PULGADAS_PANTALLA` varchar(10) NOT NULL,
   `PRECIO` int(5) NOT NULL,
-  PRIMARY KEY (`ID_SMARTPHONE`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+	FOREIGN KEY (ID_MARCA)
+        REFERENCES fabricante (ID)
+        ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Truncar tablas antes de insertar `smartphone`
@@ -111,8 +113,8 @@ INSERT INTO `smartphone` (`ID_SMARTPHONE`, `ID_MARCA`, `MODELO`, `PULGADAS_PANTA
 --
 -- Filtros para la tabla `smartphone`
 --
-ALTER TABLE `smartphone`
-  ADD CONSTRAINT `smartphone_ibfk_1` FOREIGN KEY (`ID_MARCA`) REFERENCES `fabricante` (`ID`) ON DELETE CASCADE;
+-- ALTER TABLE `smartphone`
+--  ADD CONSTRAINT `smartphone_ibfk_1` FOREIGN KEY (`ID_MARCA`) REFERENCES `fabricante` (`ID`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

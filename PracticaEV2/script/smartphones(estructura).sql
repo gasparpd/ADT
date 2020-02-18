@@ -49,13 +49,15 @@ CREATE TABLE `fabricante` (
 
 DROP TABLE IF EXISTS `smartphone`;
 CREATE TABLE `smartphone` (
-  `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT,
+  `ID_SMARTPHONE` int(2) PRIMARY KEY AUTO_INCREMENT,
   `ID_MARCA` int(2) NOT NULL,
   `MODELO` varchar(20) NOT NULL,
   `PULGADAS_PANTALLA` varchar(10) NOT NULL,
   `PRECIO` int(5) NOT NULL,
-  PRIMARY KEY (`ID_SMARTPHONE`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+	FOREIGN KEY (ID_MARCA)
+        REFERENCES fabricante (ID)
+        ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tablas volcadas
@@ -90,24 +92,12 @@ ALTER TABLE `smartphone`
 -- Restricciones para tablas volcadas
 --
 --
--- AUTO_INCREMENT de las tablas volcadas
---
 
---
--- AUTO_INCREMENT de la tabla `fabricante`
---
-ALTER TABLE `fabricante`
-  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
---
--- AUTO_INCREMENT de la tabla `smartphone`
---
-ALTER TABLE `smartphone`
-  MODIFY `ID_SMARTPHONE` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 --
 -- Filtros para la tabla `smartphone`
 --
-ALTER TABLE `smartphone`
-  ADD CONSTRAINT `smartphone_ibfk_1` FOREIGN KEY (`ID_MARCA`) REFERENCES `fabricante` (`ID`) ON DELETE CASCADE;
+-- ALTER TABLE `smartphone`
+--  ADD CONSTRAINT `smartphone_ibfk_1` FOREIGN KEY (`ID_MARCA`) REFERENCES `fabricante` (`ID`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
