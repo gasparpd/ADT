@@ -687,9 +687,9 @@ public class Principal {
                 ResultSet rs = sentencia.executeQuery(sql);
                 while (rs.next()) {
                     if (tabla == 1) {
-                        System.out.printf("%d, %d, %s, %s, %s\n", rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                        System.out.printf("ID: %d, ID_MARCA: %d, MODELO: %s, PULGADAS: %s'', PRECIO: %d€\n", rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getInt(5));
                     } else {
-                        System.out.printf("%d, %s, %s, %d\n", rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
+                        System.out.printf("ID: %d, NOMBRE: %s, AÑO DE FUNDACIÓN: %s, ID_MATRIZ: %d\n", rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
                     }
                 }
 
