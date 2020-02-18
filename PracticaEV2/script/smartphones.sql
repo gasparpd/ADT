@@ -43,7 +43,10 @@ DELIMITER ;
 --
 -- Estructura de tabla para la tabla `fabricante`
 --
-
+-- Desactivo el check de claves foráneas por problemas
+-- con las mismas al hacer el DROP TABLE
+SET foreign_key_checks = 0;
+-- -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fabricante` (
   `ID` int(2) NOT NULL AUTO_INCREMENT,
   `NOMBRE` varchar(15) NOT NULL,
@@ -85,6 +88,7 @@ CREATE TABLE IF NOT EXISTS `smartphone` (
 	FOREIGN KEY (ID_MARCA)
         REFERENCES fabricante (ID)
         ON DELETE CASCADE
+		ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -109,12 +113,9 @@ INSERT INTO `smartphone` (`ID_SMARTPHONE`, `ID_MARCA`, `MODELO`, `PULGADAS_PANTA
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `smartphone`
---
--- ALTER TABLE `smartphone`
---  ADD CONSTRAINT `smartphone_ibfk_1` FOREIGN KEY (`ID_MARCA`) REFERENCES `fabricante` (`ID`) ON DELETE CASCADE;
+-- Reactivo el check de claves foráneas
+SET foreign_key_checks = 1;
+-- -------------------------------------------------------
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

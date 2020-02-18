@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 --
 -- Desactivo el check de claves foráneas por problemas
 -- con las mismas al hacer el DROP TABLE
--- SET foreign_key_checks = 0;
+SET foreign_key_checks = 0;
 -- -------------------------------------------------------
 DROP TABLE IF EXISTS `fabricante`;
 CREATE TABLE `fabricante` (
@@ -57,13 +57,14 @@ CREATE TABLE `smartphone` (
 	FOREIGN KEY (ID_MARCA)
         REFERENCES fabricante (ID)
         ON DELETE CASCADE
+		ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tablas volcadas
 --
 -- Reactivo el check de claves foráneas
--- SET foreign_key_checks = 1;
+SET foreign_key_checks = 1;
 -- -------------------------------------------------------
 
 
