@@ -77,7 +77,7 @@ public class Principal {
     private static void menuInsert() {
         System.out.println("-------------------- MENÚ -------------------\n" +
                 "1 - Consultas preparadas.\n" +
-                "2 - Insertar datos con DOM (xml) ¡NO IMPLEMENTADO!.\n" +
+                "2 - Insertar datos con DOM (xml).\n" +
                 "3 - Insertar datos con SAX (xml).\n" +
                 "0 - Salir.\n" +
                 "---------------------------------------------");
@@ -89,6 +89,7 @@ public class Principal {
                 break;
             case 2:
                 //Insertar datos con DOM
+                insertXMLDOM();
                 break;
             case 3:
                 //Insertar datos con SAX
@@ -131,6 +132,29 @@ public class Principal {
             sents.close();
         } catch (SQLException | IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void insertXMLDOM() {
+        System.out.println("¿De qué fichero quieres insertar los datos?\n" +
+                "-------------------- MENÚ -------------------\n" +
+                "1 - Fichero smartphones.xml.\n" +
+                "2 - Fichero fabricantes.xml.\n" +
+                "NOTA:\n" +
+                "Para insertar smartphones debe de haber datos\n" +
+                "de fabricantes para que no den errores de clave foránea.\n" +
+                "---------------------------------------------");
+        int tabla = teclado.nextInt();
+        switch (tabla) {
+            case 1:
+                LecturaDOM.leerXML("smartphones");
+                break;
+            case 2:
+                LecturaDOM.leerXML("fabricantes");
+                break;
+            default:
+                System.out.println("Valor erróneo.");
+                break;
         }
     }
 
