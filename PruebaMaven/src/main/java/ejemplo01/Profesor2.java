@@ -24,10 +24,10 @@ public class Profesor2 implements Serializable{
     private String ape2;
 
 
-    public Profesor() {
+    public Profesor2() {
     }
 
-    public Profesor(int id, String nombre, String ape1, String ape2) {
+    public Profesor2(int id, String nombre, String ape1, String ape2) {
         this.id = id;
         this.nombre = nombre;
         this.ape1 = ape1;
