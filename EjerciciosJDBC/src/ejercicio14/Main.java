@@ -46,7 +46,7 @@ public class Main {
                 while (rs.next()){
                     DecimalFormat formato = new DecimalFormat("##,##0.00");
                     String valorFormateado = formato.format(rs.getFloat(1));
-                    System.out.printf("Número de empleados: %d, Salario medio: %s\n", rs.getInt(1), formato.format(rs.getFloat(2));
+                    System.out.printf("Número de empleados: %d, Salario medio: %s\n", rs.getInt(1), formato.format(rs.getFloat(2)));
                 }
                 System.out.println("---------FIN----------");
             }catch (SQLException e) {
