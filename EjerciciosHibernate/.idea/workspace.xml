@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Corregidas las anotaciones de la clase.">
-      <change afterPath="$PROJECT_DIR$/.idea/EjerciciosHibernate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/App2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +41,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EjerciciosJDBC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -52,7 +53,7 @@
       <recent name="C:\Users\DAM\Git\ADT\PruebaMaven\src\main\java\ejemplo01" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.App2">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ejemplo01.App" />
       <module name="PruebaMaven" />
@@ -66,8 +67,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="App2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ejemplo01.App2" />
+      <module name="EjerciciosHibernate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ejemplo01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App2" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
@@ -119,7 +134,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -157,9 +174,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="94" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1580411308891" />
-    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582803404574">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582828217537">
+      <screen x="0" y="0" width="1280" height="984" />
     </state>
+    <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1582828217537" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582803404574" />
     <state x="441" y="92" key="CommitChangelistDialog2" timestamp="1582803324978">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -171,30 +189,30 @@
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1582745025074" />
     <state x="630" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582803249291" />
-    <state width="1237" height="262" key="GridCell.Tab.0.bottom" timestamp="1581536697888">
+    <state width="1237" height="262" key="GridCell.Tab.0.bottom" timestamp="1582830361777">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="262" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1581536697888" />
-    <state width="1237" height="262" key="GridCell.Tab.0.center" timestamp="1581536697888">
+    <state width="1237" height="262" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
+    <state width="1237" height="262" key="GridCell.Tab.0.center" timestamp="1582830361777">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="262" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1581536697888" />
-    <state width="1237" height="262" key="GridCell.Tab.0.left" timestamp="1581536697888">
+    <state width="1237" height="262" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
+    <state width="1237" height="262" key="GridCell.Tab.0.left" timestamp="1582830361777">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="262" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1581536697888" />
-    <state width="1237" height="262" key="GridCell.Tab.0.right" timestamp="1581536697888">
+    <state width="1237" height="262" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
+    <state width="1237" height="262" key="GridCell.Tab.0.right" timestamp="1582830361777">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1237" height="262" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1581536697888" />
+    <state width="1237" height="262" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
     <state x="120" y="67" key="SettingsEditor" timestamp="1580411481849">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="120" y="67" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1580411481849" />
-    <state x="336" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1581611347718">
+    <state x="336" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1582828210570">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="336" y="317" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1581611347718" />
+    <state x="336" y="317" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1582828210570" />
     <state x="22" y="195" key="new project wizard" timestamp="1580151202970">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
