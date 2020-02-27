@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Corregidas las anotaciones de la clase.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/App2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Ejercicio 12. Mapeado Profesor2 con etiquetas.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/Direccion3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/Profesor3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +46,9 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ejemplo01" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\DAM\Git\ADT\PruebaMaven\src\main\resources" />
       <recent name="C:\Users\DAM\Git\ADT\PruebaMaven\src\main\java\ejemplo01" />
@@ -126,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582745954657</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ejercicio 12. Mapeado Profesor2 con etiquetas.">
+      <created>1582830434929</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1582830434929</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,7 +171,8 @@
     <MESSAGE value="Terminados los ejercicios de Hibernate." />
     <MESSAGE value="Agregadas las anotaciones a la clase." />
     <MESSAGE value="Corregidas las anotaciones de la clase." />
-    <option name="LAST_COMMIT_MESSAGE" value="Corregidas las anotaciones de la clase." />
+    <MESSAGE value="Ejercicio 12. Mapeado Profesor2 con etiquetas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 12. Mapeado Profesor2 con etiquetas." />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="151" key="#Project_Structure" timestamp="1580411513400">
@@ -179,10 +188,10 @@
     </state>
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1582828217537" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582803404574" />
-    <state x="441" y="92" key="CommitChangelistDialog2" timestamp="1582803324978">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="294" y="87" key="CommitChangelistDialog2" timestamp="1582830956844">
+      <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="294" y="87" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1582745954002" />
+    <state x="294" y="87" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1582830956844" />
     <state x="441" y="92" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582803324978" />
     <state x="630" y="261" key="FileChooserDialogImpl" timestamp="1582803249291">
       <screen x="0" y="0" width="1920" height="1040" />
