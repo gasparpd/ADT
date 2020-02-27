@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../EjerciciosEV2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EjerciciosEV2/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/dictionaries/Gaspar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/Ficheros/fabricantes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/Ficheros/smartphones.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/PracticaJDBC.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/script/borrarbasedatos.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/script/crearbasedatos.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/script/proc_comprobar_marca.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/script/procedimiento_descuento.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/script/smartphones(datos-prueba).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/script/smartphones(estructura).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/script/smartphones.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/EscrituraDOM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/Fabricante.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/GeneradorDOM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/LecturaDOM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/LecturaEmpleadoXml.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/LecturaSAX.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/Principal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/SAXHandlerFabricantes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/SAXHandlerSmartphones.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaEV2/src/Smartphone.java" beforeDir="false" />
+    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Corregidas las anotaciones de la clase.">
+      <change afterPath="$PROJECT_DIR$/.idea/EjerciciosHibernate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +40,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PracticaJDBC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EjerciciosJDBC" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -142,6 +114,32 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Capturada la excepción por clave primaria duplicada" />
     <MESSAGE value="Terminados los ejercicios de Hibernate" />
@@ -159,14 +157,20 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="94" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1580411308891" />
-    <state x="294" y="87" key="CommitChangelistDialog2" timestamp="1582745954002">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582803404574">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582803404574" />
+    <state x="441" y="92" key="CommitChangelistDialog2" timestamp="1582803324978">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="294" y="87" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1582745954002" />
-    <state x="420" y="247" key="FileChooserDialogImpl" timestamp="1582745025074">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="441" y="92" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582803324978" />
+    <state x="630" y="261" key="FileChooserDialogImpl" timestamp="1582803249291">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1582745025074" />
+    <state x="630" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582803249291" />
     <state width="1237" height="262" key="GridCell.Tab.0.bottom" timestamp="1581536697888">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
