@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Ejercicio 13. Relación 1 a 1.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Direccion3.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Profesor3.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/App3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/Direccion3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/Direccion3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/Profesor3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/Profesor3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +55,7 @@
       <recent name="C:\Users\DAM\Git\ADT\PruebaMaven\src\main\java\ejemplo01" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App2">
+  <component name="RunManager" selected="Application.App3">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ejemplo01.App" />
       <module name="PruebaMaven" />
@@ -85,8 +82,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="App3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ejemplo01.App3" />
+      <module name="EjerciciosHibernate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ejemplo01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App3" />
         <item itemvalue="Application.App2" />
         <item itemvalue="Application.App" />
       </list>
@@ -145,7 +156,28 @@
       <option name="project" value="LOCAL" />
       <updated>1582832088419</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ejercicio 13. Creados los ficheros de mapeo de Profesor3 y Direccion3">
+      <created>1582891203244</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1582891203244</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ejercicio 13. Agregadas las sentencias de los mapeos de las clases Direccion3 y Profesor3">
+      <created>1582891524485</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1582891524485</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ejercicio 13. Corregidas las clases a las que hacen referencia.">
+      <created>1582892711805</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1582892711805</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,7 +216,10 @@
     <MESSAGE value="Corregidas las anotaciones de la clase." />
     <MESSAGE value="Ejercicio 12. Mapeado Profesor2 con etiquetas." />
     <MESSAGE value="Ejercicio 13. Relación 1 a 1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 13. Relación 1 a 1." />
+    <MESSAGE value="Ejercicio 13. Creados los ficheros de mapeo de Profesor3 y Direccion3" />
+    <MESSAGE value="Ejercicio 13. Agregadas las sentencias de los mapeos de las clases Direccion3 y Profesor3" />
+    <MESSAGE value="Ejercicio 13. Corregidas las clases a las que hacen referencia." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 13. Corregidas las clases a las que hacen referencia." />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="151" key="#Project_Structure" timestamp="1580411513400">
@@ -204,32 +239,36 @@
     </state>
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1582828217537" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582889392566" />
-    <state x="441" y="92" key="CommitChangelistDialog2" timestamp="1582889403938">
+    <state x="591" y="165" key="CommitChangelistDialog2" timestamp="1582893204376">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="294" y="87" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1582832087921" />
-    <state x="441" y="92" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582889403938" />
+    <state x="591" y="165" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582893204376" />
     <state x="630" y="261" key="FileChooserDialogImpl" timestamp="1582803249291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1582745025074" />
     <state x="630" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582803249291" />
-    <state width="1237" height="262" key="GridCell.Tab.0.bottom" timestamp="1582830361777">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1582892774989">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="262" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
-    <state width="1237" height="262" key="GridCell.Tab.0.center" timestamp="1582830361777">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582892774989" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1582892774989">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="262" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
-    <state width="1237" height="262" key="GridCell.Tab.0.left" timestamp="1582830361777">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582892774989" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1582892774989">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="262" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
-    <state width="1237" height="262" key="GridCell.Tab.0.right" timestamp="1582830361777">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582892774989" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1582892774989">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="262" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582892774989" />
     <state x="120" y="67" key="SettingsEditor" timestamp="1580411481849">
       <screen x="0" y="0" width="1280" height="984" />
     </state>

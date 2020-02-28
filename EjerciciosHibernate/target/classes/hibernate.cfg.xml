@@ -11,6 +11,9 @@
         <property name="hibernate.show_sql">true</property>
         <mapping resource="Profesor.hbm.xml"/>
         <mapping class="ejemplo01.Profesor2"/>
+        <mapping resource="Profesor3.hbm.xml"/>
+        <mapping resource="Direccion3.hbm.xml"/>
+
         <!--- <mapping class="ejemplo01.Profesor"/>
         Comentamos esta línea porque es como se indica que debe mapear la clase con anotaciones
          y solo puede mapear de una forma a la vez-->
