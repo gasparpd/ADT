@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/App3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
-    </list>
+    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582892711805</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ejercicio 13. Guardado correctamente el objeto profesor con su respectiva clase.">
+      <created>1582893267736</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1582893267736</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,7 +222,8 @@
     <MESSAGE value="Ejercicio 13. Creados los ficheros de mapeo de Profesor3 y Direccion3" />
     <MESSAGE value="Ejercicio 13. Agregadas las sentencias de los mapeos de las clases Direccion3 y Profesor3" />
     <MESSAGE value="Ejercicio 13. Corregidas las clases a las que hacen referencia." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 13. Corregidas las clases a las que hacen referencia." />
+    <MESSAGE value="Ejercicio 13. Guardado correctamente el objeto profesor con su respectiva clase." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 13. Guardado correctamente el objeto profesor con su respectiva clase." />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="151" key="#Project_Structure" timestamp="1580411513400">
@@ -239,11 +243,15 @@
     </state>
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1582828217537" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582889392566" />
-    <state x="591" y="165" key="CommitChangelistDialog2" timestamp="1582893204376">
+    <state x="591" y="165" key="CommitChangelistDialog2" timestamp="1582893375526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="294" y="87" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1582832087921" />
-    <state x="591" y="165" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582893204376" />
+    <state x="591" y="165" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582893375526" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582893449632">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582893449632" />
     <state x="630" y="261" key="FileChooserDialogImpl" timestamp="1582803249291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
