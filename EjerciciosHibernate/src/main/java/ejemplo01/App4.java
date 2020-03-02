@@ -132,11 +132,19 @@ public class App4 {
         Transaction tx = session.beginTransaction();
 
         //Creamos el objeto
-        Direccion4 direccion = new Direccion4(1, "Plaza del ayuntamiento", 8, "Xativa", "Valencia");
-        Profesor4 profesor = new Profesor4(1, "Juan", "Perez", "García");
-        profesor.setDireccion(direccion);
+        Direccion4 direccion1 = new Direccion4(3, "Calle de la sarten", 23, "Manises", "Valencia");
+        Profesor4 profesor1 = new Profesor4(3, "Sergio", "Mateo", "Ramis");
+        profesor1.setDireccion(direccion1);
+        direccion1.setProfesor(profesor1);
+
+        Direccion4 direccion2 = new Direccion4(4, "Calle Luis lamarca", 45, "Torrente", "Valencia");
+        Profesor4 profesor2 = new Profesor4(4, "Paco", "Moreno", "Díaz");
+        profesor2.setDireccion(direccion2);
+        direccion2.setProfesor(profesor2);
+
         //Guardamos el profesor
-        session.saveOrUpdate(profesor);
+        session.saveOrUpdate(profesor1);
+        session.saveOrUpdate(direccion2);
 
         tx.commit();
         session.close();

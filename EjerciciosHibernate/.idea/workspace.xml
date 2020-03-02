@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="" />
+    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Ejercicio 15. Clases anotadas.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/App4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/App4.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +39,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -47,6 +50,8 @@
       <recent name="ejemplo01" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gaspa\Git\ADT\EjerciciosHibernate\src\main\resources" />
+      <recent name="C:\Users\gaspa\Git\ADT\EjerciciosHibernate\src\main\java\ejemplo01" />
       <recent name="C:\Users\DAM\Git\ADT\PruebaMaven\src\main\resources" />
       <recent name="C:\Users\DAM\Git\ADT\PruebaMaven\src\main\java\ejemplo01" />
     </key>
@@ -57,7 +62,7 @@
       <module name="PruebaMaven" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ejemplo01.*" />
+          <option name="PATTERN" value="ejemplo01.Profesor3" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -70,7 +75,7 @@
       <module name="EjerciciosHibernate" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ejemplo01.*" />
+          <option name="PATTERN" value="ejemplo01.Profesor3" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,7 +88,7 @@
       <module name="EjerciciosHibernate" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ejemplo01.*" />
+          <option name="PATTERN" value="ejemplo01.Profesor3" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -180,7 +185,35 @@
       <option name="project" value="LOCAL" />
       <updated>1582893267736</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Ejercicio 13. Actualizado workspace.xml.">
+      <created>1582893477786</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1582893477786</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Ejercicio 14. Modificado para Direccion4 y Profesor4.">
+      <created>1583146955848</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1583146955848</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Ejercicio 15. Actualizado.">
+      <created>1583147005349</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1583147005350</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Ejercicio 15. Clases anotadas.">
+      <created>1583147051278</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1583147051278</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,7 +256,11 @@
     <MESSAGE value="Ejercicio 13. Agregadas las sentencias de los mapeos de las clases Direccion3 y Profesor3" />
     <MESSAGE value="Ejercicio 13. Corregidas las clases a las que hacen referencia." />
     <MESSAGE value="Ejercicio 13. Guardado correctamente el objeto profesor con su respectiva clase." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 13. Guardado correctamente el objeto profesor con su respectiva clase." />
+    <MESSAGE value="Ejercicio 13. Actualizado workspace.xml." />
+    <MESSAGE value="Ejercicio 14. Modificado para Direccion4 y Profesor4." />
+    <MESSAGE value="Ejercicio 15. Actualizado." />
+    <MESSAGE value="Ejercicio 15. Clases anotadas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 15. Clases anotadas." />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="151" key="#Project_Structure" timestamp="1580411513400">
@@ -234,20 +271,20 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="94" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1580411308891" />
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1582889679616">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1583144592104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582889679616" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583144592104" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582889392566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1582828217537" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582889392566" />
-    <state x="591" y="165" key="CommitChangelistDialog2" timestamp="1582893375526">
+    <state x="591" y="165" key="CommitChangelistDialog2" timestamp="1583147072434">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="294" y="87" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1582832087921" />
-    <state x="591" y="165" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582893375526" />
+    <state x="591" y="165" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583147072434" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582893449632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -257,34 +294,35 @@
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1582745025074" />
     <state x="630" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582803249291" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1582892774989">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1582893493879">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="262" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582892774989" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1582892774989">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582893493879" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1582893493878">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="262" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582892774989" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1582892774989">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582893493878" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1582893493878">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="262" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582892774989" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1582892774989">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582893493878" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1582893493879">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="262" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1582830361777" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582892774989" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582893493879" />
     <state x="120" y="67" key="SettingsEditor" timestamp="1580411481849">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="120" y="67" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1580411481849" />
-    <state x="336" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1582828210570">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="504" y="335" key="com.intellij.ide.util.TipDialog" timestamp="1583142782174">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="336" y="317" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1582828210570" />
+    <state x="504" y="335" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583142782174" />
     <state x="22" y="195" key="new project wizard" timestamp="1580151202970">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
