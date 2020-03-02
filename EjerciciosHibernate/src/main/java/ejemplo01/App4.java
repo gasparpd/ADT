@@ -3,8 +3,10 @@ package ejemplo01;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import javax.persistence.PersistenceException;
+import java.util.List;
 
 public class App4 {
     public static void main(String[] args) {
@@ -13,7 +15,8 @@ public class App4 {
         //leerProfesorLoad();
         //modificarProfesor();
         //borrarProfesor();
-        guardarOActualizarProfesor();
+        //guardarOActualizarProfesor();
+        queryClass();
     }
 
     private static void guardarProfesor() {
@@ -147,6 +150,23 @@ public class App4 {
         session.saveOrUpdate(direccion2);
 
         tx.commit();
+        session.close();
+        sessionFactory.close();
+    }
+
+    public static void queryClass() {
+        //Obtenemos el SessionFactory
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+
+        //Abrimos la sesión mediante el SessionFactory
+        Session session = sessionFactory.openSession();
+
+        Query query = session.createQuery("SELECT p FROM Profesor p");
+        List<Profesor> profesores = query.list();
+        for (Profesor profesor : profesores) {
+            System.out.println(profesor.getNombre());
+        }
+
         session.close();
         sessionFactory.close();
     }
