@@ -157,6 +157,7 @@ public class App {
         // CONSULTA CON NOMBRE
         Query query = session.getNamedQuery("findAllProfesores");
 
+        // EJEMPLO CLASE Query
         /*Query query = session.createQuery("SELECT p FROM Profesor p");*/
         List<Profesor> profesores = query.list();
         for (Profesor profesor : profesores) {
