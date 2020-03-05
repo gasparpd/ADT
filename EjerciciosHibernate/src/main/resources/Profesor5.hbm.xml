@@ -12,7 +12,7 @@
             <key>
                 <column name="idProfesor"/>
             </key>
-            <one-to-many class="ejemplo01.CorreoElectronico"/>
+            <one-to-many class="ejemplo01.CorreoElectronico5"/>
         </set>
     </class>
 </hibernate-mapping>
