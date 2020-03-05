@@ -1,13 +1,22 @@
 package ejemplo01;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
+@Entity
+@Table(name="Profesor5")
 public class Profesor5 implements Serializable{
+    @Id
+    @Column(name="ape2")
     private int id;
+    @Column(name="ape2")
     private String nombre;
+    @Column(name="ape2")
     private String ape1;
+    @Column(name="ape2")
     private String ape2;
+    @OneToMany(mappedBy="profesor",cascade= CascadeType.ALL)
     private Set<CorreoElectronico5> correosElectronicos;
 
     public Profesor5() {
