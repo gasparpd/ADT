@@ -5,14 +5,14 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-@Table(name="Profesor5")
+@Table(name="profesor5")
 public class Profesor5 implements Serializable{
     @Id
-    @Column(name="ape2")
+    @Column(name="id")
     private int id;
-    @Column(name="ape2")
+    @Column(name="nombre")
     private String nombre;
-    @Column(name="ape2")
+    @Column(name="ape1")
     private String ape1;
     @Column(name="ape2")
     private String ape2;
