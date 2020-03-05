@@ -1,10 +1,18 @@
 package ejemplo01;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "correoelectronico5")
 public class CorreoElectronico5 implements Serializable {
+    @Id
+    @Column(name = "idCorreo")
     private int idCorreo;
+    @Column(name = "direccionCorreo")
     private String direccionCorreo;
+    @ManyToOne
+    @JoinColumn(name="idProfesor")
     private Profesor5 profesor;
 
     public CorreoElectronico5(){

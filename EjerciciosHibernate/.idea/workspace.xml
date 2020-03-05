@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/Profesor5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/Profesor5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/CorreoElectronico5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/CorreoElectronico5.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583436053692</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Ejercicio 18. Añadidas las anotaciones en clase Profesor5">
+      <created>1583437102027</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1583437102027</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -363,7 +369,8 @@
     <MESSAGE value="Ejercicio 17. Fichero de mapeo de la clase CorreoElectronico5" />
     <MESSAGE value="Ejercicio 17. Agregado Profesor5 y CorreoElectronico5" />
     <MESSAGE value="Ejercicio 17 terminado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 17 terminado" />
+    <MESSAGE value="Ejercicio 18. Añadidas las anotaciones en clase Profesor5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 18. Añadidas las anotaciones en clase Profesor5" />
   </component>
   <component name="WindowStateProjectService">
     <state x="357" y="150" key="#App" timestamp="1583348501534">
@@ -388,10 +395,10 @@
     </state>
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1583176455088" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582889392566" />
-    <state x="430" y="56" key="CommitChangelistDialog2" timestamp="1583436053201">
+    <state x="430" y="56" key="CommitChangelistDialog2" timestamp="1583437101562">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="430" y="56" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1583436053201" />
+    <state x="430" y="56" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1583437101562" />
     <state x="591" y="165" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583147682289" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582893449632">
       <screen x="0" y="0" width="1920" height="1040" />
