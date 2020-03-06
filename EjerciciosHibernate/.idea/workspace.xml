@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/CorreoElectronico5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/CorreoElectronico5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/App6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/CorreoElectronico6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/Profesor6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583437102027</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Ejercicio 18. Modificado el mapeo de las clases CorreoElectronico5 y Profesor5">
+      <created>1583494888289</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1583494888289</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,7 +357,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Capturada la excepción por clave primaria duplicada" />
     <MESSAGE value="Terminados los ejercicios de Hibernate" />
     <MESSAGE value="Terminados los ejercicios de Hibernate." />
     <MESSAGE value="Agregadas las anotaciones a la clase." />
@@ -370,7 +381,8 @@
     <MESSAGE value="Ejercicio 17. Agregado Profesor5 y CorreoElectronico5" />
     <MESSAGE value="Ejercicio 17 terminado" />
     <MESSAGE value="Ejercicio 18. Añadidas las anotaciones en clase Profesor5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 18. Añadidas las anotaciones en clase Profesor5" />
+    <MESSAGE value="Ejercicio 18. Modificado el mapeo de las clases CorreoElectronico5 y Profesor5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 18. Modificado el mapeo de las clases CorreoElectronico5 y Profesor5" />
   </component>
   <component name="WindowStateProjectService">
     <state x="357" y="150" key="#App" timestamp="1583348501534">
@@ -390,16 +402,16 @@
     </state>
     <state x="510" y="193" key="#com.intellij.ide.util.MemberChooser/0.0.1280.984@0.0.1280.984" timestamp="1583435566525" />
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583144592104" />
-    <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583176455088">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583494339781">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1583176455088" />
-    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582889392566" />
-    <state x="430" y="56" key="CommitChangelistDialog2" timestamp="1583437376955">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583494339781" />
+    <state x="591" y="165" key="CommitChangelistDialog2" timestamp="1583494887732">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="430" y="56" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1583437376955" />
-    <state x="591" y="165" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583147682289" />
+    <state x="591" y="165" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583494887732" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582893449632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -409,35 +421,35 @@
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1582745025074" />
     <state x="630" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582803249291" />
-    <state width="1237" height="426" key="GridCell.Tab.0.bottom" timestamp="1583436241864">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1877" height="703" key="GridCell.Tab.0.bottom" timestamp="1583495588155">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="426" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
-    <state width="1877" height="862" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583147629028" />
-    <state width="1237" height="426" key="GridCell.Tab.0.center" timestamp="1583436241864">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1877" height="703" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583495588155" />
+    <state width="1877" height="703" key="GridCell.Tab.0.center" timestamp="1583495588155">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="426" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
-    <state width="1877" height="862" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583147629027" />
-    <state width="1237" height="426" key="GridCell.Tab.0.left" timestamp="1583436241864">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1877" height="703" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583495588155" />
+    <state width="1877" height="703" key="GridCell.Tab.0.left" timestamp="1583495588155">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="426" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
-    <state width="1877" height="862" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583147629027" />
-    <state width="1237" height="426" key="GridCell.Tab.0.right" timestamp="1583436241864">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state width="1877" height="703" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583495588155" />
+    <state width="1877" height="703" key="GridCell.Tab.0.right" timestamp="1583495588155">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="426" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
-    <state width="1877" height="862" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583147629027" />
+    <state width="1877" height="703" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583495588155" />
     <state x="120" y="67" key="SettingsEditor" timestamp="1580411481849">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="120" y="67" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1580411481849" />
-    <state x="336" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1583434072219">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="504" y="335" key="com.intellij.ide.util.TipDialog" timestamp="1583494306287">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="336" y="317" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1583434072219" />
-    <state x="504" y="335" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583142782174" />
+    <state x="504" y="335" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583494306287" />
     <state x="22" y="195" key="new project wizard" timestamp="1583432919702">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
