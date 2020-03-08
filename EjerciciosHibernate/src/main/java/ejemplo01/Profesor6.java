@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name="profesor5")
+@Table(name="profesor6")
 public class Profesor6 implements Serializable{
     @Id
     @Column(name="id")
@@ -18,7 +18,7 @@ public class Profesor6 implements Serializable{
     @Column(name="ape2")
     private String ape2;
     @OneToMany(mappedBy="profesor",cascade= CascadeType.ALL)
-    private List<CorreoElectronico5> correosElectronicos;
+    private List<CorreoElectronico6> correosElectronicos;
 
     public Profesor6() {
     }
@@ -62,11 +62,11 @@ public class Profesor6 implements Serializable{
         this.ape2 = ape2;
     }
 
-    public List<CorreoElectronico5> getCorreosElectronicos() {
+    public List<CorreoElectronico6> getCorreosElectronicos() {
         return correosElectronicos;
     }
 
-    public void setCorreosElectronicos(List<CorreoElectronico5> correosElectronicos) {
+    public void setCorreosElectronicos(List<CorreoElectronico6> correosElectronicos) {
         this.correosElectronicos = correosElectronicos;
     }
 }
