@@ -13,12 +13,12 @@ public class CorreoElectronico6 implements Serializable {
     private String direccionCorreo;
     @ManyToOne
     @JoinColumn(name="idProfesor")
-    private Profesor5 profesor;
+    private Profesor6 profesor;
 
     public CorreoElectronico6(){
     }
 
-    public CorreoElectronico6(int idCorreo, String direccionCorreo, Profesor5 profesor){
+    public CorreoElectronico6(int idCorreo, String direccionCorreo, Profesor6 profesor){
         this.idCorreo=idCorreo;
         this.direccionCorreo=direccionCorreo;
         this.profesor=profesor;
@@ -40,11 +40,11 @@ public class CorreoElectronico6 implements Serializable {
         this.direccionCorreo = direccionCorreo;
     }
 
-    public Profesor5 getProfesor() {
+    public Profesor6 getProfesor() {
         return profesor;
     }
 
-    public void setProfesor(Profesor5 profesor) {
+    public void setProfesor(Profesor6 profesor) {
         this.profesor = profesor;
     }
 }
