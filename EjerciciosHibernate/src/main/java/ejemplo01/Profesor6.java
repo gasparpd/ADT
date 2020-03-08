@@ -2,6 +2,7 @@ package ejemplo01;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -17,7 +18,7 @@ public class Profesor6 implements Serializable{
     @Column(name="ape2")
     private String ape2;
     @OneToMany(mappedBy="profesor",cascade= CascadeType.ALL)
-    private Set<CorreoElectronico5> correosElectronicos;
+    private List<CorreoElectronico5> correosElectronicos;
 
     public Profesor6() {
     }
@@ -61,11 +62,11 @@ public class Profesor6 implements Serializable{
         this.ape2 = ape2;
     }
 
-    public Set<CorreoElectronico5> getCorreosElectronicos() {
+    public List<CorreoElectronico5> getCorreosElectronicos() {
         return correosElectronicos;
     }
 
-    public void setCorreosElectronicos(Set<CorreoElectronico5> correosElectronicos) {
+    public void setCorreosElectronicos(List<CorreoElectronico5> correosElectronicos) {
         this.correosElectronicos = correosElectronicos;
     }
 }
