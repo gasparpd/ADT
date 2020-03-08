@@ -4,8 +4,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import sun.font.CoreMetrics;
 
 import javax.persistence.PersistenceException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -130,11 +132,11 @@ public class App6 {
 
     public static void guardarOActualizarProfesor() {
 
-        Profesor5 profesor = new Profesor5(7, "Sara", "Barrrera", "Salas");
-        Set <CorreoElectronico5> correosElectronicos = new HashSet<CorreoElectronico5>();
-        correosElectronicos.add(new CorreoElectronico5(3, "sara@yahoo.com", profesor));
-        correosElectronicos.add(new CorreoElectronico5(2, "sara@hotmail.com", profesor));
-        correosElectronicos.add(new CorreoElectronico5(1, "sara@gmail.com", profesor));
+        Profesor6 profesor = new Profesor6(7, "Sara", "Barrrera", "Salas");
+        List <CorreoElectronico6> correosElectronicos = new ArrayList<CorreoElectronico6>();
+        correosElectronicos.add(new CorreoElectronico6(3, "sara@yahoo.com", profesor));
+        correosElectronicos.add(new CorreoElectronico6(2, "sara@hotmail.com", profesor));
+        correosElectronicos.add(new CorreoElectronico6(1, "sara@gmail.com", profesor));
 
         profesor.setCorreosElectronicos(correosElectronicos);
 
