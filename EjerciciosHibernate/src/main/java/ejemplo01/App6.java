@@ -4,13 +4,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import sun.font.CoreMetrics;
 
 import javax.persistence.PersistenceException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class App6 {
     public static void main(String[] args) {
