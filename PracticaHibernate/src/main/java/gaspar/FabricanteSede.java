@@ -1,14 +1,11 @@
 package gaspar;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "fabricante")
-public class Fabricante implements Serializable {
+public class FabricanteSede implements Serializable {
 
     @Id
     @Column(name = "ID")
@@ -23,18 +20,18 @@ public class Fabricante implements Serializable {
     @Column(name = "MATRIZ")
     private int matriz;
 
-    @Column(name = "ID_SEDE")
-    private int id_sede;
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Sede sede;
 
-    public Fabricante(int id, String nombre, String f_year, int matriz, int id_sede) {
+    public FabricanteSede(int id, String nombre, String f_year, int matriz) {
         this.id = id;
         this.nombre = nombre;
         this.f_year = f_year;
         this.matriz = matriz;
-        this.id_sede = id_sede;
     }
 
-    public Fabricante() {
+    public FabricanteSede() {
     }
 
     public int getId() {
@@ -69,11 +66,11 @@ public class Fabricante implements Serializable {
         this.matriz = matriz;
     }
 
-    public int getId_sede() {
-        return id_sede;
+    public Sede getSede() {
+        return sede;
     }
 
-    public void setId_sede(int id_sede) {
-        this.id_sede = id_sede;
+    public void setSede(Sede sede) {
+        this.sede = sede;
     }
 }
