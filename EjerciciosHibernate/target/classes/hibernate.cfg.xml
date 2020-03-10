@@ -15,8 +15,12 @@
         <mapping resource="Direccion3.hbm.xml"/>
         <mapping class="ejemplo01.Profesor4"/>
         <mapping class="ejemplo01.Direccion4"/>
-        <mapping resource="Profesor5.hbm.xml"/>
-        <mapping resource="CorreoElectronico5.hbm.xml"/>
+        <!--<mapping resource="Profesor5.hbm.xml"/>
+        <mapping resource="CorreoElectronico5.hbm.xml"/>-->
+        <mapping class="ejemplo01.Profesor5"/>
+        <mapping class="ejemplo01.CorreoElectronico5"/>
+        <mapping class="ejemplo01.Profesor6"/>
+        <mapping class="ejemplo01.CorreoElectronico6"/>
 
         <!--- <mapping class="ejemplo01.Profesor"/>
         Comentamos esta línea porque es como se indica que debe mapear la clase con anotaciones
