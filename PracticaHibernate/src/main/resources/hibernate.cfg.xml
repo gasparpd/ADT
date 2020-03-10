@@ -9,5 +9,8 @@
         <property name="connection.password">admin</property>
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="hibernate.show_sql">true</property>
+        <mapping resource="sede.hbm.xml"/>
+        <mapping class="gaspar.Fabricante"/>
+        <mapping class="gaspar.Smartphone"/>
     </session-factory>
 </hibernate-configuration>
