@@ -9,10 +9,10 @@ import javax.persistence.PersistenceException;
 public class AppOneToOneUni {
 
     public static void main(String[] args) {
-        //guardarFabricante();
-        leerFabricante();
-        /*leerFabricanteLoad();
-        modificarFabricante();
+        /*guardarFabricante();  //Hecho
+        getFabricante();*/     //Hecho
+        loadFabricante();
+        /*modificarFabricante();
         borrarFabricante();*/
         //guardarOActualizarFabricante();
         //queryClass();
@@ -26,14 +26,14 @@ public class AppOneToOneUni {
             //Abrimos la sesión mediante el SessionFactory
             Session session = sessionFactory.openSession();
 
-            //Creamos el objeto FabricanteSede y le pasamos su sede
-            FabricanteSede fab = new FabricanteSede(1, "Apple", "1997", null);
             Transaction tx = session.beginTransaction();
 
+            //Creamos el objeto FabricanteSede y le pasamos su sede
+            FabricanteSede fab = new FabricanteSede(1, "Apple", "1997", null);
             Sede sede = new Sede( 1, "España", "Madrid", "21012");
             fab.setSede(sede);
 
-            session.save(fab);//Aquí guardamos el objeto en la base de datos.
+            session.save(fab);  //Guardamos el objeto en la base de datos.
 
             tx.commit();
             session.close();
@@ -43,14 +43,16 @@ public class AppOneToOneUni {
         }
     }
 
-    public static void leerFabricante() {
+    public static void getFabricante() {
         //Obtenemos el SessionFactory
-
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        //Abrimos la sesión mediante el SessionFactory
 
+        //Abrimos la sesión mediante el SessionFactory
         Session session = sessionFactory.openSession();
+
         Transaction tx = session.beginTransaction();
+
+        //Obtenemos el objeto con el método get y lo imprimimos (con su sede)
         try {
             FabricanteSede fab = session.get(FabricanteSede.class, 1);
             System.out.println("Fabricante: " + fab.getNombre());
@@ -64,7 +66,7 @@ public class AppOneToOneUni {
         sessionFactory.close();
     }
 
-    public static void leerFabricanteLoad() {
+    public static void loadFabricante() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
@@ -73,9 +75,11 @@ public class AppOneToOneUni {
 
         Transaction tx = session.beginTransaction();
 
+        //Obtenemos el objeto con el método get y lo imprimimos (con su sede)
         try {
-            FabricanteSede fab = session.load(FabricanteSede.class, 102);
+            FabricanteSede fab = session.load(FabricanteSede.class, 1);
             System.out.println("Fabricante: " + fab.getNombre());
+            System.out.println("Sede: " +fab.getSede().toString());
         } catch (org.hibernate.ObjectNotFoundException e) {
             System.out.println("El valor clave no se ha encontrado en la base de datos.");
         }
