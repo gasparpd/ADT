@@ -31,6 +31,12 @@ public class FabricanteSede implements Serializable {
         this.matriz = matriz;
     }
 
+    public FabricanteSede(int id, String nombre, String f_year) {
+        this.id = id;
+        this.nombre = nombre;
+        this.f_year = f_year;
+    }
+
     public FabricanteSede() {
     }
 
