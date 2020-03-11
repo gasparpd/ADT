@@ -18,13 +18,13 @@ public class FabricanteSede implements Serializable {
     private String f_year;
 
     @Column(name = "MATRIZ")
-    private int matriz;
+    private Integer matriz;
 
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Sede sede;
 
-    public FabricanteSede(int id, String nombre, String f_year, int matriz) {
+    public FabricanteSede(int id, String nombre, String f_year, Integer matriz) {
         this.id = id;
         this.nombre = nombre;
         this.f_year = f_year;
@@ -64,11 +64,11 @@ public class FabricanteSede implements Serializable {
         this.f_year = f_year;
     }
 
-    public int getMatriz() {
+    public Integer getMatriz() {
         return matriz;
     }
 
-    public void setMatriz(int matriz) {
+    public void setMatriz(Integer matriz) {
         this.matriz = matriz;
     }
 
