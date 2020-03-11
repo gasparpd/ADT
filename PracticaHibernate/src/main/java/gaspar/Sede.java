@@ -18,6 +18,16 @@ public class Sede implements Serializable {
     public Sede() {
     }
 
+    @Override
+    public String toString() {
+        return "Sede{" +
+                "id=" + id +
+                ", pais='" + pais + '\'' +
+                ", localidad='" + localidad + '\'' +
+                ", cpostal='" + cpostal + '\'' +
+                '}';
+    }
+
     public int getId() {
         return id;
     }
@@ -48,15 +58,5 @@ public class Sede implements Serializable {
 
     public void setCpostal(String cpostal) {
         this.cpostal = cpostal;
-    }
-
-    @Override
-    public String toString() {
-        return "Sede{" +
-                "id=" + id +
-                ", pais='" + pais + '\'' +
-                ", localidad='" + localidad + '\'' +
-                ", cpostal='" + cpostal + '\'' +
-                '}';
     }
 }
