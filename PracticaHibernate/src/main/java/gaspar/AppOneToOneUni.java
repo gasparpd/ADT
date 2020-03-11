@@ -9,16 +9,16 @@ import javax.persistence.PersistenceException;
 public class AppOneToOneUni {
 
     public static void main(String[] args) {
-        //guardarFabricante();  //Hecho
-        //getFabricante();       //Hecho
+        //saveFabricante();     //Hecho
+        //getFabricante();      //Hecho
         //loadFabricante();     //Hecho
-        modificarFabricante();
-        //borrarFabricante();
+        //updateFabricante();   //Hecho
+        //deleteFabricante();   //Hecho
         //guardarOActualizarFabricante();
         //queryClass();
     }
 
-    private static void guardarFabricante() {
+    private static void saveFabricante() {
         try {
             //Obtenemos el SessionFactory
             SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -89,7 +89,7 @@ public class AppOneToOneUni {
         sessionFactory.close();
     }
 
-    public static void modificarFabricante() {
+    public static void updateFabricante() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
@@ -122,7 +122,7 @@ public class AppOneToOneUni {
         sessionFactory.close();
     }
 
-    public static void borrarFabricante() {
+    public static void deleteFabricante() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
@@ -130,8 +130,10 @@ public class AppOneToOneUni {
         Session session = sessionFactory.openSession();
 
         Transaction tx = session.beginTransaction();
+
+        //Obtenemos el objeto, imprimimos su nombre y lo borramos
         try {
-            FabricanteSede fab = session.get(FabricanteSede.class, 101);
+            FabricanteSede fab = session.get(FabricanteSede.class, 1);
             System.out.println("Fabricante:" + fab.getNombre());
             session.delete(fab);
         } catch (NullPointerException e) {
