@@ -14,7 +14,7 @@ public class FabricanteSede implements Serializable {
     @Column(name = "NOMBRE")
     private String nombre;
 
-    @Column(name = "FOUNDATION_YEAR")
+    @Column(name = "FUNDACION_YEAR")
     private String f_year;
 
     @Column(name = "MATRIZ")
