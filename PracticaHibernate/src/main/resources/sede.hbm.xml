@@ -4,8 +4,8 @@
 <hibernate-mapping>
     <class name="gaspar.Sede">
         <id column="ID" name="id" type="integer"/>
-        <property name="pais"/>
-        <property name="localidad"/>
-        <property name="cpostal"/>
+        <property name="PAIS"/>
+        <property name="LOCALIDAD"/>
+        <property name="CP"/>
     </class>
 </hibernate-mapping>
