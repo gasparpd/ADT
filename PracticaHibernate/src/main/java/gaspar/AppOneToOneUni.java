@@ -9,11 +9,11 @@ import javax.persistence.PersistenceException;
 public class AppOneToOneUni {
 
     public static void main(String[] args) {
-        /*guardarFabricante();  //Hecho
-        getFabricante();*/     //Hecho
-        loadFabricante();
-        /*modificarFabricante();
-        borrarFabricante();*/
+        //guardarFabricante();  //Hecho
+        //getFabricante();       //Hecho
+        //loadFabricante();     //Hecho
+        modificarFabricante();
+        //borrarFabricante();
         //guardarOActualizarFabricante();
         //queryClass();
     }
@@ -97,11 +97,22 @@ public class AppOneToOneUni {
         Session session = sessionFactory.openSession();
 
         Transaction tx = session.beginTransaction();
+
         try {
-            FabricanteSede fab = session.get(FabricanteSede.class, 101);
+            FabricanteSede fab = session.get(FabricanteSede.class, 1);  //Obtenemos el fabricante
             System.out.println("Fabricante: " + fab.getNombre());
-            fab.setNombre("OPPO");
-            session.update(fab);
+
+            fab.setNombre("REALME"); //Modificamos su nombre
+
+            // Obtenemos y modificamos su sede
+            Sede sede = fab.getSede();
+            sede.setPais("China");
+            sede.setLocalidad("Shenzen");
+            sede.setCpostal("32560");
+
+            fab.setSede(sede);//Le añadimos al fabricante la nueva sede creada
+
+            session.update(fab);//Actualizamos el fabricante
         } catch (NullPointerException e) {
             System.out.println("El identificador no ha sido encontrado en la base de datos.");
         }
