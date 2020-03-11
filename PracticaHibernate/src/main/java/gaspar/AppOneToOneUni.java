@@ -9,16 +9,16 @@ import javax.persistence.PersistenceException;
 public class AppOneToOneUni {
 
     public static void main(String[] args) {
-        //guardarProfesor();
-        //leerProfesor();
-        //leerProfesorLoad();
-        //modificarProfesor();
-        //borrarProfesor();
-        //guardarOActualizarProfesor();
+        guardarFabricante();
+        /*leerFabricante();
+        leerFabricanteLoad();
+        modificarFabricante();
+        borrarFabricante();*/
+        //guardarOActualizarFabricante();
         //queryClass();
     }
 
-    private static void guardarProfesor() {
+    private static void guardarFabricante() {
         try {
             //Obtenemos el SessionFactory
             SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -26,9 +26,12 @@ public class AppOneToOneUni {
             //Abrimos la sesión mediante el SessionFactory
             Session session = sessionFactory.openSession();
 
-            //Creamos el objeto FabricanteSede
-            FabricanteSede fab = new FabricanteSede(1, "Apple", "1997", 0);
+            //Creamos el objeto FabricanteSede y le pasamos su sede
+            FabricanteSede fab = new FabricanteSede(1, "Apple", "1997", null);
             Transaction tx = session.beginTransaction();
+
+            Sede sede = new Sede( 1, "España", "Madrid", "21012");
+            fab.setSede(sede);
 
             session.save(fab);//Aquí guardamos el objeto en la base de datos.
 
@@ -40,7 +43,7 @@ public class AppOneToOneUni {
         }
     }
 
-    /*public static void leerProfesor() {
+    public static void leerFabricante() {
         //Obtenemos el SessionFactory
 
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -49,8 +52,8 @@ public class AppOneToOneUni {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
         try {
-            Profesor4 profesor = session.get(Profesor4.class, 102);
-            System.out.println("Profesor: " + profesor.getNombre());
+            FabricanteSede fab = session.get(FabricanteSede.class, 102);
+            System.out.println("Fabricante: " + fab.getNombre());
         } catch (NullPointerException e) {
             System.out.println("El identificador no ha sido encontrado en la base de datos.");
         }
@@ -60,7 +63,7 @@ public class AppOneToOneUni {
         sessionFactory.close();
     }
 
-    public static void leerProfesorLoad() {
+    public static void leerFabricanteLoad() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
@@ -70,8 +73,8 @@ public class AppOneToOneUni {
         Transaction tx = session.beginTransaction();
 
         try {
-            Profesor4 profesor = session.load(Profesor4.class, 102);
-            System.out.println("Profesor: " + profesor.getNombre());
+            FabricanteSede fab = session.load(FabricanteSede.class, 102);
+            System.out.println("Fabricante: " + fab.getNombre());
         } catch (org.hibernate.ObjectNotFoundException e) {
             System.out.println("El valor clave no se ha encontrado en la base de datos.");
         }
@@ -81,7 +84,7 @@ public class AppOneToOneUni {
         sessionFactory.close();
     }
 
-    public static void modificarProfesor() {
+    public static void modificarFabricante() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
@@ -90,11 +93,10 @@ public class AppOneToOneUni {
 
         Transaction tx = session.beginTransaction();
         try {
-            Profesor4 profesor = session.get(Profesor4.class, 101);
-            System.out.println("Profesor: " + profesor.getNombre());
-            System.out.println("Profesor: " + profesor.getNombre());
-            profesor.setNombre("Pedro");
-            session.update(profesor);
+            FabricanteSede fab = session.get(FabricanteSede.class, 101);
+            System.out.println("Fabricante: " + fab.getNombre());
+            fab.setNombre("OPPO");
+            session.update(fab);
         } catch (NullPointerException e) {
             System.out.println("El identificador no ha sido encontrado en la base de datos.");
         }
@@ -104,7 +106,7 @@ public class AppOneToOneUni {
         sessionFactory.close();
     }
 
-    public static void borrarProfesor() {
+    public static void borrarFabricante() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
@@ -113,9 +115,9 @@ public class AppOneToOneUni {
 
         Transaction tx = session.beginTransaction();
         try {
-            Profesor4 profesor = session.get(Profesor4.class, 101);
-            System.out.println("Profesor:" + profesor.getNombre());
-            session.delete(profesor);
+            FabricanteSede fab = session.get(FabricanteSede.class, 101);
+            System.out.println("Fabricante:" + fab.getNombre());
+            session.delete(fab);
         } catch (NullPointerException e) {
             System.out.println("ID no encontrado en la base de datos.");
         }
@@ -124,15 +126,15 @@ public class AppOneToOneUni {
         sessionFactory.close();
     }
 
-    public static void guardarOActualizarProfesor() {
+    /*public static void guardarOActualizarFabricante() {
 
-        Profesor6 profesor = new Profesor6(7, "Sara", "Barrrera", "Salas");
+        FabricanteSede fab = new FabricanteSede(7, "Sara", "Barrrera", "Salas");
         List<CorreoElectronico6> correosElectronicos = new ArrayList<CorreoElectronico6>();
-        correosElectronicos.add(new CorreoElectronico6(3, "sara@yahoo.com", profesor));
-        correosElectronicos.add(new CorreoElectronico6(2, "sara@hotmail.com", profesor));
-        correosElectronicos.add(new CorreoElectronico6(1, "sara@gmail.com", profesor));
+        correosElectronicos.add(new CorreoElectronico6(3, "sara@yahoo.com", fab));
+        correosElectronicos.add(new CorreoElectronico6(2, "sara@hotmail.com", fab));
+        correosElectronicos.add(new CorreoElectronico6(1, "sara@gmail.com", fab));
 
-        profesor.setCorreosElectronicos(correosElectronicos);
+        fab.setCorreosElectronicos(correosElectronicos);
 
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -141,13 +143,13 @@ public class AppOneToOneUni {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        session.save(profesor);
+        session.save(fab);
 
         session.getTransaction().commit();
         session.close();
-    }
+    }*/
 
-    public static void queryClass() {
+    /*public static void queryClass() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
