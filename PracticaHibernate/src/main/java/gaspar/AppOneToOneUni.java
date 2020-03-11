@@ -9,9 +9,9 @@ import javax.persistence.PersistenceException;
 public class AppOneToOneUni {
 
     public static void main(String[] args) {
-        guardarFabricante();
-        /*leerFabricante();
-        leerFabricanteLoad();
+        //guardarFabricante();
+        leerFabricante();
+        /*leerFabricanteLoad();
         modificarFabricante();
         borrarFabricante();*/
         //guardarOActualizarFabricante();
@@ -52,8 +52,9 @@ public class AppOneToOneUni {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
         try {
-            FabricanteSede fab = session.get(FabricanteSede.class, 102);
+            FabricanteSede fab = session.get(FabricanteSede.class, 1);
             System.out.println("Fabricante: " + fab.getNombre());
+            System.out.println("Sede: " +fab.getSede().toString());
         } catch (NullPointerException e) {
             System.out.println("El identificador no ha sido encontrado en la base de datos.");
         }
