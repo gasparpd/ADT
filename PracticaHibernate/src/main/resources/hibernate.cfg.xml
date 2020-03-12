@@ -11,7 +11,7 @@
         <property name="hibernate.show_sql">true</property>
         <mapping resource="sede.hbm.xml"/>
         <mapping class="gaspar.FabricanteSede"/>
-        <mapping class="gaspar.Smartphone"/>
+        <mapping class="gaspar.SmartphoneD"/>
         <mapping class="gaspar.FabricanteSmart"/>
     </session-factory>
 </hibernate-configuration>

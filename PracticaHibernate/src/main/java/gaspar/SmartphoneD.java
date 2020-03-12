@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "smartphone")
-public class Smartphone implements Serializable {
+public class SmartphoneD implements Serializable {
 
     @Id
     @Column(name = "ID_SMARTPHONE")
@@ -24,10 +24,10 @@ public class Smartphone implements Serializable {
     @Column(name = "PRECIO")
     private int precio;
 
-    public Smartphone() {
+    public SmartphoneD() {
     }
 
-    public Smartphone(int id_smartphone, FabricanteSmart marca, String modelo, String pulgadas, int precio) {
+    public SmartphoneD(int id_smartphone, FabricanteSmart marca, String modelo, String pulgadas, int precio) {
         this.id_smartphone = id_smartphone;
         this.marca = marca;
         this.modelo = modelo;

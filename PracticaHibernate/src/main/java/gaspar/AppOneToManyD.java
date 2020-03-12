@@ -32,10 +32,10 @@ public class AppOneToManyD {
 
             //Creamos el objeto FabricanteSmart y le pasamos su smart
             FabricanteSmart fab = new FabricanteSmart(1, "BQ", "1997", null);
-            Set<Smartphone> smartphones = new HashSet<>();
-            Smartphone smart = new Smartphone(1, fab, "M5", "5", 250);
+            Set<SmartphoneD> smartphones = new HashSet<>();
+            SmartphoneD smart = new SmartphoneD(1, fab, "M5", "5", 250);
             smartphones.add(smart);
-            smart = new Smartphone(2, fab, "X2 PRO", "5,6", 350);
+            smart = new SmartphoneD(2, fab, "X2 PRO", "5,6", 350);
             smartphones.add(smart);
 
             fab.setSmartphones(smartphones);//Le pasamos el hashset de smartphones
@@ -62,11 +62,11 @@ public class AppOneToManyD {
         //Obtenemos el objeto con el método get y lo imprimimos (con sus smartphones)
         try {
             FabricanteSmart fab = session.get(FabricanteSmart.class, 1);
-            Set<Smartphone> smartphones = fab.getSmartphones();
+            Set<SmartphoneD> smartphones = fab.getSmartphones();
 
             System.out.println(fab.toString());
 
-            for (Smartphone s : smartphones) {
+            for (SmartphoneD s : smartphones) {
                 System.out.println(s.toString());
             }
         } catch (NullPointerException e) {
@@ -94,11 +94,11 @@ public class AppOneToManyD {
             fab.setNombre("REALME"); //Modificamos su nombre
 
             // Creamos un nuevo HashSet de smartphones
-            Set<Smartphone> smartphones = new HashSet<>();
+            Set<SmartphoneD> smartphones = new HashSet<>();
 
-            Smartphone smart = new Smartphone(1, fab, "6 PRO", "6,4", 250);
+            SmartphoneD smart = new SmartphoneD(1, fab, "6 PRO", "6,4", 250);
             smartphones.add(smart);
-            smart = new Smartphone(2, fab, "X2 PRO", "6,5", 350);
+            smart = new SmartphoneD(2, fab, "X2 PRO", "6,5", 350);
             smartphones.add(smart);
 
             fab.setSmartphones(smartphones);//Le añadimos al fabricante el nuevo HashSet de smartphones
@@ -127,8 +127,8 @@ public class AppOneToManyD {
             FabricanteSmart fab = session.get(FabricanteSmart.class, 1);
             System.out.println(fab.toString());
 
-            Set<Smartphone> smartphones = fab.getSmartphones();
-            for (Smartphone s : smartphones) {
+            Set<SmartphoneD> smartphones = fab.getSmartphones();
+            for (SmartphoneD s : smartphones) {
                 System.out.println(s.toString());
             }
 
@@ -154,11 +154,11 @@ public class AppOneToManyD {
         FabricanteSmart fab = new FabricanteSmart(1, "REALME", "2019", null);
 
         // Creamos un nuevo HashSet de smartphones
-        Set<Smartphone> smartphones = new HashSet<>();
+        Set<SmartphoneD> smartphones = new HashSet<>();
 
-        Smartphone smart = new Smartphone(1, fab, "6 PRO", "6.6", 279);
+        SmartphoneD smart = new SmartphoneD(1, fab, "6 PRO", "6.6", 279);
         smartphones.add(smart);
-        smart = new Smartphone(2, fab, "X50 PRO", "6.4", 599);
+        smart = new SmartphoneD(2, fab, "X50 PRO", "6.4", 599);
         smartphones.add(smart);
 
         fab.setSmartphones(smartphones);//Le añadimos al fabricante el nuevo HashSet de smartphones

@@ -22,7 +22,7 @@ public class FabricanteSmart implements Serializable {
     private Integer matriz;
 
     @OneToMany(mappedBy = "marca", cascade = CascadeType.ALL)
-    private Set<Smartphone> smartphones;
+    private Set<SmartphoneD> smartphones;
 
     public FabricanteSmart(int id, String nombre, String f_year, Integer matriz) {
         this.id = id;
@@ -82,11 +82,11 @@ public class FabricanteSmart implements Serializable {
         this.matriz = matriz;
     }
 
-    public Set<Smartphone> getSmartphones() {
+    public Set<SmartphoneD> getSmartphones() {
         return smartphones;
     }
 
-    public void setSmartphones(Set<Smartphone> smartphones) {
+    public void setSmartphones(Set<SmartphoneD> smartphones) {
         this.smartphones = smartphones;
     }
 }
