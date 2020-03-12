@@ -1,5 +1,6 @@
 package gaspar;
 
+import org.hibernate.ObjectNotFoundException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -15,7 +16,7 @@ public class AppOneToManyOrd {
     public static void main(String[] args) {
         //saveFabricante();     //Hecho
         //getFabricante();      //No implementado
-        //loadFabricante();     //
+        //loadFabricante();     //Hecho
         //updateFabricante();   //
         //deleteFabricante();   //
         //saveOrUpdateFabricante();   //
@@ -52,7 +53,7 @@ public class AppOneToManyOrd {
         }
     }
 
-    public static void getFabricante() {
+    public static void loadFabricante() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
@@ -63,15 +64,15 @@ public class AppOneToManyOrd {
 
         //Obtenemos el objeto con el método get y lo imprimimos (con sus smartphones)
         try {
-            FabricanteSmartD fab = session.get(FabricanteSmartD.class, 1);
-            Set<SmartphoneD> smartphones = fab.getSmartphones();
+            FabricanteSmartOrd fab = session.get(FabricanteSmartOrd.class, 1);
+            List<SmartphoneOrd> smartphones = fab.getSmartphones();
 
             System.out.println(fab.toString());
 
-            for (SmartphoneD s : smartphones) {
+            for (SmartphoneOrd s : smartphones) {
                 System.out.println(s.toString());
             }
-        } catch (NullPointerException e) {
+        } catch (ObjectNotFoundException e) {
             System.out.println("El identificador no ha sido encontrado en la base de datos.");
         }
 
