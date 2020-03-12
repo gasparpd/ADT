@@ -35,6 +35,16 @@ public class Smartphone implements Serializable {
         this.precio = precio;
     }
 
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "id_smartphone=" + id_smartphone +
+                ", modelo='" + modelo + '\'' +
+                ", pulgadas='" + pulgadas + '\'' +
+                ", precio=" + precio +
+                '}';
+    }
+
     public int getId_smartphone() {
         return id_smartphone;
     }
