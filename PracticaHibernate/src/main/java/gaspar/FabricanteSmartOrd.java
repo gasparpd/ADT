@@ -42,7 +42,7 @@ public class FabricanteSmartOrd implements Serializable {
 
     @Override
     public String toString() {
-        return "FabricanteSmart{" +
+        return "Fabricante{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", f_year='" + f_year + '\'' +
