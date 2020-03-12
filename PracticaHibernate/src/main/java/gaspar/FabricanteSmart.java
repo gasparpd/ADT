@@ -40,6 +40,16 @@ public class FabricanteSmart implements Serializable {
     public FabricanteSmart() {
     }
 
+    @Override
+    public String toString() {
+        return "FabricanteSmart{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", f_year='" + f_year + '\'' +
+                ", matriz=" + matriz +
+                '}';
+    }
+
     public int getId() {
         return id;
     }
