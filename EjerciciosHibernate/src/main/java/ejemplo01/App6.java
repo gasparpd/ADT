@@ -15,8 +15,8 @@ public class App6 {
         //leerProfesor();
         //leerProfesorLoad();
         //modificarProfesor();
-        //borrarProfesor();
-        guardarOActualizarProfesor();
+        borrarProfesor();
+        //guardarOActualizarProfesor();
         //queryClass();
     }
 
@@ -116,7 +116,7 @@ public class App6 {
 
         Transaction tx = session.beginTransaction();
         try {
-            Profesor4 profesor = session.get(Profesor4.class, 101);
+            Profesor6 profesor = session.get(Profesor6.class, 7);
             System.out.println("Profesor:" + profesor.getNombre());
             session.delete(profesor);
         } catch (NullPointerException e) {
