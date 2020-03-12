@@ -21,8 +21,7 @@ public class FabricanteSmart implements Serializable {
     @Column(name = "MATRIZ")
     private Integer matriz;
 
-    @OneToMany(mappedBy = "fabricante", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @OneToMany(mappedBy = "marca", cascade = CascadeType.ALL)
     private Set<Smartphone> smartphones;
 
     public FabricanteSmart(int id, String nombre, String f_year, Integer matriz) {
