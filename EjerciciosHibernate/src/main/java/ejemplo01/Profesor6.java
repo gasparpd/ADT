@@ -8,19 +8,20 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name="profesor6")
-public class Profesor6 implements Serializable{
+@Table(name = "profesor6")
+public class Profesor6 implements Serializable {
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     private int id;
-    @Column(name="nombre")
+    @Column(name = "nombre")
     private String nombre;
-    @Column(name="ape1")
+    @Column(name = "ape1")
     private String ape1;
-    @Column(name="ape2")
+    @Column(name = "ape2")
     private String ape2;
-    @OneToMany(mappedBy="profesor",cascade= CascadeType.ALL)
-    @IndexColumn(name = "ID_X")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idProfesor")
+    @IndexColumn(name = "idx")
     private List<CorreoElectronico6> correosElectronicos;
 
     public Profesor6() {
