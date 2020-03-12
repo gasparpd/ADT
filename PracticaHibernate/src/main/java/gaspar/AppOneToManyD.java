@@ -16,7 +16,7 @@ public class AppOneToManyD {
         //loadFabricante();     //No implementado
         //updateFabricante();   //Hecho
         //deleteFabricante();   //Hecho
-        //saveOrUpdateFabricante();
+        //saveOrUpdateFabricante();   //Hecho
         //queryClass();
     }
 
@@ -151,13 +151,19 @@ public class AppOneToManyD {
 
         session.beginTransaction();
 
-        FabricanteSede fab = new FabricanteSede(2, "BQ", "2002", null);
+        FabricanteSmart fab = new FabricanteSmart(1, "REALME", "2019", null);
 
-        // Creamos y añadimos la sede al fabricante
-        Sede sede = new Sede(fab.getId(), "SPAIN", "MADRID", "400392");
-        fab.setSede(sede);//Le añadimos al fabricante la nueva sede creada
+        // Creamos un nuevo HashSet de smartphones
+        Set<Smartphone> smartphones = new HashSet<>();
 
-        session.saveOrUpdate(fab);
+        Smartphone smart = new Smartphone(1, fab, "6 PRO", "6.6", 279);
+        smartphones.add(smart);
+        smart = new Smartphone(2, fab, "X50 PRO", "6.4", 599);
+        smartphones.add(smart);
+
+        fab.setSmartphones(smartphones);//Le añadimos al fabricante el nuevo HashSet de smartphones
+
+        session.saveOrUpdate(fab);//Guardamos o actualizamos el fabricante
 
         session.getTransaction().commit();
         session.close();
