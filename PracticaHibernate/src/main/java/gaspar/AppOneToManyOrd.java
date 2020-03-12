@@ -18,7 +18,7 @@ public class AppOneToManyOrd {
         //getFabricante();      //No implementado
         //loadFabricante();     //Hecho
         //updateFabricante();   //
-        //deleteFabricante();   //
+        deleteFabricante();   //
         //saveOrUpdateFabricante();   //
         //queryClass();
     }
@@ -127,11 +127,11 @@ public class AppOneToManyOrd {
 
         //Obtenemos el objeto, imprimimos su nombre y lo borramos
         try {
-            FabricanteSmartD fab = session.get(FabricanteSmartD.class, 1);
+            FabricanteSmartOrd fab = session.get(FabricanteSmartOrd.class, 1);
             System.out.println(fab.toString());
 
-            Set<SmartphoneD> smartphones = fab.getSmartphones();
-            for (SmartphoneD s : smartphones) {
+            List<SmartphoneOrd> smartphones = fab.getSmartphones();
+            for (SmartphoneOrd s : smartphones) {
                 System.out.println(s.toString());
             }
 
