@@ -2,7 +2,7 @@ package gaspar;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "fabricante")
@@ -22,7 +22,7 @@ public class FabricanteSmartOrd implements Serializable {
     private Integer matriz;
 
     @OneToMany(mappedBy = "marca", cascade = CascadeType.ALL)
-    private Set<SmartphoneD> smartphones;
+    private List<SmartphoneOrd> smartphones;
 
     public FabricanteSmartOrd(int id, String nombre, String f_year, Integer matriz) {
         this.id = id;
@@ -82,5 +82,11 @@ public class FabricanteSmartOrd implements Serializable {
         this.matriz = matriz;
     }
 
+    public List<SmartphoneOrd> getSmartphones() {
+        return smartphones;
+    }
 
+    public void setSmartphones(List<SmartphoneOrd> smartphones) {
+        this.smartphones = smartphones;
+    }
 }

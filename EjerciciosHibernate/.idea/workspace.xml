@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/src/main/java/gaspar/AppOneToManyD.java" afterDir="false" />
+    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Ejercicio 18. Modificado el mapeo de las clases CorreoElectronico5 y Profesor5">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaHibernate/src/main/java/gaspar/SmartphoneOrd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaHibernate/src/main/java/gaspar/SmartphoneOrd.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +46,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -398,16 +399,16 @@
     </state>
     <state x="510" y="193" key="#com.intellij.ide.util.MemberChooser/0.0.1280.984@0.0.1280.984" timestamp="1583435566525" />
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583144592104" />
-    <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583780318469">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584021468457">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1583780318469" />
-    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583494339781" />
-    <state x="591" y="165" key="CommitChangelistDialog2" timestamp="1583494887732">
+    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584021468457" />
+    <state x="591" y="165" key="CommitChangelistDialog2" timestamp="1584021479105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="430" y="56" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1583437376955" />
-    <state x="591" y="165" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583494887732" />
+    <state x="591" y="165" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584021479105" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582893449632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -437,10 +438,11 @@
     </state>
     <state width="1237" height="426" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
     <state width="1877" height="703" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583495588155" />
-    <state x="120" y="67" key="SettingsEditor" timestamp="1580411481849">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="180" y="71" key="SettingsEditor" timestamp="1584021737892">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="120" y="67" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1580411481849" />
+    <state x="180" y="71" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584021737892" />
     <state x="504" y="335" key="com.intellij.ide.util.TipDialog" timestamp="1583494306287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
