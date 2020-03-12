@@ -15,7 +15,7 @@ public class AppOneToManyD {
         //getFabricante();      //Hecho
         //loadFabricante();     //No implementado
         //updateFabricante();   //Hecho
-        //deleteFabricante();   //
+        //deleteFabricante();   //Hecho
         //saveOrUpdateFabricante();
         //queryClass();
     }
@@ -124,9 +124,15 @@ public class AppOneToManyD {
 
         //Obtenemos el objeto, imprimimos su nombre y lo borramos
         try {
-            FabricanteSede fab = session.get(FabricanteSede.class, 1);
-            System.out.println("Fabricante:" + fab.getNombre());
-            session.delete(fab);
+            FabricanteSmart fab = session.get(FabricanteSmart.class, 1);
+            System.out.println(fab.toString());
+
+            Set<Smartphone> smartphones = fab.getSmartphones();
+            for (Smartphone s : smartphones) {
+                System.out.println(s.toString());
+            }
+
+            session.delete(fab);//Eliminamos el fabricante
         } catch (NullPointerException e) {
             System.out.println("ID no encontrado en la base de datos.");
         }
