@@ -1,5 +1,7 @@
 package gaspar;
 
+import org.hibernate.annotations.IndexColumn;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -22,6 +24,7 @@ public class FabricanteSmartOrd implements Serializable {
     private Integer matriz;
 
     @OneToMany(mappedBy = "marca", cascade = CascadeType.ALL)
+    @IndexColumn(name = "ID_X")
     private List<SmartphoneOrd> smartphones;
 
     public FabricanteSmartOrd(int id, String nombre, String f_year, Integer matriz) {
