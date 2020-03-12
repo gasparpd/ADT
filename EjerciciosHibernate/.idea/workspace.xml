@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/src/main/java/gaspar/AppOneToOneUni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/src/main/java/gaspar/AppOneToManyD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
