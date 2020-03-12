@@ -12,9 +12,9 @@ public class AppOneToManyD {
 
     public static void main(String[] args) {
         //saveFabricante();     //Hecho
-        getFabricante();      //Hecho
-        //loadFabricante();     //
-        //updateFabricante();   //
+        //getFabricante();      //Hecho
+        //loadFabricante();     //No implementado
+        //updateFabricante();   //Hecho
         //deleteFabricante();   //
         //saveOrUpdateFabricante();
         //queryClass();
@@ -78,29 +78,6 @@ public class AppOneToManyD {
         sessionFactory.close();
     }
 
-    /*public static void loadFabricante() {
-        //Obtenemos el SessionFactory
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-
-        //Abrimos la sesión mediante el SessionFactory
-        Session session = sessionFactory.openSession();
-
-        Transaction tx = session.beginTransaction();
-
-        //Obtenemos el objeto con el método get y lo imprimimos (con su sede)
-        try {
-            FabricanteSede fab = session.load(FabricanteSede.class, 1);
-            System.out.println("Fabricante: " + fab.getNombre());
-            System.out.println("Sede: " + fab.getSede().toString());
-        } catch (org.hibernate.ObjectNotFoundException e) {
-            System.out.println("El valor clave no se ha encontrado en la base de datos.");
-        }
-
-        tx.commit();
-        session.close();
-        sessionFactory.close();
-    }*/
-
     public static void updateFabricante() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -111,18 +88,20 @@ public class AppOneToManyD {
         Transaction tx = session.beginTransaction();
 
         try {
-            FabricanteSede fab = session.get(FabricanteSede.class, 1);  //Obtenemos el fabricante
-            System.out.println("Fabricante: " + fab.getNombre());
+            FabricanteSmart fab = session.get(FabricanteSmart.class, 1);  //Obtenemos el fabricante
+            System.out.println(fab.toString());
 
             fab.setNombre("REALME"); //Modificamos su nombre
 
-            // Obtenemos y modificamos su sede
-            Sede sede = fab.getSede();
-            sede.setPais("China");
-            sede.setLocalidad("Shenzen");
-            sede.setCpostal("32560");
+            // Creamos un nuevo HashSet de smartphones
+            Set<Smartphone> smartphones = new HashSet<>();
 
-            fab.setSede(sede);//Le añadimos al fabricante la nueva sede creada
+            Smartphone smart = new Smartphone(1, fab, "6 PRO", "6,4", 250);
+            smartphones.add(smart);
+            smart = new Smartphone(2, fab, "X2 PRO", "6,5", 350);
+            smartphones.add(smart);
+
+            fab.setSmartphones(smartphones);//Le añadimos al fabricante el nuevo HashSet de smartphones
 
             session.update(fab);//Actualizamos el fabricante
         } catch (NullPointerException e) {
