@@ -12,16 +12,24 @@ public class CorreoElectronico6 implements Serializable {
     @Column(name = "direccionCorreo")
     private String direccionCorreo;
     @ManyToOne
-    @JoinColumn(name="idProfesor")
+    @JoinColumn(name = "idProfesor")
     private Profesor6 profesor;
 
-    public CorreoElectronico6(){
+    public CorreoElectronico6() {
     }
 
-    public CorreoElectronico6(int idCorreo, String direccionCorreo, Profesor6 profesor){
-        this.idCorreo=idCorreo;
-        this.direccionCorreo=direccionCorreo;
-        this.profesor=profesor;
+    public CorreoElectronico6(int idCorreo, String direccionCorreo, Profesor6 profesor) {
+        this.idCorreo = idCorreo;
+        this.direccionCorreo = direccionCorreo;
+        this.profesor = profesor;
+    }
+
+    @Override
+    public String toString() {
+        return "CorreoElectronico6{" +
+                "idCorreo=" + idCorreo +
+                ", direccionCorreo='" + direccionCorreo + '\'' +
+                '}';
     }
 
     public int getIdCorreo() {

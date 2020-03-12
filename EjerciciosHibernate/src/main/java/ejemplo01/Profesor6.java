@@ -5,7 +5,6 @@ import org.hibernate.annotations.IndexColumn;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "profesor6")
@@ -32,6 +31,16 @@ public class Profesor6 implements Serializable {
         this.nombre = nombre;
         this.ape1 = ape1;
         this.ape2 = ape2;
+    }
+
+    @Override
+    public String toString() {
+        return "Profesor6{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", ape1='" + ape1 + '\'' +
+                ", ape2='" + ape2 + '\'' +
+                '}';
     }
 
     public int getId() {
