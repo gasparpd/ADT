@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Ejercicio 18. Modificado el mapeo de las clases CorreoElectronico5 y Profesor5">
+    <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Ejercicio 19. Añadido método toString">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaHibernate/src/main/java/gaspar/AppOneToManyOrd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaHibernate/src/main/java/gaspar/AppOneToManyOrd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaHibernate/src/main/java/gaspar/FabricanteSmartOrd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaHibernate/src/main/java/gaspar/FabricanteSmartOrd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/App6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/App6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PracticaHibernate/PracticaHibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaHibernate/PracticaHibernate.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PracticaHibernate" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -343,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584044133411</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Ejercicio 19. Añadido método toString">
+      <created>1584054554323</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1584054554323</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,7 +383,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Corregidas las anotaciones de la clase." />
     <MESSAGE value="Ejercicio 12. Mapeado Profesor2 con etiquetas." />
     <MESSAGE value="Ejercicio 13. Relación 1 a 1." />
     <MESSAGE value="Ejercicio 13. Creados los ficheros de mapeo de Profesor3 y Direccion3" />
@@ -400,7 +407,10 @@
     <MESSAGE value="Ejercicio 19. Añadida etiqueta InddxColumn al atributo correoselectronicos" />
     <MESSAGE value="Ejercicio 19. Implementando método delete" />
     <MESSAGE value="Ejercicio 19. Añadida etiqueta IndexColumn" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 19. Añadida etiqueta IndexColumn" />
+    <MESSAGE value="Ejercicio 19. Añadido método toString" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 19. Añadido método toString" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="357" y="150" key="#App" timestamp="1583348501534">
@@ -415,19 +425,22 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="94" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1580411308891" />
-    <state x="510" y="193" key="#com.intellij.ide.util.MemberChooser" timestamp="1583435566525">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="510" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1584054397079">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="510" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1584054397079" />
     <state x="510" y="193" key="#com.intellij.ide.util.MemberChooser/0.0.1280.984@0.0.1280.984" timestamp="1583435566525" />
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583144592104" />
-    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584021468457">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="539" y="267" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584053115850">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="539" y="267" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1584053115850" />
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1583780318469" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584021468457" />
-    <state x="530" y="132" key="CommitChangelistDialog2" timestamp="1584044132967">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="353" y="0" key="CommitChangelistDialog2" timestamp="1584054868447">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="353" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584054868447" />
     <state x="430" y="56" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1583437376955" />
     <state x="530" y="132" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584044132967" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582893449632">
@@ -439,26 +452,34 @@
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1583780895426" />
     <state x="630" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582803249291" />
-    <state width="1877" height="638" key="GridCell.Tab.0.bottom" timestamp="1584044136707">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="359" key="GridCell.Tab.0.bottom" timestamp="1584054813617">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="359" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584054813617" />
     <state width="1237" height="426" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
     <state width="1877" height="638" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584044136707" />
-    <state width="1877" height="638" key="GridCell.Tab.0.center" timestamp="1584044136707">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="359" key="GridCell.Tab.0.center" timestamp="1584054813617">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="359" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584054813617" />
     <state width="1237" height="426" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
     <state width="1877" height="638" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584044136707" />
-    <state width="1877" height="638" key="GridCell.Tab.0.left" timestamp="1584044136707">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="359" key="GridCell.Tab.0.left" timestamp="1584054813617">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="359" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584054813617" />
     <state width="1237" height="426" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
     <state width="1877" height="638" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584044136707" />
-    <state width="1877" height="638" key="GridCell.Tab.0.right" timestamp="1584044136707">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="359" key="GridCell.Tab.0.right" timestamp="1584054813617">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="359" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584054813617" />
     <state width="1237" height="426" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
     <state width="1877" height="638" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584044136707" />
+    <state x="459" y="52" key="RollbackChangesDialog" timestamp="1584054848358">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="459" y="52" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584054848358" />
     <state x="180" y="71" key="SettingsEditor" timestamp="1584021737892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

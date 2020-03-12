@@ -11,16 +11,16 @@ import java.util.List;
 
 public class App6 {
     public static void main(String[] args) {
-        //guardarProfesor();
-        //leerProfesor();
-        //leerProfesorLoad();
+        //saveProfesor();   //Hecho
+        //getProfesor();    //Hecho
+        //loadProfesor();
         //modificarProfesor();
-        borrarProfesor();
+        //borrarProfesor();     //
         //guardarOActualizarProfesor();
         //queryClass();
     }
 
-    private static void guardarProfesor() {
+    private static void saveProfesor() {
         try {
             //Obtenemos el SessionFactory
 
@@ -29,9 +29,18 @@ public class App6 {
             //Abrimos la sesión mediante el SessionFactory
             Session session = sessionFactory.openSession();
 
-            //Creamos el objeto
-            Profesor4 profesor = new Profesor4(101, "Alberto", "Perez", "García");
             Transaction tx = session.beginTransaction();
+            //Creamos el objeto
+            Profesor6 profesor = new Profesor6(1, "Sara", "Perez", "García");
+            List<CorreoElectronico6> mails = new ArrayList<CorreoElectronico6>();
+            CorreoElectronico6 correo = new CorreoElectronico6(1, "sara@gmail.com", profesor);
+            mails.add(correo);
+            correo = new CorreoElectronico6(2, "sara@hotmail.com", profesor);
+            mails.add(correo);
+            correo = new CorreoElectronico6(3, "sara@outlook.com", profesor);
+            mails.add(correo);
+
+            profesor.setCorreosElectronicos(mails);
 
             session.save(profesor);//Aquí guardamos el objeto en la base de datos.
 
@@ -43,17 +52,22 @@ public class App6 {
         }
     }
 
-    public static void leerProfesor() {
+    public static void getProfesor() {
         //Obtenemos el SessionFactory
-
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        //Abrimos la sesión mediante el SessionFactory
 
+        //Abrimos la sesión mediante el SessionFactory
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
+
         try {
-            Profesor4 profesor = session.get(Profesor4.class, 102);
-            System.out.println("Profesor: " + profesor.getNombre());
+            Profesor6 profesor = session.get(Profesor6.class, 1);
+            System.out.println(profesor.toString());
+            List<CorreoElectronico6> mails = profesor.getCorreosElectronicos();
+
+            for (CorreoElectronico6 m : mails) {
+                System.out.println(m.toString());
+            }
         } catch (NullPointerException e) {
             System.out.println("El identificador no ha sido encontrado en la base de datos.");
         }
@@ -63,7 +77,7 @@ public class App6 {
         sessionFactory.close();
     }
 
-    public static void leerProfesorLoad() {
+    public static void loadProfesor() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
@@ -130,7 +144,7 @@ public class App6 {
     public static void guardarOActualizarProfesor() {
 
         Profesor6 profesor = new Profesor6(7, "Sara", "Barrrera", "Salas");
-        List <CorreoElectronico6> correosElectronicos = new ArrayList<CorreoElectronico6>();
+        List<CorreoElectronico6> correosElectronicos = new ArrayList<CorreoElectronico6>();
         correosElectronicos.add(new CorreoElectronico6(3, "sara@yahoo.com", profesor));
         correosElectronicos.add(new CorreoElectronico6(2, "sara@hotmail.com", profesor));
         correosElectronicos.add(new CorreoElectronico6(1, "sara@gmail.com", profesor));
