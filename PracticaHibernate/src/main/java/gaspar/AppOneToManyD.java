@@ -11,8 +11,8 @@ import java.util.Set;
 public class AppOneToManyD {
 
     public static void main(String[] args) {
-        saveFabricante();     //Hecho
-        //getFabricante();      //
+        //saveFabricante();     //Hecho
+        getFabricante();      //Hecho
         //loadFabricante();     //
         //updateFabricante();   //
         //deleteFabricante();   //
@@ -59,11 +59,16 @@ public class AppOneToManyD {
 
         Transaction tx = session.beginTransaction();
 
-        //Obtenemos el objeto con el método get y lo imprimimos (con su sede)
+        //Obtenemos el objeto con el método get y lo imprimimos (con sus smartphones)
         try {
-            FabricanteSede fab = session.get(FabricanteSede.class, 1);
-            System.out.println("Fabricante: " + fab.getNombre());
-            System.out.println("Sede: " + fab.getSede().toString());
+            FabricanteSmart fab = session.get(FabricanteSmart.class, 1);
+            Set<Smartphone> smartphones = fab.getSmartphones();
+
+            System.out.println(fab.toString());
+
+            for (Smartphone s : smartphones) {
+                System.out.println(s.toString());
+            }
         } catch (NullPointerException e) {
             System.out.println("El identificador no ha sido encontrado en la base de datos.");
         }
@@ -73,7 +78,7 @@ public class AppOneToManyD {
         sessionFactory.close();
     }
 
-    public static void loadFabricante() {
+    /*public static void loadFabricante() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
@@ -94,7 +99,7 @@ public class AppOneToManyD {
         tx.commit();
         session.close();
         sessionFactory.close();
-    }
+    }*/
 
     public static void updateFabricante() {
         //Obtenemos el SessionFactory
