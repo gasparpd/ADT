@@ -13,7 +13,7 @@ public class SmartphoneOrd implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "ID_MARCA")
-    private FabricanteSmart marca;
+    private FabricanteSmartOrd marca;
 
     @Column(name = "MODELO")
     private String modelo;
@@ -27,7 +27,7 @@ public class SmartphoneOrd implements Serializable {
     public SmartphoneOrd() {
     }
 
-    public SmartphoneOrd(int id_smartphone, FabricanteSmart marca, String modelo, String pulgadas, int precio) {
+    public SmartphoneOrd(int id_smartphone, FabricanteSmartOrd marca, String modelo, String pulgadas, int precio) {
         this.id_smartphone = id_smartphone;
         this.marca = marca;
         this.modelo = modelo;
@@ -53,11 +53,11 @@ public class SmartphoneOrd implements Serializable {
         this.id_smartphone = id_smartphone;
     }
 
-    public FabricanteSmart getMarca() {
+    public FabricanteSmartOrd getMarca() {
         return marca;
     }
 
-    public void setMarca(FabricanteSmart marca) {
+    public void setMarca(FabricanteSmartOrd marca) {
         this.marca = marca;
     }
 
