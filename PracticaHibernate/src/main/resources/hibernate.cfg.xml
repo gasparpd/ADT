@@ -12,6 +12,8 @@
         <mapping resource="sede.hbm.xml"/>
         <mapping class="gaspar.FabricanteSede"/>
         <mapping class="gaspar.SmartphoneD"/>
-        <mapping class="gaspar.FabricanteSmart"/>
+        <mapping class="gaspar.FabricanteSmartD"/>
+        <mapping class="gaspar.SmartphoneOrd"/>
+        <mapping class="gaspar.FabricanteSmartOrd"/>
     </session-factory>
 </hibernate-configuration>
