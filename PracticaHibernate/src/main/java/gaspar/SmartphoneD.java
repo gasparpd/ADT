@@ -13,7 +13,7 @@ public class SmartphoneD implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "ID_MARCA")
-    private FabricanteSmart marca;
+    private FabricanteSmartD marca;
 
     @Column(name = "MODELO")
     private String modelo;
@@ -27,7 +27,7 @@ public class SmartphoneD implements Serializable {
     public SmartphoneD() {
     }
 
-    public SmartphoneD(int id_smartphone, FabricanteSmart marca, String modelo, String pulgadas, int precio) {
+    public SmartphoneD(int id_smartphone, FabricanteSmartD marca, String modelo, String pulgadas, int precio) {
         this.id_smartphone = id_smartphone;
         this.marca = marca;
         this.modelo = modelo;
@@ -53,11 +53,11 @@ public class SmartphoneD implements Serializable {
         this.id_smartphone = id_smartphone;
     }
 
-    public FabricanteSmart getMarca() {
+    public FabricanteSmartD getMarca() {
         return marca;
     }
 
-    public void setMarca(FabricanteSmart marca) {
+    public void setMarca(FabricanteSmartD marca) {
         this.marca = marca;
     }
 

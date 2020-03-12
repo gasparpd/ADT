@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "fabricante")
-public class FabricanteSmart implements Serializable {
+public class FabricanteSmartD implements Serializable {
 
     @Id
     @Column(name = "ID")
@@ -24,20 +24,20 @@ public class FabricanteSmart implements Serializable {
     @OneToMany(mappedBy = "marca", cascade = CascadeType.ALL)
     private Set<SmartphoneD> smartphones;
 
-    public FabricanteSmart(int id, String nombre, String f_year, Integer matriz) {
+    public FabricanteSmartD(int id, String nombre, String f_year, Integer matriz) {
         this.id = id;
         this.nombre = nombre;
         this.f_year = f_year;
         this.matriz = matriz;
     }
 
-    public FabricanteSmart(int id, String nombre, String f_year) {
+    public FabricanteSmartD(int id, String nombre, String f_year) {
         this.id = id;
         this.nombre = nombre;
         this.f_year = f_year;
     }
 
-    public FabricanteSmart() {
+    public FabricanteSmartD() {
     }
 
     @Override

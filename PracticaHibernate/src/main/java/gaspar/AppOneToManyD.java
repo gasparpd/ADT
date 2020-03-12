@@ -31,7 +31,7 @@ public class AppOneToManyD {
             Transaction tx = session.beginTransaction();
 
             //Creamos el objeto FabricanteSmart y le pasamos su smart
-            FabricanteSmart fab = new FabricanteSmart(1, "BQ", "1997", null);
+            FabricanteSmartD fab = new FabricanteSmartD(1, "BQ", "1997", null);
             Set<SmartphoneD> smartphones = new HashSet<>();
             SmartphoneD smart = new SmartphoneD(1, fab, "M5", "5", 250);
             smartphones.add(smart);
@@ -61,7 +61,7 @@ public class AppOneToManyD {
 
         //Obtenemos el objeto con el método get y lo imprimimos (con sus smartphones)
         try {
-            FabricanteSmart fab = session.get(FabricanteSmart.class, 1);
+            FabricanteSmartD fab = session.get(FabricanteSmartD.class, 1);
             Set<SmartphoneD> smartphones = fab.getSmartphones();
 
             System.out.println(fab.toString());
@@ -88,7 +88,7 @@ public class AppOneToManyD {
         Transaction tx = session.beginTransaction();
 
         try {
-            FabricanteSmart fab = session.get(FabricanteSmart.class, 1);  //Obtenemos el fabricante
+            FabricanteSmartD fab = session.get(FabricanteSmartD.class, 1);  //Obtenemos el fabricante
             System.out.println(fab.toString());
 
             fab.setNombre("REALME"); //Modificamos su nombre
@@ -124,7 +124,7 @@ public class AppOneToManyD {
 
         //Obtenemos el objeto, imprimimos su nombre y lo borramos
         try {
-            FabricanteSmart fab = session.get(FabricanteSmart.class, 1);
+            FabricanteSmartD fab = session.get(FabricanteSmartD.class, 1);
             System.out.println(fab.toString());
 
             Set<SmartphoneD> smartphones = fab.getSmartphones();
@@ -151,7 +151,7 @@ public class AppOneToManyD {
 
         session.beginTransaction();
 
-        FabricanteSmart fab = new FabricanteSmart(1, "REALME", "2019", null);
+        FabricanteSmartD fab = new FabricanteSmartD(1, "REALME", "2019", null);
 
         // Creamos un nuevo HashSet de smartphones
         Set<SmartphoneD> smartphones = new HashSet<>();
