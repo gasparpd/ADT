@@ -19,7 +19,7 @@ public class AppOneToManyOrd {
         //updateFabricante();   //Hecho
         //deleteFabricante();   //Hecho
         //saveOrUpdateFabricante();   //Hecho
-        queryClass();
+        //queryClass();         //Hecho
     }
 
     private static void saveFabricante() {
@@ -203,6 +203,18 @@ public class AppOneToManyOrd {
         for (FabricanteSmartOrd f : fabricantes) {
             System.out.println(f.toString());
         }
+
+        Transaction tx = session.beginTransaction();//Requerido para consultas update/delete
+
+        //Consulta de actualización
+        query = session.createQuery("UPDATE SmartphoneOrd s SET s.precio = s.precio + 50 WHERE s.marca = 1");
+        int filas = query.executeUpdate();
+        System.out.println(String.format("Filas actualizadas: ?", filas));
+
+        //Consulta de borrado
+        query = session.createQuery("DELETE FROM SmartphoneOrd s WHERE s.marca = 1");
+        int filasborradas = query.executeUpdate();
+        System.out.println(String.format("Filas eliminadas: %d", filasborradas));
 
         session.close();
         sessionFactory.close();
