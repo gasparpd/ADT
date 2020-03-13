@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import javax.persistence.PersistenceException;
+import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class AppOneToManyOrd {
         //updateFabricante();   //Hecho
         //deleteFabricante();   //Hecho
         //saveOrUpdateFabricante();   //Hecho
-        //queryClass();
+        queryClass();
     }
 
     private static void saveFabricante() {
@@ -172,20 +173,43 @@ public class AppOneToManyOrd {
         session.close();
     }
 
-    /*public static void queryClass() {
+    public static void queryClass() {
         //Obtenemos el SessionFactory
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
         //Abrimos la sesión mediante el SessionFactory
         Session session = sessionFactory.openSession();
 
-        Query query = session.createQuery("SELECT p FROM Profesor p");
-        List<Profesor> profesores = query.list();
-        for (Profesor profesor : profesores) {
-            System.out.println(profesor.getNombre());
+        //Imprime todos los fabricantes
+        System.out.println("-------------Fabricantes-------------");
+        Query query = session.createQuery("SELECT f FROM FabricanteSmartOrd f");
+        List<FabricanteSmartOrd> fabricantes = query.getResultList();
+        for (FabricanteSmartOrd f : fabricantes) {
+            System.out.println(f.toString());
+        }
+        System.out.println("-------------------------------------");
+
+        //Imprimir número de smartphones de un fabricante
+        Object obj = session.createQuery("SELECT COUNT(*) FROM SmartphoneOrd WHERE marca = 1").uniqueResult();
+        System.out.println("Número de smartphones del fabricante 1: " + obj);
+        System.out.println("-------------------------------------");
+
+
+        //Imprime un fabricante (parámetro)
+        int id_fab = 1;
+        query = session.createQuery("SELECT f FROM FabricanteSmartOrd f WHERE id = :id_fab");
+        query.setParameter("id_fab", id_fab);//Añadimos el parámetro a la consulta
+        fabricantes = query.getResultList();
+        for (FabricanteSmartOrd f : fabricantes) {
+            System.out.println(f.toString());
         }
 
         session.close();
         sessionFactory.close();
-    }*/
+
+        /*
+        // CONSULTA CON NOMBRE
+        Query query = session.getNamedQuery("findAllProfesores");
+        */
+    }
 }
