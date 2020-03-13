@@ -7,9 +7,7 @@ import org.hibernate.Transaction;
 
 import javax.persistence.PersistenceException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class AppOneToManyOrd {
 
@@ -19,7 +17,7 @@ public class AppOneToManyOrd {
         //loadFabricante();     //Hecho
         //updateFabricante();   //Hecho
         //deleteFabricante();   //Hecho
-        //saveOrUpdateFabricante();   //
+        //saveOrUpdateFabricante();   //Hecho
         //queryClass();
     }
 
@@ -156,14 +154,14 @@ public class AppOneToManyOrd {
 
         session.beginTransaction();
 
-        FabricanteSmartD fab = new FabricanteSmartD(1, "REALME", "2019", null);
+        FabricanteSmartOrd fab = new FabricanteSmartOrd(1, "REALME", "2018", null);
 
         // Creamos un nuevo HashSet de smartphones
-        Set<SmartphoneD> smartphones = new HashSet<>();
+        List<SmartphoneOrd> smartphones = new ArrayList<>();
 
-        SmartphoneD smart = new SmartphoneD(1, fab, "6 PRO", "6.6", 279);
+        SmartphoneOrd smart = new SmartphoneOrd(1, fab, "6 PRO", "6.69", 279);
         smartphones.add(smart);
-        smart = new SmartphoneD(2, fab, "X50 PRO", "6.4", 599);
+        smart = new SmartphoneOrd(2, fab, "X50 PRO", "6.44", 599);
         smartphones.add(smart);
 
         fab.setSmartphones(smartphones);//Le añadimos al fabricante el nuevo HashSet de smartphones
