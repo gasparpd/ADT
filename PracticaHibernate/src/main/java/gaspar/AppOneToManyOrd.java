@@ -17,7 +17,7 @@ public class AppOneToManyOrd {
         //saveFabricante();     //Hecho
         //getFabricante();      //No implementado
         //loadFabricante();     //Hecho
-        //updateFabricante();   //
+        //updateFabricante();   //Hecho
         //deleteFabricante();   //Hecho
         //saveOrUpdateFabricante();   //
         //queryClass();
@@ -91,17 +91,18 @@ public class AppOneToManyOrd {
         Transaction tx = session.beginTransaction();
 
         try {
-            FabricanteSmartD fab = session.get(FabricanteSmartD.class, 1);  //Obtenemos el fabricante
+            FabricanteSmartOrd fab = session.get(FabricanteSmartOrd.class, 1);  //Obtenemos el fabricante
             System.out.println(fab.toString());
 
             fab.setNombre("REALME"); //Modificamos su nombre
+            fab.setF_year("2018");
 
             // Creamos un nuevo HashSet de smartphones
-            Set<SmartphoneD> smartphones = new HashSet<>();
+            List<SmartphoneOrd> smartphones = new ArrayList<>();
 
-            SmartphoneD smart = new SmartphoneD(1, fab, "6 PRO", "6,4", 250);
+            SmartphoneOrd smart = new SmartphoneOrd(1, fab, "6 PRO", "6,4", 250);
             smartphones.add(smart);
-            smart = new SmartphoneD(2, fab, "X2 PRO", "6,5", 350);
+            smart = new SmartphoneOrd(2, fab, "X2 PRO", "6,5", 350);
             smartphones.add(smart);
 
             fab.setSmartphones(smartphones);//Le añadimos al fabricante el nuevo HashSet de smartphones
