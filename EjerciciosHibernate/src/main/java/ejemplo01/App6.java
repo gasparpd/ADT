@@ -15,7 +15,7 @@ public class App6 {
         //getProfesor();    //Hecho
         //loadProfesor();
         //modificarProfesor();
-        borrarProfesor(); //
+        //borrarProfesor(); //Hecho
         //guardarOActualizarProfesor();
         //queryClass();
     }
@@ -132,6 +132,12 @@ public class App6 {
         try {
             Profesor6 profesor = session.get(Profesor6.class, 1);
             System.out.println(profesor.toString());
+
+            List<CorreoElectronico6> mails = profesor.getCorreosElectronicos();
+            for (CorreoElectronico6 m : mails) {
+                System.out.println(m.toString());
+            }
+
             session.delete(profesor);
         } catch (NullPointerException e) {
             System.out.println("ID no encontrado en la base de datos.");

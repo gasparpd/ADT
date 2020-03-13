@@ -1,5 +1,7 @@
 package ejemplo01;
 
+import org.hibernate.annotations.IndexColumn;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -16,9 +18,8 @@ public class Profesor6 implements Serializable {
     private String ape1;
     @Column(name = "ape2")
     private String ape2;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idProfesor")
-    @OrderBy("idx")
+    @OneToMany(mappedBy = "profesor", cascade = CascadeType.ALL)
+    @IndexColumn(name = "idx")
     private List<CorreoElectronico6> correosElectronicos;
 
     public Profesor6() {
