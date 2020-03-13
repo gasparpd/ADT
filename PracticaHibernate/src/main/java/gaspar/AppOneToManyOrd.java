@@ -18,7 +18,7 @@ public class AppOneToManyOrd {
         //getFabricante();      //No implementado
         //loadFabricante();     //Hecho
         //updateFabricante();   //
-        deleteFabricante();   //
+        //deleteFabricante();   //Hecho
         //saveOrUpdateFabricante();   //
         //queryClass();
     }
