@@ -15,7 +15,7 @@ public class App6 {
         //getProfesor();    //Hecho
         //loadProfesor();
         //modificarProfesor();
-        //borrarProfesor();     //
+        borrarProfesor(); //
         //guardarOActualizarProfesor();
         //queryClass();
     }
@@ -130,8 +130,8 @@ public class App6 {
 
         Transaction tx = session.beginTransaction();
         try {
-            Profesor6 profesor = session.get(Profesor6.class, 7);
-            System.out.println("Profesor:" + profesor.getNombre());
+            Profesor6 profesor = session.get(Profesor6.class, 1);
+            System.out.println(profesor.toString());
             session.delete(profesor);
         } catch (NullPointerException e) {
             System.out.println("ID no encontrado en la base de datos.");
