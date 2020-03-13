@@ -138,6 +138,7 @@ public class AppOneToManyOrd {
             session.delete(fab);//Eliminamos el fabricante
         } catch (NullPointerException e) {
             System.out.println("ID no encontrado en la base de datos.");
+            e.printStackTrace();
         }
 
         tx.commit();
