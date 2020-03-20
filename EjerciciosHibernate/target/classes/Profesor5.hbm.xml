@@ -2,20 +2,17 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="ejemplo01.Profesor6">
-        <id column="id" name="id" type="integer"/>
+    <class name="ejemplo01.Profesor5">
+        <id column="Id" name="id" type="integer"/>
         <property name="nombre"/>
         <property name="ape1"/>
         <property name="ape2"/>
 
-        <list name="correosElectronicos" cascade="all" inverse="true">
+        <set name="correosElectronicos" cascade="all" inverse="true">
             <key>
                 <column name="idProfesor"/>
             </key>
-            <list-index>
-                <column name="idx"/>
-            </list-index>
-            <one-to-many class="ejemplo01.CorreoElectronico6"/>
-        </list>
+            <one-to-many class="ejemplo01.CorreoElectronico5"/>
+        </set>
     </class>
 </hibernate-mapping>

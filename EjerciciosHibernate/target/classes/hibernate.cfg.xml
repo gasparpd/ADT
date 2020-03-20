@@ -19,11 +19,9 @@
         <mapping resource="CorreoElectronico5.hbm.xml"/>-->
         <mapping class="ejemplo01.Profesor5"/>
         <mapping class="ejemplo01.CorreoElectronico5"/>
-        <mapping class="ejemplo01.Profesor6"/>
-        <mapping class="ejemplo01.CorreoElectronico6"/>
-
-        <!--- <mapping class="ejemplo01.Profesor"/>
-        Comentamos esta línea porque es como se indica que debe mapear la clase con anotaciones
-         y solo puede mapear de una forma a la vez-->
+        <!--<mapping class="ejemplo01.Profesor6"/>
+        <mapping class="ejemplo01.CorreoElectronico6"/>-->
+        <mapping resource="Profesor6.hbm.xml"/>
+        <mapping resource="CorreoElectronico6.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
