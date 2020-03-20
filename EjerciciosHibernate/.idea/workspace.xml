@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Ejercicio 19. Implementado el método &quot;get&quot; para obtener un profesor y sus correos.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CorreoElectronico6.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Profesor6.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/App6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/App6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/Profesor6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/Profesor6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaHibernate/PracticaHibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaHibernate/PracticaHibernate.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,19 +44,19 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ejemplo01" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\DAM\Git\ADT\EjerciciosHibernate\src\main\resources" />
       <recent name="C:\Users\gaspa\Git\ADT\EjerciciosHibernate\src\main\resources" />
+      <recent name="C:\Users\DAM\Git\ADT\EjerciciosHibernate\src\main\resources" />
       <recent name="C:\Users\gaspa\Git\ADT\EjerciciosHibernate\src\main\java\ejemplo01" />
       <recent name="C:\Users\DAM\Git\ADT\PruebaMaven\src\main\resources" />
       <recent name="C:\Users\DAM\Git\ADT\PruebaMaven\src\main\java\ejemplo01" />
@@ -438,12 +439,12 @@
     <state x="510" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1584054397079" />
     <state x="510" y="193" key="#com.intellij.ide.util.MemberChooser/0.0.1280.984@0.0.1280.984" timestamp="1583435566525" />
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583144592104" />
-    <state x="539" y="267" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584053115850">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584711258087">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="539" y="267" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1584053115850" />
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1583780318469" />
-    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584021468457" />
+    <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584711258087" />
     <state x="353" y="0" key="CommitChangelistDialog2" timestamp="1584055015602">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -487,16 +488,16 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="459" y="52" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584054848358" />
-    <state x="180" y="71" key="SettingsEditor" timestamp="1584021737892">
+    <state x="180" y="71" key="SettingsEditor" timestamp="1584711289224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="120" y="67" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1580411481849" />
-    <state x="180" y="71" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584021737892" />
-    <state x="504" y="335" key="com.intellij.ide.util.TipDialog" timestamp="1583494306287">
+    <state x="180" y="71" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584711289224" />
+    <state x="504" y="335" key="com.intellij.ide.util.TipDialog" timestamp="1584720759455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="336" y="317" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1583434072219" />
-    <state x="504" y="335" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583494306287" />
+    <state x="504" y="335" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584720759455" />
     <state x="22" y="195" key="new project wizard" timestamp="1583432919702">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
