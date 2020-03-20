@@ -2,40 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Ejercicio 19. Implementado el método &quot;get&quot; para obtener un profesor y sus correos.">
-      <change afterPath="$PROJECT_DIR$/target/classes/CorreoElectronico5.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Direccion3.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Profesor3.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Profesor5.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/dictionaries/Gaspar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_39.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_9_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__org_jboss_jandex_2_1_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PracticaHibernate/target/classes/sede.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ejemplo01/App6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejemplo01/App6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Profesor.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Profesor.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Profesor6.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Profesor6.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaHibernate/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaHibernate/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PracticaHibernate/PracticaHibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../PracticaHibernate/PracticaHibernate.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -395,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584724027780</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Ejercicio 20. Corregido fichero de mapeo de la clase Profesor6">
+      <created>1584728376757</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1584728376758</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -427,7 +404,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ejercicio 13. Creados los ficheros de mapeo de Profesor3 y Direccion3" />
     <MESSAGE value="Ejercicio 13. Agregadas las sentencias de los mapeos de las clases Direccion3 y Profesor3" />
     <MESSAGE value="Ejercicio 13. Corregidas las clases a las que hacen referencia." />
     <MESSAGE value="Ejercicio 13. Guardado correctamente el objeto profesor con su respectiva clase." />
@@ -452,7 +428,8 @@
     <MESSAGE value="Ejercicio 19. Añadido método toString" />
     <MESSAGE value="Ejercicio 19. Implementado el método &quot;get&quot; para obtener un profesor y sus correos." />
     <MESSAGE value="Ejercicio 20. Creado fichero de mapeo de la clase Profesor6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 20. Creado fichero de mapeo de la clase Profesor6" />
+    <MESSAGE value="Ejercicio 20. Corregido fichero de mapeo de la clase Profesor6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 20. Corregido fichero de mapeo de la clase Profesor6" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -482,11 +459,12 @@
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1583780318469" />
     <state x="646" y="324" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1584727936301" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584711258087" />
-    <state x="530" y="132" key="CommitChangelistDialog2" timestamp="1584724281893">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="424" y="16" key="CommitChangelistDialog2" timestamp="1584732423059">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="353" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584055015602" />
     <state x="430" y="56" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1583437376955" />
+    <state x="424" y="16" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584732423059" />
     <state x="530" y="132" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584724281893" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582893449632">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -497,38 +475,39 @@
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1583780895426" />
     <state x="630" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582803249291" />
-    <state width="1493" height="454" key="GridCell.Tab.0.bottom" timestamp="1584728181513">
+    <state width="1493" height="454" key="GridCell.Tab.0.bottom" timestamp="1584732489739">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1237" height="359" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584057975006" />
     <state width="1237" height="426" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
-    <state width="1493" height="454" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584728181513" />
+    <state width="1493" height="454" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584732489739" />
     <state width="1877" height="638" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584044136707" />
-    <state width="1493" height="454" key="GridCell.Tab.0.center" timestamp="1584728181512">
+    <state width="1493" height="454" key="GridCell.Tab.0.center" timestamp="1584732489739">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1237" height="359" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584057975005" />
     <state width="1237" height="426" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
-    <state width="1493" height="454" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584728181512" />
+    <state width="1493" height="454" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584732489739" />
     <state width="1877" height="638" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584044136707" />
-    <state width="1493" height="454" key="GridCell.Tab.0.left" timestamp="1584728181512">
+    <state width="1493" height="454" key="GridCell.Tab.0.left" timestamp="1584732489739">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1237" height="359" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584057975005" />
     <state width="1237" height="426" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
-    <state width="1493" height="454" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584728181512" />
+    <state width="1493" height="454" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584732489738" />
     <state width="1877" height="638" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584044136707" />
-    <state width="1493" height="454" key="GridCell.Tab.0.right" timestamp="1584728181512">
+    <state width="1493" height="454" key="GridCell.Tab.0.right" timestamp="1584732489739">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1237" height="359" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584057975005" />
     <state width="1237" height="426" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1583436241864" />
-    <state width="1493" height="454" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584728181512" />
+    <state width="1493" height="454" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584732489739" />
     <state width="1877" height="638" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584044136707" />
-    <state x="459" y="52" key="RollbackChangesDialog" timestamp="1584054848358">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="551" y="63" key="RollbackChangesDialog" timestamp="1584728323500">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="459" y="52" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584054848358" />
+    <state x="551" y="63" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584728323500" />
     <state x="144" y="0" key="SettingsEditor" timestamp="1584728026025">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -17,7 +17,7 @@ public class App6 {
         //modificarProfesor();
         //borrarProfesor(); //Hecho
         //guardarOActualizarProfesor();
-        //queryClass();
+        queryClass();
     }
 
     private static void saveProfesor() {
@@ -49,6 +49,7 @@ public class App6 {
             sessionFactory.close();
         } catch (PersistenceException e) {
             System.out.println("Clave primaria duplicada.");
+            e.printStackTrace();
         }
     }
 
@@ -177,10 +178,52 @@ public class App6 {
         //Abrimos la sesión mediante el SessionFactory
         Session session = sessionFactory.openSession();
 
-        Query query = session.createQuery("SELECT p FROM Profesor p");
-        List<Profesor> profesores = query.list();
-        for (Profesor profesor : profesores) {
+        /*
+        //Ejercicio 22
+        Query query = session.createQuery("SELECT p FROM Profesor6 p");
+        List<Profesor6> profesores = query.list();
+        for (Profesor6 profesor : profesores) {
+            System.out.println(profesor.toString());
+        }
+
+        //Ejercicio 23
+        query = session.createQuery("SELECT p.id,p.nombre FROM Profesor6 p");
+        List<Object[]> listDatos = query.list();
+        for (Object[] datos : listDatos) {
+            System.out.println(datos[0] + "--" + datos[1]);
+        }
+
+        //Ejercicio 24
+        query = session.createQuery("SELECT p.nombre FROM Profesor6 p");
+        List<Object> listaDatos = query.list();
+        for (Object datos : listaDatos) {
+            System.out.println(datos);
+        }
+
+        //Ejercicio 25
+        Profesor6 profesor = (Profesor6) session.createQuery("SELECT p FROM Profesor6 p WHERE id=1").uniqueResult();
+        System.out.println("Profesor con Id 1 = " + profesor.getNombre());
+
+
+        //Ejercicio 26
+        int tamanyoPagina = 10;
+        int paginaAMostrar = 0;
+
+        Query query = session.createQuery("SELECT p FROM Profesor6 p Order By p.id");
+        query.setMaxResults(tamanyoPagina);
+        query.setFirstResult(paginaAMostrar * tamanyoPagina);
+        List<Profesor6> profesores = query.list();
+
+        for (Profesor6 profesor : profesores) {
             System.out.println(profesor.getNombre());
+        }
+        */
+
+        //Ejercicio 27
+        Query query = session.getNamedQuery("findAllProfesores");
+        List<Profesor6> profesores = query.list();
+        for (Profesor6 profesor : profesores) {
+            System.out.println(profesor.toString());
         }
 
         session.close();

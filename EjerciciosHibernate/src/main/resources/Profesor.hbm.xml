@@ -8,7 +8,4 @@
         <property name="ape1"/>
         <property name="ape2"/>
     </class>
-    <query name="findAllProfesores"><![CDATA[
-            SELECT p FROM Profesor p
-        ]]></query>
 </hibernate-mapping>

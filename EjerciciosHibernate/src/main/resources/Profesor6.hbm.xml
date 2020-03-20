@@ -18,4 +18,7 @@
             <one-to-many class="ejemplo01.CorreoElectronico6"/>
         </list>
     </class>
+    <query name="findAllProfesores"><![CDATA[
+        SELECT p FROM Profesor6 p
+    ]]></query>
 </hibernate-mapping>
