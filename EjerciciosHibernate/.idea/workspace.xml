@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="24b95143-c18d-4769-9682-2e02c5b3379b" name="Default Changelist" comment="Ejercicio 19. Implementado el método &quot;get&quot; para obtener un profesor y sus correos.">
       <change afterPath="$PROJECT_DIR$/src/main/resources/CorreoElectronico6.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Profesor6.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -359,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584055016624</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Ejercicio 20. Creado fichero de mapeo de la clase Profesor6">
+      <created>1584724027780</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1584724027780</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -391,7 +395,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ejercicio 13. Relación 1 a 1." />
     <MESSAGE value="Ejercicio 13. Creados los ficheros de mapeo de Profesor3 y Direccion3" />
     <MESSAGE value="Ejercicio 13. Agregadas las sentencias de los mapeos de las clases Direccion3 y Profesor3" />
     <MESSAGE value="Ejercicio 13. Corregidas las clases a las que hacen referencia." />
@@ -416,7 +419,8 @@
     <MESSAGE value="Ejercicio 19. Añadida etiqueta IndexColumn" />
     <MESSAGE value="Ejercicio 19. Añadido método toString" />
     <MESSAGE value="Ejercicio 19. Implementado el método &quot;get&quot; para obtener un profesor y sus correos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 19. Implementado el método &quot;get&quot; para obtener un profesor y sus correos." />
+    <MESSAGE value="Ejercicio 20. Creado fichero de mapeo de la clase Profesor6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 20. Creado fichero de mapeo de la clase Profesor6" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -445,12 +449,12 @@
     <state x="539" y="267" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1584053115850" />
     <state x="539" y="387" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.984@0.0.1280.984" timestamp="1583780318469" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584711258087" />
-    <state x="353" y="0" key="CommitChangelistDialog2" timestamp="1584055015602">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="530" y="132" key="CommitChangelistDialog2" timestamp="1584724027156">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="353" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584055015602" />
     <state x="430" y="56" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1583437376955" />
-    <state x="530" y="132" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584044132967" />
+    <state x="530" y="132" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584724027156" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582893449632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
